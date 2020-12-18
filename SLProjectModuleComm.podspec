@@ -45,7 +45,7 @@ s.dependency "UMCShare/Social/WeChat"
 s.dependency "UMCPush" #推送
   
   #Bugly
-s.dependency "Bugly'
+s.dependency "Bugly"
 
 
 end
