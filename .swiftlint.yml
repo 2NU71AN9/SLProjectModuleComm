@@ -1,0 +1,95 @@
+#规则查看
+#https://www.jianshu.com/p/328091791033
+#https://www.jianshu.com/p/146bd915c8a1
+#https://www.jianshu.com/p/58fe2e9247e8
+#https://realm.github.io/SwiftLint/rule-directory.html
+
+included: #需要进行语法检查的文件夹列表, 每个文件夹都以 - 开头
+    - SLProjectModuleComm
+
+excluded: #需要在语法检查时候排除掉的文件夹
+    - Pods
+    - SLProjectModuleComm/R.generated.swift
+cyclomatic_complexity: #循环复杂度。函数体的复杂度应该要限制，这个属性主要约束条件句、循环句中的循环嵌套问题， 当嵌套太多的循环时，则会触发swiftlint中的warning和error，当达到10个循环嵌套时就会报warning，达到20个循环嵌套时就会报error
+    warning: 10
+    error: 20
+
+function_body_length: #函数体长度， 函数体不应该跨越太多行
+    warning: 100
+    error: 200
+
+function_parameter_count: 8 # 函数或方法的参数个数限制
+
+line_length: #单行长度
+    warning: 250 #表示单行字符数超过 xxx 时抛出警告
+    error: 400
+    ignores_function_declarations: true #表示是否忽略检查函数定义的长度
+    ignores_comments: true #设置是否忽略检查注释的长度
+
+file_length: #文件内容行数
+    warning: 600
+    error: 1200
+    
+type_name: # 类型命名时字符个数限制
+    min_length: 2 # warning
+    max_length:
+        warning: 40
+        error: 50
+    excluded: # 排除
+        - iPhone
+        - R
+
+disabled_rules: #需要关闭的强制性规则
+    - identifier_name
+    - missing_docs
+    - notification_center_detachment
+#    - file_header #新建的文件开始的注释应该和文件名一样
+#    - trailing_newline #文件（属性、方法）结束的的时候（“}”之前）， 应该有一个空格新行
+#    - opening_brace #{括号之前应该有一个空格,且与声明在同一行
+#    - comma #逗号使用只要遵循“前不离身后退一步”就行了
+#    - colon #冒号: 紧靠所定义的常量或变量等，必须没有空格，与所指定的类型之间必须只有一个空格，多一个或少一个都不行，如果是用在Dictionary中，则要求紧靠Key，与Value之间必须有且仅有一个空格
+#    - force_cast #不建议直接强解类型
+#    - type_name #类型名， 类型名应该只包含字母数字字符， 并且以大写字母开头，长度在3-40个字符
+#    - trailing_semicolon #尽管在变量或常量赋值之后加不加分号在swift中没有硬性的要求，但是为了使code style更swift化，所以尽量或者绝对不要加“;”
+#    - force_try #对会抛出异常(throws)的方法,不建议try!强解
+#    - nesting #嵌套。类型嵌套至多一级结构， 函数语句嵌套至多五级结构
+#    - operator_whitespace #空格/空白操作符。当定义空格操作符的时候，被定义的名字或类型两边应该各有一个单行空格操作符
+#    - control_statement #控制语句, for，while，do，catch语句中的条件不能包含在()中
+#    - legacy_constant #结构范围常数尽量分开、明确、具体， 不要使用OC的遗留整体常数 如: 用CGPoint.zero 不用CGPointZero
+#    - return_arrow_whitespace #返回箭头和返回类型应该被空格分开 -> Any
+    - trailing_whitespace #空行中包含空格
+#    - vertical_whitespace #垂直方向上的空格行，限制为一行（注释除外）
+#    - closing_brace #类似小括号包含大括号的不能用空格 ({ ... })
+#    - statement_position #else 和 catch 前面要加一个空格， 也不能大于1个空格， 否则就会触发警告
+#    - type_body_length #类型体长度。类型体长度不应该跨越太多行， 超过200行给warning，超过350行给error。一般是大括号或者括号内, 比如定义一个enum或struct
+    - todo #TODO 和 FIXME 应该避免使用， 使用“notaTODO 和 notaFIXME”代替。另外， 和 MARK 标记不同的是， “notaTODO 和 notaFIXME”没有空格要求
+#    - legacy_constructor #使用swift语法化， 不要使用OC版本的构造器
+#    - valid_docs
+#    - leading_whitespace #文件开始不应该有空格或者换行, 否则就会触发warning
+    - inclusive_language #包含某些词汇
+    - multiple_closures_with_trailing_closure #多个闭包与尾随闭包冲突:当传递多个闭包参数时，不应该使用尾随闭包语法。
+    
+    
+opt_in_rules: # 需要打开的可选规则
+    - empty_count #建议使用isEmpty判断,而不是使用count==0判断
+    - closure_end_indentation #闭包的封闭端和开始端有相同的缩进, 意思就是 大括号（一般是方法）上下对齐的问题，这样使code看起来更加整洁
+    - closure_spacing #在闭包的{}中间要有一个空格,如map({ $0 })
+    - force_unwrapping #避免强制解包, 否则将给予warning
+    - implicitly_unwrapped_optional #尽量避免隐式解析可选类型的使用
+    - operator_usage_whitespace #操作符两边应该有空格
+    - redundant_nil_coalescing #使用可能为为nil的可选值时,建议使用: str ?? "", ??左右两侧要有一个空格
+    - discouraged_optional_boolean #不建议使用可选布尔值
+    - fatal_error_message #执行fatalError错误时,建议有一个提示信息; 如:fatalError("Foo")
+    - generic_type_name #泛型类型名称只能包含字母数字字符，以大写字母开头，长度介于1到20个字符之间
+    - implicit_return #闭包、函数和getter中只有一句代码不用写return
+#    - multiline_arguments #调用函数和方法时, 其参数应该在同一行上，或者每行一个
+    - multiline_parameters #声明函数和方法时, 其参数应该在同一行上，或者每行一个
+    - trailing_closure #关于闭包中{}的使用, 推荐使用尾随闭包的语法
+    - vertical_parameter_alignment_on_call #当调用多个参数的函数时,如果参数多行显示,则应该垂直对齐
+#    - explicit_acl #所有属性和方法的声明, 都应该明确指定修饰关键字
+
+#可以在类内部执行注释来屏蔽某一条约束等，具体操作格式如下
+#// swiftlint:disable colon
+#let noWarning :String = "" // No warning about colons immediately after variable names!
+#// swiftlint:enable colon
+#let hasWarning :String = "" // Warning generated about colons immediately after variable names

@@ -405,6 +405,19 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.entitlements` struct is generated, and contains static references to 2 properties.
+  struct entitlements {
+    static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
+
+    struct comAppleDeveloperAssociatedDomains {
+      static let applinksBo5kT4mCn = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bo5k.t4m.cn") ?? "applinks:bo5k.t4m.cn"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.file` struct is generated, and contains static references to 2 files.
   struct file {
     /// Resource file `CityCode.json`.
@@ -427,12 +440,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 8 images.
   struct image {
     /// Image `cry100`.
     static let cry100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cry100")
     /// Image `navi_back`.
     static let navi_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_back")
+    /// Image `tab1_normal`.
+    static let tab1_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab1_normal")
+    /// Image `tab1_selected`.
+    static let tab1_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab1_selected")
+    /// Image `tab2_normal`.
+    static let tab2_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab2_normal")
+    /// Image `tab2_selected`.
+    static let tab2_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab2_selected")
+    /// Image `tab3_normal`.
+    static let tab3_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab3_normal")
+    /// Image `tab3_selected`.
+    static let tab3_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab3_selected")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "cry100", bundle: ..., traitCollection: ...)`
@@ -448,50 +473,65 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    fileprivate init() {}
-  }
-
-  /// This `R.info` struct is generated, and contains static references to 1 properties.
-  struct info {
-    struct uiApplicationSceneManifest {
-      static let _key = "UIApplicationSceneManifest"
-      static let uiApplicationSupportsMultipleScenes = false
-
-      struct uiSceneConfigurations {
-        static let _key = "UISceneConfigurations"
-
-        struct uiWindowSceneSessionRoleApplication {
-          struct defaultConfiguration {
-            static let _key = "Default Configuration"
-            static let uiSceneConfigurationName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneConfigurationName") ?? "Default Configuration"
-            static let uiSceneDelegateClassName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate"
-            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "Main"
-
-            fileprivate init() {}
-          }
-
-          fileprivate init() {}
-        }
-
-        fileprivate init() {}
-      }
-
-      fileprivate init() {}
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tab1_normal", bundle: ..., traitCollection: ...)`
+    static func tab1_normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tab1_normal, compatibleWith: traitCollection)
     }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tab1_selected", bundle: ..., traitCollection: ...)`
+    static func tab1_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tab1_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tab2_normal", bundle: ..., traitCollection: ...)`
+    static func tab2_normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tab2_normal, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tab2_selected", bundle: ..., traitCollection: ...)`
+    static func tab2_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tab2_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tab3_normal", bundle: ..., traitCollection: ...)`
+    static func tab3_normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tab3_normal, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tab3_selected", bundle: ..., traitCollection: ...)`
+    static func tab3_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tab3_selected, compatibleWith: traitCollection)
+    }
+    #endif
 
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 5 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
     /// Nib `JYDatePickerViewController`.
     static let jyDatePickerViewController = _R.nib._JYDatePickerViewController()
+    /// Nib `SLHomeView`.
+    static let slHomeView = _R.nib._SLHomeView()
     /// Nib `SLNoNetworkViewController`.
     static let slNoNetworkViewController = _R.nib._SLNoNetworkViewController()
     /// Nib `SLNoNetworkView`.
     static let slNoNetworkView = _R.nib._SLNoNetworkView()
+    /// Nib `SLViewController`.
+    static let slViewController = _R.nib._SLViewController()
     /// Nib `SLVisitorViewController`.
     static let slVisitorViewController = _R.nib._SLVisitorViewController()
 
@@ -512,6 +552,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SLHomeView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.slHomeView) instead")
+    static func slHomeView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.slHomeView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SLNoNetworkView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.slNoNetworkView) instead")
     static func slNoNetworkView(_: Void = ()) -> UIKit.UINib {
@@ -524,6 +572,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.slNoNetworkViewController) instead")
     static func slNoNetworkViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.slNoNetworkViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SLViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.slViewController) instead")
+    static func slViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.slViewController)
     }
     #endif
 
@@ -543,12 +599,20 @@ struct R: Rswift.Validatable {
       return R.nib.jyDatePickerViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func slHomeView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SLHomeView? {
+      return R.nib.slHomeView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SLHomeView
+    }
+
     static func slNoNetworkView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SLNoNetworkView? {
       return R.nib.slNoNetworkView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SLNoNetworkView
     }
 
     static func slNoNetworkViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.slNoNetworkViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func slViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.slViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func slVisitorViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -617,6 +681,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _SLHomeView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SLHomeView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SLHomeView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SLHomeView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _SLNoNetworkView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SLNoNetworkView"
@@ -643,6 +718,17 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "view_able1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_able1' is used in nib 'SLNoNetworkViewController', but couldn't be loaded.") }
           if UIKit.UIColor(named: "view_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_background' is used in nib 'SLNoNetworkViewController', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SLViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SLViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
