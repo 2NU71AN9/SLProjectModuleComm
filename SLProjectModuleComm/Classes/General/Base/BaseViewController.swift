@@ -105,9 +105,10 @@ extension BaseViewController {
 
     ///
     @objc func bind() {
-        guard let viewModel = viewModel else { return }
-        contentView?.refreshEvent.bind(to: viewModel.refreshSubject).disposed(by: bag)
-        contentView?.loadMoreEvent.bind(to: viewModel.loadMoreSubject).disposed(by: bag)
+        if let viewModel = viewModel {
+            contentView?.refreshEvent.bind(to: viewModel.refreshSubject).disposed(by: bag)
+            contentView?.loadMoreEvent.bind(to: viewModel.loadMoreSubject).disposed(by: bag)
+        }
     }
     
     /// 无网络页面点击重新加载
