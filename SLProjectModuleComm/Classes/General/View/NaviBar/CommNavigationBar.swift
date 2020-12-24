@@ -121,7 +121,17 @@ class CommNavigationBar: UIView {
 }
 
 extension CommNavigationBar {
+    private static var exchanged = false // 是否已经进行过
+    private static func exchangeMethod() {
+        if exchanged { return }
+        exchanged = true
+        RunTime.exchangeMethod(selector: #selector(UIView.addSubview(_:)),
+                               replace: #selector(UIView.sl_addSubview(_:)),
+                               class: UIView.self)
+    }
+    
     static func loadView() -> CommNavigationBar {
+        exchangeMethod()
         let view = CommNavigationBar.sl_loadNib() as? CommNavigationBar
         view?.layer.zPosition = naviBar_zPosition
         return view ?? CommNavigationBar()
@@ -155,6 +165,18 @@ extension CommNavigationBar {
             navigationController.popViewController(animated: true)
         } else if navigationController.presentingViewController != nil {
             navigationController.dismiss(animated: true, completion: nil)
+        }
+    }
+}
+
+extension UIView {
+    @objc func sl_addSubview(_ subView: UIView) {
+        sl_addSubview(subView)
+        for view in subviews {
+            if view.isKind(of: CommNavigationBar.self) {
+                bringSubviewToFront(view)
+                break
+            }
         }
     }
 }
