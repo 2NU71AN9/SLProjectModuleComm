@@ -10,6 +10,7 @@ import UIKit
 class SLUMServicer: NSObject, UMAnalyticsProtocol, UMShareProtocol, UMPushProtocol {
     
     @objc static let shared = SLUMServicer()
+    private override init() { super.init() }
     
     /// 注册友盟
     /// - Parameter appKey: AppKey
