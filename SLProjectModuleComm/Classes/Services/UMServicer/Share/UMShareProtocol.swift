@@ -10,7 +10,7 @@ import SLSupportLibrary
 import PKHUD
 
 protocol UMShareProtocol {
-    func confitShareSettings()
+    func registShare(wechatAppId: String, wechatAppSecret: String) -> Self
     
     func shareText(_ text: String, success: (() -> Void)?, failure: (() -> Void)?)
     func shareMiniApp(path: String?, success: (() -> Void)?, failure: (() -> Void)?)
@@ -18,7 +18,7 @@ protocol UMShareProtocol {
 }
 
 extension UMShareProtocol where Self: SLUMServicer {
-    func confitShareSettings() {
+    func registShare(wechatAppId: String, wechatAppSecret: String) -> Self {
         UMSocialGlobal.shareInstance()?.isUsingWaterMark = true // 水印
         UMSocialGlobal.shareInstance()?.isUsingHttpsWhenShareContent = false // 可以分享http图片
         UMSocialGlobal.shareInstance()?.universalLinkDic = [UMSocialPlatformType.wechatSession: universalLink]
@@ -28,7 +28,7 @@ extension UMShareProtocol where Self: SLUMServicer {
         }
         
         // 设置分享面板
-        UMSocialManager.default()?.setPlaform(.wechatSession, appKey: AppID_wechat, appSecret: AppSecret_wechat, redirectURL: "")
+        UMSocialManager.default()?.setPlaform(.wechatSession, appKey: wechatAppId, appSecret: wechatAppSecret, redirectURL: "")
         UMSocialManager.default()?.removePlatformProvider(with: .wechatFavorite)
         
         UMSocialShareUIConfig.shareInstance()?.shareContainerConfig.shareContainerBackgroundColor = ColorBox.text_gray1.color
@@ -41,6 +41,7 @@ extension UMShareProtocol where Self: SLUMServicer {
         UMSocialShareUIConfig.shareInstance()?.shareTitleViewConfig.isShow = false
         UMSocialShareUIConfig.shareInstance()?.sharePageControlConfig.isShow = false
         UMSocialShareUIConfig.shareInstance()?.shareCancelControlConfig.isShow = false
+        return self
     }
     
     func shareText(_ text: String, success: (() -> Void)?, failure: (() -> Void)?) {

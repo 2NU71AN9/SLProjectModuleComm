@@ -8,7 +8,7 @@
 import UIKit
 
 protocol UMAnalyticsProtocol {
-    func confitAnalyticsSettings()
+    func registAnalytics() -> Self
     
     /// 添加事件
     /// SLUMServicer.shared.addEvent(.profileSignIn(userId: "123123123123"))
@@ -19,11 +19,12 @@ protocol UMAnalyticsProtocol {
 }
 
 extension UMAnalyticsProtocol where Self: SLUMServicer {
-    func confitAnalyticsSettings() {
+    func registAnalytics() -> Self {
         // 开启统计
         UMConfigure.setAnalyticsEnabled(true)
         // 自动采集页面信息
         MobClick.setAutoPageEnabled(true)
+        return self
     }
     
     func addEvent(_ event: UMEventService) {

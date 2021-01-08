@@ -8,7 +8,7 @@
 import UIKit
 
 protocol UMPushProtocol {
-    func confitPushSettings(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
+    func registPush(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Self
     func registDeviceToken(_ deviceToken: Data?)
     
     /// 添加标签
@@ -24,7 +24,7 @@ protocol UMPushProtocol {
 }
 
 extension UMPushProtocol where Self: SLUMServicer {
-    func confitPushSettings(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    func registPush(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Self {
         let entity = UMessageRegisterEntity()
         entity.types = Int(UMessageAuthorizationOptions.badge.rawValue | UMessageAuthorizationOptions.sound.rawValue | UMessageAuthorizationOptions.alert.rawValue)
         UNUserNotificationCenter.current().delegate = self
@@ -34,6 +34,7 @@ extension UMPushProtocol where Self: SLUMServicer {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
         // 设置是否允许SDK当应用在前台运行收到Push时弹出Alert框
         UMessage.setAutoAlert(false)
+        return self
     }
     
     func registDeviceToken(_ deviceToken: Data?) {

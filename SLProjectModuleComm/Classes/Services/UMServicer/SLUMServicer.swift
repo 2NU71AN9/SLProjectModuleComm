@@ -9,11 +9,11 @@ import UIKit
 
 class SLUMServicer: NSObject, UMAnalyticsProtocol, UMShareProtocol, UMPushProtocol {
     
-    static let shared = SLUMServicer()
+    @objc static let shared = SLUMServicer()
     
     /// 注册友盟
     /// - Parameter appKey: AppKey
-    func config(_ appKey: String, _ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    @objc func regist(_ appKey: String) -> SLUMServicer {
         UMConfigure.initWithAppkey(appKey, channel: nil)
         #if DEBUG
         UMConfigure.setLogEnabled(true)
@@ -21,10 +21,7 @@ class SLUMServicer: NSObject, UMAnalyticsProtocol, UMShareProtocol, UMPushProtoc
         #else
         UMConfigure.setLogEnabled(false)
         #endif
-        
-        confitAnalyticsSettings()
-        confitShareSettings()
-        confitPushSettings(launchOptions)
+        return self
     }
 }
 

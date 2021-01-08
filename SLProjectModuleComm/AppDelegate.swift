@@ -87,7 +87,11 @@ extension AppDelegate {
         SLEmptyPageManager.enable = true
         SLEmptyPageManager.defaultEmptyViewBgColor = .clear
         
-        SLUMServicer.shared.config(AppKey_UM, launchOptions)
+        _ = SLUMServicer.shared.regist(AppKey_UM)
+            .registAnalytics()
+            .registPush(launchOptions)
+            .registShare(wechatAppId: AppID_wechat, wechatAppSecret: AppSecret_wechat)
+        
         SLBuglyServicer.shared.config(AppID_bugly)
     }
 }
