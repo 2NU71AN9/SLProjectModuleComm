@@ -5,8 +5,7 @@
 #import "Reachability.h"
 
 #import <UMCommon/UMCommon.h>
-#import <UMCommonLog/UMCommonLogManager.h>
-//UMAnalytics
+// UMAnalytics
 #import <UMCommon/MobClick.h>
 // U-Share
 #import <UMShare/UMShare.h>

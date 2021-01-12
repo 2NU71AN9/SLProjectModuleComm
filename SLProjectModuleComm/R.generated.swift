@@ -410,7 +410,11 @@ struct R: Rswift.Validatable {
     static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
 
     struct comAppleDeveloperAssociatedDomains {
+      static let applinksBfedrpJgshareCn = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bfedrp.jgshare.cn") ?? "applinks:bfedrp.jgshare.cn"
+      static let applinksBfedrpJmlkCo = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bfedrp.jmlk.co") ?? "applinks:bfedrp.jmlk.co"
       static let applinksBo5kT4mCn = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bo5k.t4m.cn") ?? "applinks:bo5k.t4m.cn"
+      static let applinksBo5kT4mCnMyCommProject = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bo5k.t4m.cn/myCommProject/") ?? "applinks:bo5k.t4m.cn/myCommProject/"
+      static let applinksHelpWechatCom = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:help.wechat.com") ?? "applinks:help.wechat.com"
 
       fileprivate init() {}
     }

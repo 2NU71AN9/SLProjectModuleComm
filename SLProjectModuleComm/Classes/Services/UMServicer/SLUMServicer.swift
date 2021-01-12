@@ -9,16 +9,15 @@ import UIKit
 
 class SLUMServicer: NSObject, UMAnalyticsProtocol, UMShareProtocol, UMPushProtocol {
     
-    @objc static let shared = SLUMServicer()
-    private override init() { super.init() }
+    static let shared = SLUMServicer()
     
     /// 注册友盟
     /// - Parameter appKey: AppKey
-    @objc func regist(_ appKey: String) -> SLUMServicer {
+    func regist(_ appKey: String) -> SLUMServicer {
         UMConfigure.initWithAppkey(appKey, channel: nil)
         #if DEBUG
         UMConfigure.setLogEnabled(true)
-        UMCommonLogManager.setUp()
+//        UMCommonLogManager.setUp()
         #else
         UMConfigure.setLogEnabled(false)
         #endif

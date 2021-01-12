@@ -24,7 +24,7 @@ public let robotServiceKey = "RobotServiceUrl"
 // appid
 public let APPID = ""
 // 通用链接
-public let universalLink = "https://bo5k.t4m.cn/"
+public let universalLink = "https://bo5k.t4m.cn/myCommProject/"
 
 // 默认定位城市
 public let defaultCity = "济南市"

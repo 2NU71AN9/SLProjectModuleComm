@@ -90,7 +90,7 @@ extension AppDelegate {
         _ = SLUMServicer.shared.regist(AppKey_UM)
             .registAnalytics()
             .registPush(launchOptions)
-            .registShare(wechatAppId: AppID_wechat, wechatAppSecret: AppSecret_wechat)
+            .registShare(wechatAppId: AppID_wechat, wechatAppSecret: AppSecret_wechat, universalLink: universalLink)
         
         SLBuglyServicer.shared.config(AppID_bugly)
     }

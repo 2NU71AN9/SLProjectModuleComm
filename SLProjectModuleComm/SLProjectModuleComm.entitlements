@@ -7,6 +7,10 @@
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>applinks:bo5k.t4m.cn</string>
+		<string>applinks:bo5k.t4m.cn/myCommProject/</string>
+		<string>applinks:bfedrp.jgshare.cn</string>
+		<string>applinks:bfedrp.jmlk.co</string>
+		<string>applinks:help.wechat.com</string>
 	</array>
 </dict>
 </plist>
