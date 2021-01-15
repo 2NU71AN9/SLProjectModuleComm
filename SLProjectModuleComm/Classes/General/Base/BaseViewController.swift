@@ -18,7 +18,10 @@ class BaseViewController: GeneralViewController {
         return bar
     }()
     
+    // 登录成功后会重置
     private(set) var bag = DisposeBag()
+    // 不会重置
+    let bagStay = DisposeBag()
     
     var naviBarHidden = false {
         didSet {

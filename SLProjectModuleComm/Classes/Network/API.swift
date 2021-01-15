@@ -46,7 +46,7 @@ public enum HttpCode: Int {
     var logoutCode: [Int] { [rawValue, 14006] }
 }
 
-public enum JYError: Swift.Error {
+public enum SLError: Swift.Error {
     case requestFailed(message: String?) // 网络请求失败
     case noDataOrDataParsingFailed(message: String?) // 无返回数据或数据解析失败
     case failed(code: Int?, message: String?) // 失败
@@ -54,7 +54,7 @@ public enum JYError: Swift.Error {
 }
 
 // MARK: - 输出error详细信息
-extension JYError: LocalizedError {
+extension SLError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .requestFailed(let error):

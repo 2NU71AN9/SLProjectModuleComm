@@ -26,16 +26,16 @@ extension Observable where Element == NetworkResponse {
                     /// 如果是字典
                     guard let model = T.deserialize(from: response.result as? [String: Any])
                         else {
-                            throw JYError.noDataOrDataParsingFailed(message: "转模型失败")
+                            throw SLError.noDataOrDataParsingFailed(message: "转模型失败")
                     }
                     return model
                 } else {
-                    throw JYError.noDataOrDataParsingFailed(message: "不是字典类型")
+                    throw SLError.noDataOrDataParsingFailed(message: "不是字典类型")
                 }
 
             } else {
                 /// 直接输出错误
-                throw JYError.failed(code: response.code, message: response.message)
+                throw SLError.failed(code: response.code, message: response.message)
             }
         }
             .showError()
@@ -50,7 +50,7 @@ extension Observable where Element == NetworkResponse {
                     /// 如果是数组
                     guard let models = [T].deserialize(from: response.result as? [[String: Any]]) as? [T]
                         else {
-                            throw JYError.noDataOrDataParsingFailed(message: "转模型失败")
+                            throw SLError.noDataOrDataParsingFailed(message: "转模型失败")
                     }
                     return models
                 } else {
@@ -59,7 +59,7 @@ extension Observable where Element == NetworkResponse {
                 }
             } else {
                 /// 直接输出错误
-                throw JYError.failed(code: response.code, message: response.message)
+                throw SLError.failed(code: response.code, message: response.message)
             }
         }
             .showError()
@@ -73,7 +73,7 @@ extension Observable where Element == NetworkResponse {
                 return response
             } else {
                 /// 直接输出错误
-                throw JYError.failed(code: response.code, message: response.message)
+                throw SLError.failed(code: response.code, message: response.message)
             }
         }
             .showError()
@@ -84,7 +84,7 @@ extension Observable where Element == NetworkResponse {
         map { response in
             if response.code != HttpCode.success.rawValue {
                 complete?(response)
-                throw JYError.failed(code: response.code, message: response.message)
+                throw SLError.failed(code: response.code, message: response.message)
             } else {
                 return response
             }
@@ -103,11 +103,11 @@ public extension Observable {
 }
 
 extension Observable where Element: HandyJSON {
-    public func subscribeTo(_ complete: PublishSubject<(Element?, JYError?)>) -> Disposable {
+    public func subscribeTo(_ complete: PublishSubject<(Element?, SLError?)>) -> Disposable {
         subscribe(onNext: { (element) in
             complete.onNext((element, nil))
         }, onError: { (error) in
-            complete.onNext((nil, error as? JYError))
+            complete.onNext((nil, error as? SLError))
         })
     }
 }
