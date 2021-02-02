@@ -9,11 +9,12 @@
 import UIKit
 import RxSwift
 
-class BaseViewModel: NSObject, DataSourceCleanProtocol {
+class BaseViewModel: NSObject {
 
     public let bag = DisposeBag()
     public let refreshSubject = PublishSubject<Bool>()
     public let loadMoreSubject = PublishSubject<Bool>()
+    public let loadDataComplete = PublishSubject<(SLError?, Int)>()
 
     public var page = 1
 
@@ -57,12 +58,8 @@ extension BaseViewModel {
     @objc func loadData() {
 
     }
-}
-
-protocol DataSourceCleanProtocol {
-    func dataSourceClean()
-}
-
-extension DataSourceCleanProtocol {
-    func dataSourceClean() {}
+    /// 清理数据源
+    @objc func dataSourceClean() {
+        
+    }
 }
