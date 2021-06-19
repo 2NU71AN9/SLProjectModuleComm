@@ -22,7 +22,7 @@ class SLNoNetworkView: UIView {
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         if superview != nil {
-            snp.sl_makeConstraints { (make) in
+            snp.sl.makeConstraints { (make) in
                 make.center.equalToSuperview()
                 make.size.equalToSuperview()
             }

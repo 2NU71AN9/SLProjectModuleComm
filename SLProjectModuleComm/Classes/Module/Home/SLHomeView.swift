@@ -11,7 +11,7 @@ class SLHomeView: BaseView {
 
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.registerClass(UITableViewCell.self)
+            tableView.sl.registerClass(UITableViewCell.self)
             tableView.delegate = self
             tableView.dataSource = self
         }

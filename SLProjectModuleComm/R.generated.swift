@@ -522,12 +522,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
-    /// Nib `JYDatePickerViewController`.
-    static let jyDatePickerViewController = _R.nib._JYDatePickerViewController()
     /// Nib `SLHomeView`.
     static let slHomeView = _R.nib._SLHomeView()
     /// Nib `SLNoNetworkViewController`.
@@ -544,14 +542,6 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.commNavigationBar) instead")
     static func commNavigationBar(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.commNavigationBar)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UINib(name: "JYDatePickerViewController", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.jyDatePickerViewController) instead")
-    static func jyDatePickerViewController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.jyDatePickerViewController)
     }
     #endif
 
@@ -597,10 +587,6 @@ struct R: Rswift.Validatable {
 
     static func commNavigationBar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CommNavigationBar? {
       return R.nib.commNavigationBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommNavigationBar
-    }
-
-    static func jyDatePickerViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.jyDatePickerViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func slHomeView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SLHomeView? {
@@ -669,17 +655,6 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "navi_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navi_back' is used in nib 'CommNavigationBar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _JYDatePickerViewController: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "JYDatePickerViewController"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

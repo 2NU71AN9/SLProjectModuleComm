@@ -1,9 +1,12 @@
-platform :ios, '11.0'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '12.0'
 
 target 'SLProjectModuleComm' do
   use_frameworks!
 
-  pod 'SLSupportLibrary'
+  pod 'SLIKit'
+  pod 'SLEmptyPage'
   pod 'IQKeyboardManagerSwift'
   pod 'SVProgressHUD'
   pod 'SwiftDate'
@@ -18,12 +21,12 @@ target 'SLProjectModuleComm' do
   pod 'HXPhotoPicker'
   pod 'Moya'
   pod 'Starscream'
-  pod 'SLEmptyPage'
   pod 'FSTextView'
   pod 'ESTabBarController-swift'
   pod 'SwiftLint'
   pod 'CTMediator'
   pod 'NewPopMenu'
+  pod 'Peep'
   
   #友盟
   pod 'UMCommon'
@@ -34,6 +37,5 @@ target 'SLProjectModuleComm' do
   
   #Bugly
   pod 'Bugly'
-
 
 end

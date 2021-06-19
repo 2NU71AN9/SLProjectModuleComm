@@ -16,7 +16,7 @@ protocol ViewLifeProtocol {
 
 extension ViewLifeProtocol where Self: UIView {
     func config() {
-        backgroundColor = ColorBox.view_background.color
+        backgroundColor = R.color.view_background()
     }
     func viewDidLoad() {}
 }

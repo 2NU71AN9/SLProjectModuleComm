@@ -7,7 +7,7 @@
 
 import UIKit
 import Moya
-import SLSupportLibrary
+import SLIKit
 
 public enum APIService {
     /// 登录

@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import ESTabBarController_swift
 import pop
-import SLSupportLibrary
+import SLIKit
 
 class SLESTabBarController: ESTabBarController {
     private let bag = DisposeBag()

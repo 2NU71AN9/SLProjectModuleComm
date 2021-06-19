@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SLSupportLibrary
+import SLIKit
 import RxSwift
 
 class CommNavigationBar: UIView {
@@ -132,14 +132,14 @@ extension CommNavigationBar {
     
     static func loadView() -> CommNavigationBar {
         exchangeMethod()
-        let view = CommNavigationBar.sl_loadNib() as? CommNavigationBar
+        let view = CommNavigationBar.sl.loadNib()?.base
         view?.layer.zPosition = naviBar_zPosition
         return view ?? CommNavigationBar()
     }
 
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        snp.sl_makeConstraints { (make) in
+        snp.sl.makeConstraints { (make) in
             make.left.top.right.equalToSuperview()
         }
     }

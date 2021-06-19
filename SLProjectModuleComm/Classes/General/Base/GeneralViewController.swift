@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SLIKit
 
 class GeneralViewController: UIViewController {
 
@@ -45,10 +46,10 @@ class GeneralViewController: UIViewController {
         if Bundle.main.path(forResource: clsName, ofType: "nib") != nil,
             let nibCls = Bundle.main.loadNibNamed("\(clsName)", owner: nil, options: nil)?.first as? BaseView {
             view = nibCls
-        } else if let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? BaseView.Type {
+        } else if let cls = NSClassFromString(Bundle.main.sl.namespace~~ + "." + clsName) as? BaseView.Type {
             view = cls.init()
         }
-        if let cls = NSClassFromString(Bundle.main.namespace + "." + clsName + "Model") as? BaseViewModel.Type {
+        if let cls = NSClassFromString(Bundle.main.sl.namespace~~ + "." + clsName + "Model") as? BaseViewModel.Type {
             viewModel = cls.init()
         }
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 import RxSwift
-import SLSupportLibrary
+import SLIKit
 
 class BaseViewController: GeneralViewController {
 
@@ -53,7 +53,7 @@ extension BaseViewController {
     final override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        view.backgroundColor = ColorBox.view_background.color
+        view.backgroundColor = R.color.view_background()
         view.addSubview(naviBar)
         additionalSafeAreaInsets.top = naviBarHidden ? 0 : NavigationBarHeight
         AccountServicer.service.isLogin ? setMasterView() : setVisitorPage()
