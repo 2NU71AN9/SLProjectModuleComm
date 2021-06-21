@@ -444,12 +444,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 8 images.
+  /// This `R.image` struct is generated, and contains static references to 9 images.
   struct image {
     /// Image `cry100`.
     static let cry100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cry100")
     /// Image `navi_back`.
     static let navi_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_back")
+    /// Image `navi_close`.
+    static let navi_close = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_close")
     /// Image `tab1_normal`.
     static let tab1_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab1_normal")
     /// Image `tab1_selected`.
@@ -474,6 +476,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "navi_back", bundle: ..., traitCollection: ...)`
     static func navi_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.navi_back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "navi_close", bundle: ..., traitCollection: ...)`
+    static func navi_close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navi_close, compatibleWith: traitCollection)
     }
     #endif
 
@@ -522,18 +531,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
+    /// Nib `SLDiscoverViewController`.
+    static let slDiscoverViewController = _R.nib._SLDiscoverViewController()
     /// Nib `SLHomeView`.
     static let slHomeView = _R.nib._SLHomeView()
+    /// Nib `SLLoginViewController`.
+    static let slLoginViewController = _R.nib._SLLoginViewController()
     /// Nib `SLNoNetworkViewController`.
     static let slNoNetworkViewController = _R.nib._SLNoNetworkViewController()
     /// Nib `SLNoNetworkView`.
     static let slNoNetworkView = _R.nib._SLNoNetworkView()
-    /// Nib `SLViewController`.
-    static let slViewController = _R.nib._SLViewController()
     /// Nib `SLVisitorViewController`.
     static let slVisitorViewController = _R.nib._SLVisitorViewController()
 
@@ -546,10 +557,26 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SLDiscoverViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.slDiscoverViewController) instead")
+    static func slDiscoverViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.slDiscoverViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SLHomeView", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.slHomeView) instead")
     static func slHomeView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.slHomeView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SLLoginViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.slLoginViewController) instead")
+    static func slLoginViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.slLoginViewController)
     }
     #endif
 
@@ -570,14 +597,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UINib(name: "SLViewController", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.slViewController) instead")
-    static func slViewController(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.slViewController)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SLVisitorViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.slVisitorViewController) instead")
     static func slVisitorViewController(_: Void = ()) -> UIKit.UINib {
@@ -589,8 +608,16 @@ struct R: Rswift.Validatable {
       return R.nib.commNavigationBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommNavigationBar
     }
 
+    static func slDiscoverViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.slDiscoverViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func slHomeView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SLHomeView? {
       return R.nib.slHomeView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SLHomeView
+    }
+
+    static func slLoginViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.slLoginViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func slNoNetworkView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SLNoNetworkView? {
@@ -599,10 +626,6 @@ struct R: Rswift.Validatable {
 
     static func slNoNetworkViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.slNoNetworkViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
-    }
-
-    static func slViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-      return R.nib.slViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func slVisitorViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -660,12 +683,34 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _SLDiscoverViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SLDiscoverViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _SLHomeView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SLHomeView"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SLHomeView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SLHomeView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SLLoginViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SLLoginViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
@@ -697,17 +742,6 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "view_able1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_able1' is used in nib 'SLNoNetworkViewController', but couldn't be loaded.") }
           if UIKit.UIColor(named: "view_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_background' is used in nib 'SLNoNetworkViewController', but couldn't be loaded.") }
         }
-      }
-
-      fileprivate init() {}
-    }
-
-    struct _SLViewController: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "SLViewController"
-
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

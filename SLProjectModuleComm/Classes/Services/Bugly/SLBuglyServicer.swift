@@ -8,6 +8,7 @@
 import UIKit
 import Bugly
 
+/// bugly相关
 class SLBuglyServicer: NSObject {
 
     static let shared = SLBuglyServicer()

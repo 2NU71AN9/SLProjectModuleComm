@@ -1,14 +1,18 @@
 //
 //  SLLoginViewController.swift
-//  SLCommProject
+//  SLProjectModuleComm
 //
-//  Created by 孙梁 on 2020/12/12.
+//  Created by 孙梁 on 2021/6/21.
 //
 
 import UIKit
 
 class SLLoginViewController: BaseViewController {
     
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBAction func loginAction(_ sender: UIButton) {
+        loginSuccess()
+    }
 }
 
 extension SLLoginViewController {
@@ -16,16 +20,10 @@ extension SLLoginViewController {
     override func setMasterView() {
         super.setMasterView()
         title = "登录"
-        
     }
     
     override func setVisitorPage() {
         setMasterView()
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        loginSuccess()
     }
 }
 
@@ -44,7 +42,7 @@ extension SLLoginViewController {
         if navigationController?.presentingViewController != nil && presentingViewController != nil {
             dismiss(animated: true, completion: nil)
         } else {
-            UIApplication.shared.keyWindow?.rootViewController = SLTabBar.customStyle()
+            UIApplication.shared.windows.last?.rootViewController = SLTabBar.customStyle()
         }
     }
 }

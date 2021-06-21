@@ -9,11 +9,7 @@
 import UIKit
 
 class BaseNavigationController: UINavigationController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+    /// push页面时隐藏tabBar
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         viewController.hidesBottomBarWhenPushed = !viewControllers.isEmpty
         super.pushViewController(viewController, animated: animated)

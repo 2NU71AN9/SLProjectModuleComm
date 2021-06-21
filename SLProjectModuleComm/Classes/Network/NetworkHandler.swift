@@ -15,7 +15,10 @@ import Alamofire
 class NetworkHandler: NSObject {
 
     static let APIProvider = MoyaProvider<APIService>(plugins: [ShowProgress(), CheckNetStatus()])
-
+    
+    /// 网络请求
+    /// - Parameter target: API
+    /// - Returns: 接口返回数据
     public static func request(_ target: APIService) -> Observable<NetworkResponse> {
         Observable<NetworkResponse>.create { (obsever) -> Disposable in
             APIProvider.request(target) { (result) in
@@ -55,7 +58,40 @@ class NetworkHandler: NSObject {
             }
             return Disposables.create()
         }
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .default))
-            .observeOn(MainScheduler.instance)
+        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+        .observe(on: MainScheduler.instance)
+    }
+    
+    /// 下载文件
+    /// - Parameters:
+    ///   - target: API
+    ///   - progress: 进度
+    public static func download(_ target: APIService, progress: ((Double) -> Void)? = nil) -> Observable<URL> {
+        Observable<URL>.create { (obsever) -> Disposable in
+            if FileManager.default.fileExists(atPath: target.localLocation.path) {
+                obsever.onNext(target.localLocation)
+                obsever.onCompleted()
+            } else {
+                APIProvider.request(target, progress: { pro in
+                    progress?(pro.progress)
+                }) { (result) in
+                    switch result {
+                    case .success:
+                        obsever.onNext(target.localLocation)
+                        print("下载成功==>" + target.localLocation.absoluteString)
+                        obsever.onCompleted()
+                    case .failure(let error):
+                        #if DEBUG
+                        print(error.errorDescription ?? "下载失败")
+                        #endif
+                        obsever.onError(error)
+                        obsever.onCompleted()
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .default))
+        .observe(on: MainScheduler.instance)
     }
 }

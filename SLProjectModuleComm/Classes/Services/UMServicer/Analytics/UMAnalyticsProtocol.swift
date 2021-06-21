@@ -19,6 +19,8 @@ protocol UMAnalyticsProtocol {
 }
 
 extension UMAnalyticsProtocol where Self: SLUMServicer {
+    
+    @discardableResult
     func registAnalytics() -> Self {
         // 开启统计
         UMConfigure.setAnalyticsEnabled(true)

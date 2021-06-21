@@ -10,6 +10,7 @@ import RxSwift
 
 class UserLoginRetryServicer: NSObject {
     /**
+     进行某个操作前判断是否登录, 未登录跳转登录, 登录成功后自动进行改操作
      UserLoginRetryServicer.isLogin().subscribe(onNext: { [weak self] (_) in
          // ...
      }).disposed(by: bagStay)

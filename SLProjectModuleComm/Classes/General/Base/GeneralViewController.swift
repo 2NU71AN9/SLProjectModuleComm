@@ -9,6 +9,12 @@
 import UIKit
 import SLIKit
 
+/**
+ base类, 可根据vc名称自动初始化并持有view和viewModel
+ 需要按命名规则事先创建好vc view viewModel
+ 命名规则: xxxViewController xxxView  xxxViewModel
+ 可不创建xxxView或xxxViewModel, 即和普通vc一样, 并且不影响xib使用
+ */
 class GeneralViewController: UIViewController {
 
     public var contentView: BaseView? {
@@ -38,6 +44,7 @@ class GeneralViewController: UIViewController {
         }
     }
 
+    /// 重写loadView方法, 替换view, 初始化viewModel
     override func loadView() {
         super.loadView()
         let name = String(describing: type(of: self))

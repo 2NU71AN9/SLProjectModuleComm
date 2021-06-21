@@ -22,6 +22,8 @@ protocol UMShareProtocol {
 }
 
 extension UMShareProtocol where Self: SLUMServicer {
+    
+    @discardableResult
     func registShare(wechatAppId: String, wechatAppSecret: String, universalLink: String) -> Self {
         UMSocialGlobal.shareInstance()?.isUsingWaterMark = false // 水印
         UMSocialGlobal.shareInstance()?.isUsingHttpsWhenShareContent = false // 可以分享http图片

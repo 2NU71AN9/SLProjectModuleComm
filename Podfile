@@ -1,6 +1,6 @@
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 #source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '12.0'
+platform :ios, '13.0'
 
 target 'SLProjectModuleComm' do
   use_frameworks!
@@ -27,6 +27,7 @@ target 'SLProjectModuleComm' do
   pod 'CTMediator'
   pod 'NewPopMenu'
   pod 'Peep'
+  pod 'GDPerformanceView-Swift'
   
   #友盟
   pod 'UMCommon'

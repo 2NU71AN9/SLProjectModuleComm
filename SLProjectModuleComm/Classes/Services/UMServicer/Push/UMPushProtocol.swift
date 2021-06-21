@@ -24,6 +24,8 @@ protocol UMPushProtocol {
 }
 
 extension UMPushProtocol where Self: SLUMServicer {
+    
+    @discardableResult
     func registPush(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Self {
         let entity = UMessageRegisterEntity()
         entity.types = Int(UMessageAuthorizationOptions.badge.rawValue | UMessageAuthorizationOptions.sound.rawValue | UMessageAuthorizationOptions.alert.rawValue)

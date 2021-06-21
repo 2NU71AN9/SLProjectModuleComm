@@ -9,28 +9,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SLDiscoverViewController" customModule="SLProjectModuleComm" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="ygo-27-Lcg" id="tg0-oe-Q8c"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SLHomeView" customModule="SLProjectModuleComm" customModuleProvider="target">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="AYt-Tr-cmP">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ygo-27-Lcg">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </tableView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="AYt-Tr-cmP" secondAttribute="bottom" id="1xd-yH-SgB"/>
-                <constraint firstItem="AYt-Tr-cmP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IBq-i5-XQi"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AYt-Tr-cmP" secondAttribute="trailing" id="Tw0-bs-a3i"/>
-                <constraint firstItem="AYt-Tr-cmP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="xcE-Jo-dUt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ygo-27-Lcg" secondAttribute="trailing" id="Dhw-zd-ALs"/>
+                <constraint firstAttribute="bottom" secondItem="ygo-27-Lcg" secondAttribute="bottom" id="MBQ-KQ-Wem"/>
+                <constraint firstItem="ygo-27-Lcg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="V0f-AR-B3T"/>
+                <constraint firstItem="ygo-27-Lcg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="x6c-CO-MSL"/>
             </constraints>
-            <connections>
-                <outlet property="tableView" destination="AYt-Tr-cmP" id="NN2-fD-oOU"/>
-            </connections>
-            <point key="canvasLocation" x="139" y="137"/>
+            <point key="canvasLocation" x="139" y="141"/>
         </view>
     </objects>
     <resources>

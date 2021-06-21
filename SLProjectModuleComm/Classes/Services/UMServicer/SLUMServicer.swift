@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// 友盟相关
 class SLUMServicer: NSObject, UMAnalyticsProtocol, UMShareProtocol, UMPushProtocol {
     
     static let shared = SLUMServicer()

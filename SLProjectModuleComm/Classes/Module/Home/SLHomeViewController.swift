@@ -15,14 +15,6 @@ class SLHomeViewController: BaseViewController {
 extension SLHomeViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "标题"
-        naviBar.item1Title = "点击"
-        naviBar.item1Event = { [weak self] in
-            self?.click()
-        }
-    }
-    
-    private func click() {
-        
+        title = "首页"
     }
 }

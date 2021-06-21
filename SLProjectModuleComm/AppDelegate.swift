@@ -10,6 +10,7 @@ import IQKeyboardManagerSwift
 import PKHUD
 import SVProgressHUD
 import SLEmptyPage
+import GDPerformanceView_Swift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -87,11 +88,16 @@ extension AppDelegate {
         SLEmptyPageManager.enable = true
         SLEmptyPageManager.defaultEmptyViewBgColor = .clear
         
-        _ = SLUMServicer.shared.regist(AppKey_UM)
+        SLUMServicer.shared.regist(AppKey_UM)
             .registAnalytics()
             .registPush(launchOptions)
             .registShare(wechatAppId: AppID_wechat, wechatAppSecret: AppSecret_wechat, universalLink: universalLink)
         
         SLBuglyServicer.shared.config(AppID_bugly)
+        
+        #if DEBUG
+        PerformanceMonitor.shared().start()
+        PerformanceMonitor.shared().performanceViewConfigurator.options = [.performance, .memory]
+        #endif
     }
 }

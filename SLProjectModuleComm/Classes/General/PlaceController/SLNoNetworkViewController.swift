@@ -7,8 +7,10 @@
 
 import UIKit
 
+/// 无网络时显示的页面
 class SLNoNetworkViewController: UIViewController {
 
+    /// 重新加载的回调
     @objc public var refreshEvent: (() -> Void)?
     
     @IBOutlet weak var imageView: UIImageView! {

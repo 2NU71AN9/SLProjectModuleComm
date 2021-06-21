@@ -9,10 +9,13 @@
 import UIKit
 import RxSwift
 
+/// view base类
 class BaseView: UIView, ViewLifeProtocol {
 
     let bag = DisposeBag()
+    /// tableView下拉刷新
     let refreshEvent = PublishSubject<Bool>()
+    /// tableView上拉刷新
     let loadMoreEvent = PublishSubject<Bool>()
 
     weak var parentVC: BaseViewController?

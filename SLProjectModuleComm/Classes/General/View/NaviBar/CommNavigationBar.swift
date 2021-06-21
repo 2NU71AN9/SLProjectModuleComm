@@ -10,11 +10,14 @@ import UIKit
 import SLIKit
 import RxSwift
 
+/// 自定义导航栏
 class CommNavigationBar: UIView {
-
+    /// 导航栏高度
     static var kBarHeight = NavigationBarHeight
     
+    /// 返回点击, 为nil时会按照原有栈返回
     var backEvent: (() -> Void)?
+    /// 右侧按钮1, 2, 3点击
     var item1Event: (() -> Void)?
     var item2Event: (() -> Void)?
     var item3Event: (() -> Void)?
@@ -38,6 +41,8 @@ class CommNavigationBar: UIView {
             titleLabel.text = title
         }
     }
+    
+    /// 右侧按钮1, 2, 3图片
     var item1Image: UIImage? {
         didSet {
             item1.setImage(item1Image, for: .normal)
@@ -56,6 +61,8 @@ class CommNavigationBar: UIView {
             item3.isHidden = item3Image == nil && item3Title?.isEmpty ?? true
         }
     }
+    
+    /// 右侧按钮1, 2, 3文字
     var item1Title: String? {
         didSet {
             item1.setTitle(item1Title, for: .normal)
@@ -75,6 +82,7 @@ class CommNavigationBar: UIView {
         }
     }
 
+    /// 控制器
     weak var viewController: UIViewController? {
         didSet {
             setBackItemShow()
@@ -122,6 +130,7 @@ class CommNavigationBar: UIView {
 
 extension CommNavigationBar {
     private static var exchanged = false // 是否已经进行过
+    /// 交换方法, 使导航栏始终在最上层, 不被后加的view遮挡
     private static func exchangeMethod() {
         if exchanged { return }
         exchanged = true
@@ -130,6 +139,7 @@ extension CommNavigationBar {
                                class: UIView.self)
     }
     
+    /// 创建导航栏
     static func loadView() -> CommNavigationBar {
         exchangeMethod()
         let view = CommNavigationBar.sl.loadNib()?.base
@@ -144,15 +154,19 @@ extension CommNavigationBar {
         }
     }
     
+    /// 是否显示返回按钮
     private func setBackItemShow() {
         guard let viewController = viewController else { return }
         guard let navigationController = viewController.navigationController else {
             backBtn.isHidden = viewController.presentingViewController == nil
+            backBtn.setImage(R.image.navi_close(), for: .normal)
             return
         }
-        backBtn.isHidden = navigationController.viewControllers.count <= 1
+        backBtn.setImage(navigationController.viewControllers.count <= 1 && viewController.presentingViewController != nil ? R.image.navi_close() : R.image.navi_back(), for: .normal)
+        backBtn.isHidden = navigationController.viewControllers.count <= 1 && viewController.presentingViewController == nil
     }
     
+    /// 根据页面结构使用不同方式返回
     private func dismiss() {
         guard let viewController = viewController else { return }
         guard let navigationController = viewController.navigationController else {
@@ -170,6 +184,7 @@ extension CommNavigationBar {
 }
 
 extension UIView {
+    /// 使导航栏始终在最上层, 不被后加的view遮挡
     @objc func sl_addSubview(_ subView: UIView) {
         sl_addSubview(subView)
         for view in subviews {

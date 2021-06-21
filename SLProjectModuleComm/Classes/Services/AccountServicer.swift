@@ -10,8 +10,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+/// 用户登录相关信息管理
 class AccountServicer: NSObject {
     @objc static let service = AccountServicer()
+    /**
+     初始化
+     UserDefaults获取保存的用户信息和token
+     */
     private override init() {
         super.init()
         if let dict = UserDefaults.standard.value(forKey: userDateStandKey) as? [String: Any] {
@@ -21,10 +26,13 @@ class AccountServicer: NSObject {
             self.token = token
         }
     }
-
+    /// 是否登录
     @objc var isLogin: Bool { !(token?.isEmpty ?? true) }
+    /// token
     @objc private(set) var token: String?
+    /// 用户信息
     private(set) var userDate: SLUserModel?
+    /// 登录信息
     private(set) var robotServiceUrl: String?
 
     // 登录成功后发出通知(只用监听), 发通知调用loginSuccess()
@@ -36,7 +44,7 @@ class AccountServicer: NSObject {
 }
 
 extension AccountServicer {
-    /// 用户登出, 会重新刷新页面
+    /// 用户登出, 清除登录信息和用户信息, 重新刷新页面
     @objc func logout() {
         if isLogin == false {
             goToLogin()
@@ -59,7 +67,7 @@ extension AccountServicer {
         UserDefaults.standard.removeObject(forKey: tokenStandKey)
     }
 
-    /// 前往登陆页, 不会重新刷新页面
+    /// 前往登陆页, 不清除登录信息和用户信息, 不会重新刷新页面
     @objc func goToLogin() {
         haveToLogoutSubject.value.onNext(false)
         haveToLogoutSubject.value.onCompleted()

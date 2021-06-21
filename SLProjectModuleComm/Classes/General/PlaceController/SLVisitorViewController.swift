@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// 未登录时显示的页面
 class SLVisitorViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView! {
