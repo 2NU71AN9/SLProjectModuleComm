@@ -12,3 +12,9 @@
 #import <UShareUI/UShareUI.h>
 // U-Push
 #import <UMPush/UMessage.h>
+
+// 极光
+#import <UIKit/UIKit.h>
+#import <JANALYTICSService.h>
+#import <JSHAREService.h>
+#import <JPUSHService.h>

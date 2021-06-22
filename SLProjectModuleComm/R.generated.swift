@@ -444,7 +444,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 9 images.
+  /// This `R.image` struct is generated, and contains static references to 12 images.
   struct image {
     /// Image `cry100`.
     static let cry100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cry100")
@@ -452,6 +452,8 @@ struct R: Rswift.Validatable {
     static let navi_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_back")
     /// Image `navi_close`.
     static let navi_close = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_close")
+    /// Image `switchCamera40`.
+    static let switchCamera40 = Rswift.ImageResource(bundle: R.hostingBundle, name: "switchCamera40")
     /// Image `tab1_normal`.
     static let tab1_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab1_normal")
     /// Image `tab1_selected`.
@@ -464,6 +466,10 @@ struct R: Rswift.Validatable {
     static let tab3_normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab3_normal")
     /// Image `tab3_selected`.
     static let tab3_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab3_selected")
+    /// Image `wechat50`.
+    static let wechat50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "wechat50")
+    /// Image `wechatTimeLine50`.
+    static let wechatTimeLine50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "wechatTimeLine50")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "cry100", bundle: ..., traitCollection: ...)`
@@ -483,6 +489,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "navi_close", bundle: ..., traitCollection: ...)`
     static func navi_close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.navi_close, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "switchCamera40", bundle: ..., traitCollection: ...)`
+    static func switchCamera40(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.switchCamera40, compatibleWith: traitCollection)
     }
     #endif
 
@@ -528,13 +541,31 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "wechat50", bundle: ..., traitCollection: ...)`
+    static func wechat50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.wechat50, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "wechatTimeLine50", bundle: ..., traitCollection: ...)`
+    static func wechatTimeLine50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.wechatTimeLine50, compatibleWith: traitCollection)
+    }
+    #endif
+
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
   struct nib {
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
+    /// Nib `FaceRecognitionViewController`.
+    static let faceRecognitionViewController = _R.nib._FaceRecognitionViewController()
+    /// Nib `JGSharePlatformPicker`.
+    static let jgSharePlatformPicker = _R.nib._JGSharePlatformPicker()
     /// Nib `SLDiscoverViewController`.
     static let slDiscoverViewController = _R.nib._SLDiscoverViewController()
     /// Nib `SLHomeView`.
@@ -553,6 +584,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.commNavigationBar) instead")
     static func commNavigationBar(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.commNavigationBar)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FaceRecognitionViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.faceRecognitionViewController) instead")
+    static func faceRecognitionViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.faceRecognitionViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "JGSharePlatformPicker", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.jgSharePlatformPicker) instead")
+    static func jgSharePlatformPicker(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.jgSharePlatformPicker)
     }
     #endif
 
@@ -606,6 +653,14 @@ struct R: Rswift.Validatable {
 
     static func commNavigationBar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CommNavigationBar? {
       return R.nib.commNavigationBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommNavigationBar
+    }
+
+    static func faceRecognitionViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.faceRecognitionViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func jgSharePlatformPicker(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.jgSharePlatformPicker.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func slDiscoverViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -662,6 +717,8 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _CommNavigationBar.validate()
+      try _FaceRecognitionViewController.validate()
+      try _JGSharePlatformPicker.validate()
       try _SLNoNetworkViewController.validate()
       try _SLVisitorViewController.validate()
     }
@@ -677,6 +734,42 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "navi_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navi_back' is used in nib 'CommNavigationBar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FaceRecognitionViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "FaceRecognitionViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "switchCamera40", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'switchCamera40' is used in nib 'FaceRecognitionViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _JGSharePlatformPicker: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "JGSharePlatformPicker"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "wechat50", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wechat50' is used in nib 'JGSharePlatformPicker', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "wechatTimeLine50", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'wechatTimeLine50' is used in nib 'JGSharePlatformPicker', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "view_gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_gray1' is used in nib 'JGSharePlatformPicker', but couldn't be loaded.") }
         }
       }
 

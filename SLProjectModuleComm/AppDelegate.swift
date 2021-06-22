@@ -27,10 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        SLJGServicer.shared.registDeviceToken(deviceToken)
         SLUMServicer.shared.registDeviceToken(deviceToken)
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        if SLJGServicer.shared.handleOpenURL(url: url, options: options) == false {
+            // 其他SDK的回调
+        }
         if SLUMServicer.shared.handleOpenURL(url: url, options: options) == false {
             // 其他SDK的回调
         }
@@ -38,6 +42,9 @@ extension AppDelegate {
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        if SLJGServicer.shared.handleUniversalLink(url: userActivity.webpageURL) == false {
+            // 其他SDK的回调
+        }
         if SLUMServicer.shared.handleUniversalLink(activity: userActivity) == false {
             // 其他SDK的回调
         }
@@ -92,6 +99,11 @@ extension AppDelegate {
             .registAnalytics()
             .registPush(launchOptions)
             .registShare(wechatAppId: AppID_wechat, wechatAppSecret: AppSecret_wechat, universalLink: universalLink)
+        
+        SLJGServicer.shared
+            .registAnalytics(AppKey_JG)
+            .registShare(appKey: AppKey_JG, universalLink: universalLink, wechatAppId: AppID_wechat, wechatAppSecret: AppSecret_wechat)
+            .registPush(appKey: AppKey_JG, launchOptions: launchOptions)
         
         SLBuglyServicer.shared.config(AppID_bugly)
         

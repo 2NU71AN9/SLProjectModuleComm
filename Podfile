@@ -7,6 +7,7 @@ target 'SLProjectModuleComm' do
 
   pod 'SLIKit'
   pod 'SLEmptyPage'
+  pod 'Aspects'
   pod 'IQKeyboardManagerSwift'
   pod 'SVProgressHUD'
   pod 'SwiftDate'
@@ -35,6 +36,12 @@ target 'SLProjectModuleComm' do
   pod 'UMShare/UI' #分享
   pod 'UMShare/Social/WeChat'
   pod 'UMPush' #推送
+  
+  #极光
+  pod 'JCore'
+  pod 'JAnalytics'
+  pod 'JShare'
+  pod 'JPush'
   
   #Bugly
   pod 'Bugly'

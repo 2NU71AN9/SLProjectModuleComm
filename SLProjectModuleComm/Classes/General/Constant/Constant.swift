@@ -47,6 +47,10 @@ public let noNetworkPageHaveRefresh = true
 
 // 友盟AppKey
 public let AppKey_UM = "5fd97b5f498d9e0d4d90761a"
+// 极光
+public let AppKey_JG = "99846b6fcc88b4168c3fe69f"
+public let AppSecret_JG = "578613872257ee82cf246697"
+
 // 微信
 public let AppID_wechat = "wxac7f360237a214cc"
 public let AppSecret_wechat = "08196524f27704095dbe7ece0d7dc304"
