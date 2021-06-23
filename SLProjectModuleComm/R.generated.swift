@@ -422,16 +422,24 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 3 files.
   struct file {
     /// Resource file `CityCode.json`.
     static let cityCodeJson = Rswift.FileResource(bundle: R.hostingBundle, name: "CityCode", pathExtension: "json")
+    /// Resource file `Example_Success.m4a`.
+    static let example_SuccessM4a = Rswift.FileResource(bundle: R.hostingBundle, name: "Example_Success", pathExtension: "m4a")
     /// Resource file `area.plist`.
     static let areaPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "area", pathExtension: "plist")
 
     /// `bundle.url(forResource: "CityCode", withExtension: "json")`
     static func cityCodeJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.cityCodeJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Example_Success", withExtension: "m4a")`
+    static func example_SuccessM4a(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.example_SuccessM4a
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -558,7 +566,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 9 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
   struct nib {
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
@@ -578,6 +586,10 @@ struct R: Rswift.Validatable {
     static let slNoNetworkView = _R.nib._SLNoNetworkView()
     /// Nib `SLVisitorViewController`.
     static let slVisitorViewController = _R.nib._SLVisitorViewController()
+    /// Nib `SoundViewController`.
+    static let soundViewController = _R.nib._SoundViewController()
+    /// Nib `TapticViewController`.
+    static let tapticViewController = _R.nib._TapticViewController()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CommNavigationBar", in: bundle)`
@@ -651,6 +663,22 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SoundViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.soundViewController) instead")
+    static func soundViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.soundViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TapticViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.tapticViewController) instead")
+    static func tapticViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.tapticViewController)
+    }
+    #endif
+
     static func commNavigationBar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CommNavigationBar? {
       return R.nib.commNavigationBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommNavigationBar
     }
@@ -685,6 +713,14 @@ struct R: Rswift.Validatable {
 
     static func slVisitorViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.slVisitorViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func soundViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.soundViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func tapticViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.tapticViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -855,6 +891,28 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "view_able1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_able1' is used in nib 'SLVisitorViewController', but couldn't be loaded.") }
           if UIKit.UIColor(named: "view_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_background' is used in nib 'SLVisitorViewController', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SoundViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SoundViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TapticViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TapticViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

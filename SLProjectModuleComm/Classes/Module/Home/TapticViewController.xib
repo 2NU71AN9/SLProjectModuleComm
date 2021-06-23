@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TapticViewController" customModule="SLProjectModuleComm" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QxX-iG-wgz">
+                    <rect key="frame" x="20" y="64" width="374" height="485"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRG-vV-bM7">
+                            <rect key="frame" x="112" y="0.0" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="MGw-W5-pqV"/>
+                                <constraint firstAttribute="width" constant="150" id="dtp-ct-z7b"/>
+                            </constraints>
+                            <state key="normal" title="soft">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn1Action:" destination="-1" eventType="touchUpInside" id="PA6-Du-fRh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tv-iS-wR0">
+                            <rect key="frame" x="112" y="55" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="qln-24-cMe"/>
+                                <constraint firstAttribute="width" constant="150" id="s0m-ve-6mg"/>
+                            </constraints>
+                            <state key="normal" title="light">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn2Action:" destination="-1" eventType="touchUpInside" id="kfh-oK-4fX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9O-LS-wma">
+                            <rect key="frame" x="112" y="110" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="DcL-rL-1Ru"/>
+                                <constraint firstAttribute="height" constant="45" id="HUW-TR-rj8"/>
+                            </constraints>
+                            <state key="normal" title="medium">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn3Action:" destination="-1" eventType="touchUpInside" id="JvR-K1-BRx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFY-L9-qVL">
+                            <rect key="frame" x="112" y="165" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="Dzq-Js-6Sq"/>
+                                <constraint firstAttribute="width" constant="150" id="lKL-Rv-iwY"/>
+                            </constraints>
+                            <state key="normal" title="heavy">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn4Action:" destination="-1" eventType="touchUpInside" id="4UK-Lu-691"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXY-3e-Mco">
+                            <rect key="frame" x="112" y="220" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="7bs-cg-uBT"/>
+                                <constraint firstAttribute="height" constant="45" id="n52-KP-nYO"/>
+                            </constraints>
+                            <state key="normal" title="rigid">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn5Action:" destination="-1" eventType="touchUpInside" id="hU9-ax-lvV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ly5-rB-1Ew">
+                            <rect key="frame" x="112" y="275" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="1GQ-2p-9GT"/>
+                                <constraint firstAttribute="height" constant="45" id="n14-mc-yN4"/>
+                            </constraints>
+                            <state key="normal" title="success">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn6Action:" destination="-1" eventType="touchUpInside" id="yUW-QU-wWx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiY-e4-CVU">
+                            <rect key="frame" x="112" y="330" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="6bf-Hl-hkV"/>
+                                <constraint firstAttribute="height" constant="45" id="mTL-Cg-BQd"/>
+                            </constraints>
+                            <state key="normal" title="warning">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn7Action:" destination="-1" eventType="touchUpInside" id="ex1-HZ-td4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-bx-rVG">
+                            <rect key="frame" x="112" y="385" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="5Ap-B5-hM4"/>
+                                <constraint firstAttribute="width" constant="150" id="kNM-cJ-Foa"/>
+                            </constraints>
+                            <state key="normal" title="error">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn8Action:" destination="-1" eventType="touchUpInside" id="ust-TO-fkg"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIs-yL-YxB">
+                            <rect key="frame" x="112" y="440" width="150" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="7SQ-sq-n7a"/>
+                                <constraint firstAttribute="width" constant="150" id="Idh-X9-Pcf"/>
+                            </constraints>
+                            <state key="normal" title="自定义">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn9Action:" destination="-1" eventType="touchUpInside" id="ob0-0H-EB0"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QxX-iG-wgz" secondAttribute="trailing" constant="20" id="KOm-EX-xkg"/>
+                <constraint firstItem="QxX-iG-wgz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="nCo-rw-gvU"/>
+                <constraint firstItem="QxX-iG-wgz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="v7g-fu-wLY"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="137"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="prime">
+            <color red="0.99199998378753662" green="0.21600000560283661" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

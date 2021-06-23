@@ -47,6 +47,12 @@ extension SLHomeViewController {
         case [1, 0]:
             let vc = FaceRecognitionViewController()
             present(vc, animated: true, completion: nil)
+        case [1, 1]:
+            let vc = TapticViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [1, 2]:
+            let vc = SoundViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [4, 0]:
             if let url = URL(string: "App-Prefs:root") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
