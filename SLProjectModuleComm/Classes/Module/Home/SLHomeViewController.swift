@@ -53,6 +53,21 @@ extension SLHomeViewController {
         case [1, 2]:
             let vc = SoundViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [2, 0]:
+            let vc = WaterfallFlowViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [2, 1]:
+            let vc = RefreshViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [2, 2]:
+            let vc = EmptyPageViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [2, 3]:
+            let vc = ToastViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [2, 4]:
+            let vc = SegmentViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [4, 0]:
             if let url = URL(string: "App-Prefs:root") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)

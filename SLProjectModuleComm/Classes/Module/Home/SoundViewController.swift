@@ -9,6 +9,12 @@ import UIKit
 import Peep
 
 class SoundViewController: BaseViewController {
+    
+    override func setMasterView() {
+        super.setMasterView()
+        title = "音效"
+    }
+    
     @IBAction func btn1Action(_ sender: UIButton) {
         Peep.play(sound: AlertTone.tweet)
     }

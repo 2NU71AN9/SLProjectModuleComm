@@ -71,7 +71,7 @@ disabled_rules: #需要关闭的强制性规则
     
     
 opt_in_rules: # 需要打开的可选规则
-    - empty_count #建议使用isEmpty判断,而不是使用count==0判断
+#    - empty_count #建议使用isEmpty判断,而不是使用count==0判断
     - closure_end_indentation #闭包的封闭端和开始端有相同的缩进, 意思就是 大括号（一般是方法）上下对齐的问题，这样使code看起来更加整洁
     - closure_spacing #在闭包的{}中间要有一个空格,如map({ $0 })
     - force_unwrapping #避免强制解包, 否则将给予warning

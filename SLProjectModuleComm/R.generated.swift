@@ -566,7 +566,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 11 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 12 nibs.
   struct nib {
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
@@ -590,6 +590,8 @@ struct R: Rswift.Validatable {
     static let soundViewController = _R.nib._SoundViewController()
     /// Nib `TapticViewController`.
     static let tapticViewController = _R.nib._TapticViewController()
+    /// Nib `ToastViewController`.
+    static let toastViewController = _R.nib._ToastViewController()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CommNavigationBar", in: bundle)`
@@ -679,6 +681,14 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ToastViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.toastViewController) instead")
+    static func toastViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.toastViewController)
+    }
+    #endif
+
     static func commNavigationBar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CommNavigationBar? {
       return R.nib.commNavigationBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommNavigationBar
     }
@@ -721,6 +731,10 @@ struct R: Rswift.Validatable {
 
     static func tapticViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.tapticViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func toastViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.toastViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -918,6 +932,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _ToastViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ToastViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
   #endif
@@ -941,6 +966,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "cry100", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cry100' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }

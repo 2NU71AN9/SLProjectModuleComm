@@ -10,6 +10,11 @@ import Haptica
 
 class TapticViewController: BaseViewController {
     
+    override func setMasterView() {
+        super.setMasterView()
+        title = "Taptic"
+    }
+    
     @IBAction func btn1Action(_ sender: UIButton) {
         Haptic.impact(.soft).generate()
     }
@@ -37,5 +42,4 @@ class TapticViewController: BaseViewController {
     @IBAction func btn9Action(_ sender: UIButton) {
         Haptic.play("..oO-Oo..", delay: 0.1)
     }
-
 }
