@@ -5,7 +5,7 @@ platform :ios, '13.0'
 target 'SLProjectModuleComm' do
   use_frameworks!
 
-  pod 'SLIKit'
+  pod 'SLIKit', :git => 'https://github.com/2NU71AN9/SLIKit.git'
   pod 'SLEmptyPage'
   pod 'Aspects'
   pod 'IQKeyboardManagerSwift'

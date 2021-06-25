@@ -53,6 +53,14 @@ extension SLHomeViewController {
         case [1, 2]:
             let vc = SoundViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [1, 3]:
+            let vc = SLQRCodeViewController { result in
+                SLHUD.showToast(result?.strScanned)
+            }
+            navigationController?.pushViewController(vc, animated: true)
+        case [1, 4]:
+            let vc = QRCodeViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [2, 0]:
             let vc = WaterfallFlowViewController()
             navigationController?.pushViewController(vc, animated: true)

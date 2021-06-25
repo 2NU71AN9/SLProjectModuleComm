@@ -13,8 +13,8 @@ class SLHomeViewModel: BaseViewModel {
     let cellDidSelectSubject = PublishSubject<IndexPath>()
     
     private let dataArray = [["友盟分享", "极光分享"],
-                             ["人脸检测", "Taptic", "音效", "二维码扫描"],
-                             ["瀑布流", "上拉加载/下拉刷新", "空白状态页", "Toast", "多页面", "列表嵌套"],
+                             ["人脸检测", "Taptic", "音效", "二维码扫描", "生成二维码"],
+                             ["瀑布流", "上拉加载/下拉刷新", "空白状态页", "Toast", "多页面", "列表嵌套", "轮播"],
                              ["图片选择", "文件选择+文件预览"],
                              ["前往系统设置", "前往自己应用设置", "前往AppStore"]
     ]

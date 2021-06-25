@@ -410,11 +410,8 @@ struct R: Rswift.Validatable {
     static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
 
     struct comAppleDeveloperAssociatedDomains {
-      static let applinksBfedrpJgshareCn = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bfedrp.jgshare.cn") ?? "applinks:bfedrp.jgshare.cn"
-      static let applinksBfedrpJmlkCo = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bfedrp.jmlk.co") ?? "applinks:bfedrp.jmlk.co"
       static let applinksBo5kT4mCn = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bo5k.t4m.cn") ?? "applinks:bo5k.t4m.cn"
       static let applinksBo5kT4mCnMyCommProject = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bo5k.t4m.cn/myCommProject/") ?? "applinks:bo5k.t4m.cn/myCommProject/"
-      static let applinksHelpWechatCom = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:help.wechat.com") ?? "applinks:help.wechat.com"
 
       fileprivate init() {}
     }
@@ -452,10 +449,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 12 images.
+  /// This `R.image` struct is generated, and contains static references to 13 images.
   struct image {
     /// Image `cry100`.
     static let cry100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cry100")
+    /// Image `navi_back_white`.
+    static let navi_back_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_back_white")
     /// Image `navi_back`.
     static let navi_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_back")
     /// Image `navi_close`.
@@ -490,6 +489,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "navi_back", bundle: ..., traitCollection: ...)`
     static func navi_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.navi_back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "navi_back_white", bundle: ..., traitCollection: ...)`
+    static func navi_back_white(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.navi_back_white, compatibleWith: traitCollection)
     }
     #endif
 
@@ -566,7 +572,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 12 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
   struct nib {
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
@@ -574,6 +580,8 @@ struct R: Rswift.Validatable {
     static let faceRecognitionViewController = _R.nib._FaceRecognitionViewController()
     /// Nib `JGSharePlatformPicker`.
     static let jgSharePlatformPicker = _R.nib._JGSharePlatformPicker()
+    /// Nib `QRCodeViewController`.
+    static let qrCodeViewController = _R.nib._QRCodeViewController()
     /// Nib `SLDiscoverViewController`.
     static let slDiscoverViewController = _R.nib._SLDiscoverViewController()
     /// Nib `SLHomeView`.
@@ -614,6 +622,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.jgSharePlatformPicker) instead")
     static func jgSharePlatformPicker(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.jgSharePlatformPicker)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "QRCodeViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.qrCodeViewController) instead")
+    static func qrCodeViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.qrCodeViewController)
     }
     #endif
 
@@ -699,6 +715,10 @@ struct R: Rswift.Validatable {
 
     static func jgSharePlatformPicker(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.jgSharePlatformPicker.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func qrCodeViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.qrCodeViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func slDiscoverViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -821,6 +841,17 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "view_gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_gray1' is used in nib 'JGSharePlatformPicker', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _QRCodeViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "QRCodeViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

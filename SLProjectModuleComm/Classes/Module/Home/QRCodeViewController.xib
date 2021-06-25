@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRCodeViewController" customModule="SLProjectModuleComm" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView1" destination="TiP-mA-Hft" id="Yl6-Sd-Sb1"/>
+                <outlet property="imageView2" destination="0HS-Lc-r9a" id="mym-nd-LDW"/>
+                <outlet property="textField" destination="99X-No-7EU" id="gwc-ke-ecR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入内容" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99X-No-7EU">
+                    <rect key="frame" x="15" y="64" width="384" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Jpk-jB-YoG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done"/>
+                    <connections>
+                        <action selector="editDidEnd:" destination="-1" eventType="editingDidEnd" id="XNy-MD-c6C"/>
+                    </connections>
+                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cxu-Sq-3Y8">
+                    <rect key="frame" x="107" y="134" width="200" height="415"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TiP-mA-Hft">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="0AN-H0-ZvY"/>
+                                <constraint firstAttribute="height" constant="200" id="lSO-OR-uCZ"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0HS-Lc-r9a">
+                            <rect key="frame" x="0.0" y="215" width="200" height="200"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="0HS-Lc-r9a" firstAttribute="width" secondItem="TiP-mA-Hft" secondAttribute="width" id="VD0-p8-wWc"/>
+                        <constraint firstItem="0HS-Lc-r9a" firstAttribute="height" secondItem="TiP-mA-Hft" secondAttribute="height" id="iPb-fB-iEX"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="99X-No-7EU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="K5m-Tp-FeG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="99X-No-7EU" secondAttribute="trailing" constant="15" id="d2O-QZ-mZK"/>
+                <constraint firstItem="99X-No-7EU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="jrR-a9-A1v"/>
+                <constraint firstItem="cxu-Sq-3Y8" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="psC-Nc-jkq"/>
+                <constraint firstItem="cxu-Sq-3Y8" firstAttribute="top" secondItem="99X-No-7EU" secondAttribute="bottom" constant="30" id="y1u-LC-kHb"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="137"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
