@@ -11,8 +11,8 @@ excluded: #需要在语法检查时候排除掉的文件夹
     - Pods
     - SLProjectModuleComm/R.generated.swift
 cyclomatic_complexity: #循环复杂度。函数体的复杂度应该要限制，这个属性主要约束条件句、循环句中的循环嵌套问题， 当嵌套太多的循环时，则会触发swiftlint中的warning和error，当达到10个循环嵌套时就会报warning，达到20个循环嵌套时就会报error
-    warning: 10
-    error: 20
+    warning: 30
+    error: 50
 
 function_body_length: #函数体长度， 函数体不应该跨越太多行
     warning: 100

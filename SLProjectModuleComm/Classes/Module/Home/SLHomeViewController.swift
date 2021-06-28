@@ -79,6 +79,9 @@ extension SLHomeViewController {
         case [2, 5]:
             let vc = ListNestViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [2, 6]:
+            let vc = CarouselViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [3, 1]:
             SL.pickerFile.complete { url, _ in
                 SLFileBrowser(url).show()

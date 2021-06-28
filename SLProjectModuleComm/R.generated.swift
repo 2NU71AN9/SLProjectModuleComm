@@ -449,10 +449,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 13 images.
+  /// This `R.image` struct is generated, and contains static references to 15 images.
   struct image {
     /// Image `cry100`.
     static let cry100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cry100")
+    /// Image `icon_cat`.
+    static let icon_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_cat")
+    /// Image `icon_footprint`.
+    static let icon_footprint = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_footprint")
     /// Image `navi_back_white`.
     static let navi_back_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_back_white")
     /// Image `navi_back`.
@@ -482,6 +486,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "cry100", bundle: ..., traitCollection: ...)`
     static func cry100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.cry100, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_cat", bundle: ..., traitCollection: ...)`
+    static func icon_cat(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_cat, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_footprint", bundle: ..., traitCollection: ...)`
+    static func icon_footprint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_footprint, compatibleWith: traitCollection)
     }
     #endif
 
@@ -572,8 +590,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 13 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 14 nibs.
   struct nib {
+    /// Nib `CarouselViewController`.
+    static let carouselViewController = _R.nib._CarouselViewController()
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
     /// Nib `FaceRecognitionViewController`.
@@ -600,6 +620,14 @@ struct R: Rswift.Validatable {
     static let tapticViewController = _R.nib._TapticViewController()
     /// Nib `ToastViewController`.
     static let toastViewController = _R.nib._ToastViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CarouselViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.carouselViewController) instead")
+    static func carouselViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.carouselViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CommNavigationBar", in: bundle)`
@@ -705,6 +733,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func carouselViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.carouselViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func commNavigationBar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CommNavigationBar? {
       return R.nib.commNavigationBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommNavigationBar
     }
@@ -791,6 +823,17 @@ struct _R: Rswift.Validatable {
       try _JGSharePlatformPicker.validate()
       try _SLNoNetworkViewController.validate()
       try _SLVisitorViewController.validate()
+    }
+
+    struct _CarouselViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CarouselViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
     }
 
     struct _CommNavigationBar: Rswift.NibResourceType, Rswift.Validatable {
