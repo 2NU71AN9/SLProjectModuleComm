@@ -76,6 +76,10 @@ extension SLHomeViewController {
         case [2, 4]:
             let vc = SegmentViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [3, 1]:
+            SL.pickerFile.complete { url, _ in
+                SLFileBrowser(url).show()
+            }.show()
         case [4, 0]:
             if let url = URL(string: "App-Prefs:root") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
