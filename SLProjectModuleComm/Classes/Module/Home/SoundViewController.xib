@@ -20,15 +20,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ylZ-Ln-IeT">
-                    <rect key="frame" x="132" y="64" width="150" height="210"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ylZ-Ln-IeT">
+                    <rect key="frame" x="20" y="64" width="374" height="225"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II9-ra-mdQ">
-                            <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="W5N-Ku-BRo"/>
-                                <constraint firstAttribute="width" constant="150" id="and-eB-ybz"/>
                             </constraints>
                             <state key="normal" title="alert-1">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,10 +42,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9z-Sq-wfR">
-                            <rect key="frame" x="0.0" y="55" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="60" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="9Le-OB-9mc"/>
                                 <constraint firstAttribute="height" constant="45" id="XqJ-WV-a9Y"/>
                             </constraints>
                             <state key="normal" title="alert-2">
@@ -62,10 +60,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVF-GR-Tdt">
-                            <rect key="frame" x="0.0" y="110" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="120" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="Qb2-Yj-3eN"/>
                                 <constraint firstAttribute="height" constant="45" id="sgo-HI-VI6"/>
                             </constraints>
                             <state key="normal" title="KeyPress">
@@ -81,11 +78,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kza-aN-1Jj">
-                            <rect key="frame" x="0.0" y="165" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="180" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="Kh8-cM-EMy"/>
-                                <constraint firstAttribute="width" constant="150" id="lLz-Dp-a3p"/>
                             </constraints>
                             <state key="normal" title="本地音频">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,8 +101,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ylZ-Ln-IeT" secondAttribute="trailing" constant="20" id="7ks-ZW-KiN"/>
                 <constraint firstItem="ylZ-Ln-IeT" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="DnQ-p2-EeV"/>
                 <constraint firstItem="ylZ-Ln-IeT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="R7y-jO-ucc"/>
+                <constraint firstItem="ylZ-Ln-IeT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="gou-c3-hDk"/>
             </constraints>
             <point key="canvasLocation" x="139" y="137"/>
         </view>

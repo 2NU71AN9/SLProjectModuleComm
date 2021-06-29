@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HXPPImageCell" rowHeight="287" id="KGk-i7-Jjw" customClass="HXPPImageCell" customModule="DAOAProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="287"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="287"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ltX-HD-w6d">
+                        <rect key="frame" x="15" y="15" width="470" height="257"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tt7-bG-6TD">
+                                <rect key="frame" x="0.0" y="0.0" width="470" height="18"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIm-xy-r6a">
+                                        <rect key="frame" x="0.0" y="0.0" width="61.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最多9张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvE-cf-yrJ">
+                                        <rect key="frame" x="418" y="0.5" width="52" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <color key="textColor" name="text_gray3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEi-nq-igK" customClass="HXPhotoView">
+                                <rect key="frame" x="0.0" y="157" width="470" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bMP-vE-Exz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ltX-HD-w6d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="6Z3-3w-yBJ"/>
+                    <constraint firstItem="ltX-HD-w6d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="HKL-qF-QDW"/>
+                    <constraint firstAttribute="trailing" secondItem="ltX-HD-w6d" secondAttribute="trailing" constant="15" id="ZKy-Qt-xGz"/>
+                    <constraint firstAttribute="bottom" secondItem="ltX-HD-w6d" secondAttribute="bottom" constant="15" id="rF3-Lx-qpf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="countLabel" destination="fvE-cf-yrJ" id="Skq-fO-geM"/>
+                <outlet property="photoView" destination="gEi-nq-igK" id="bNh-tg-8lr"/>
+                <outlet property="photoViewHeight" destination="bMP-vE-Exz" id="s7c-ie-4Ih"/>
+                <outlet property="titleLabel" destination="YIm-xy-r6a" id="GBc-ce-fAS"/>
+            </connections>
+            <point key="canvasLocation" x="268.1159420289855" y="171.76339285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="text_gray3">
+            <color red="0.37099999189376831" green="0.37099999189376831" blue="0.37099999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

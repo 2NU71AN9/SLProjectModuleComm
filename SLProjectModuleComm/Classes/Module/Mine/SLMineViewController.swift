@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SLIKit
 
 class SLMineViewController: BaseViewController {
     private lazy var tableView = UITableView(frame: CGRect.zero, style: .insetGrouped).sl
@@ -17,8 +18,9 @@ class SLMineViewController: BaseViewController {
         .estimatedRowHeight(80)
         .estimatedSectionHeaderHeight(0)
         .estimatedSectionFooterHeight(0)
-        .registerClass(UITableViewCell.self)
         .base
+    
+    private let dataArray = [["本机IP", "WIFI IP", "WIFI名称", "WIFI mac地址"], ["清除缓存"]]
 }
 
 // MARK: - LifeCyle
@@ -49,15 +51,40 @@ extension SLMineViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SLMineViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        dataArray.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        dataArray[section].count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row + 1)"
-        return cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")
+        if cell == nil {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
+        }
+        cell?.textLabel?.text = dataArray[indexPath.section][indexPath.row]
+        cell?.accessoryType = .disclosureIndicator
+        switch indexPath {
+        case [0, 0]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = SL.tools.getIPAddress()
+        case [0, 1]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = SL.tools.getWiFiIP()
+        case [0, 2]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = SL.tools.getWifiNameWithMac().0
+        case [0, 3]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = SL.tools.getWifiNameWithMac().1
+        case [1, 0]:
+            cell?.detailTextLabel?.text = SLFileManager.access2Cache()
+        default:
+            cell?.detailTextLabel?.text = nil
+        }
+        return cell~~
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cellDidSelectAction(indexPath)
     }
 }
 
@@ -70,5 +97,14 @@ extension SLMineViewController {
 
 // MARK: - Event
 extension SLMineViewController {
-    
+    private func cellDidSelectAction(_ indexPath: IndexPath) {
+        switch indexPath {
+        case [1, 0]:
+            SLFileManager.cleanCache { [weak self] in
+                self?.tableView.cellForRow(at: indexPath)?.detailTextLabel?.text = SLFileManager.access2Cache()
+            }
+        default:
+            break
+        }
+    }
 }

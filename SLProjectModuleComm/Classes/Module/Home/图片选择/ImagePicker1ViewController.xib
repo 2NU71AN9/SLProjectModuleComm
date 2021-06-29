@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagePicker1ViewController" customModule="SLProjectModuleComm" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="mkg-Op-abM" id="Zpt-Vg-k8Q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1MR-ek-MU3">
+                    <rect key="frame" x="20" y="64" width="374" height="105"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LH8-aO-4vo">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="Vnp-UC-mKn"/>
+                            </constraints>
+                            <state key="normal" title="选择图片">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn1Action:" destination="-1" eventType="touchUpInside" id="8xR-c9-zTc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqG-1w-DFh">
+                            <rect key="frame" x="0.0" y="60" width="374" height="45"/>
+                            <color key="backgroundColor" name="prime"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="C5j-5f-LIa"/>
+                            </constraints>
+                            <state key="normal" title="选择头像">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="btn2Action:" destination="-1" eventType="touchUpInside" id="XQN-C4-EQ4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mkg-Op-abM">
+                    <rect key="frame" x="57" y="219" width="300" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="300" id="QM3-pQ-PwV"/>
+                        <constraint firstAttribute="height" constant="300" id="gMC-bg-lKU"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1MR-ek-MU3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2OD-f5-wAF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1MR-ek-MU3" secondAttribute="trailing" constant="20" id="UhJ-Oq-cVq"/>
+                <constraint firstItem="1MR-ek-MU3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="jcN-kU-Ql1"/>
+                <constraint firstItem="mkg-Op-abM" firstAttribute="top" secondItem="1MR-ek-MU3" secondAttribute="bottom" constant="50" id="nEU-re-gGA"/>
+                <constraint firstItem="mkg-Op-abM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="zXG-VS-dQ7"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="141"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="prime">
+            <color red="0.99199998378753662" green="0.21600000560283661" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

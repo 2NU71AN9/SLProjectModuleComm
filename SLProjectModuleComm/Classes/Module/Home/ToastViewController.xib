@@ -20,14 +20,13 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-kL-cNP">
-                    <rect key="frame" x="132" y="64" width="150" height="265"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-kL-cNP">
+                    <rect key="frame" x="20" y="64" width="374" height="285"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsM-5Y-GJR">
-                            <rect key="frame" x="0.0" y="0.0" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="81u-Q5-PU6"/>
                                 <constraint firstAttribute="height" constant="45" id="vIs-dY-9dX"/>
                             </constraints>
                             <state key="normal" title="text">
@@ -43,11 +42,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQE-PJ-FW7">
-                            <rect key="frame" x="0.0" y="55" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="60" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="4g8-el-pHY"/>
-                                <constraint firstAttribute="width" constant="150" id="WjI-FS-VtW"/>
                             </constraints>
                             <state key="normal" title="success">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,11 +60,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83r-w8-eR9">
-                            <rect key="frame" x="0.0" y="110" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="120" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="lu9-kV-ZpS"/>
-                                <constraint firstAttribute="width" constant="150" id="qh5-Eb-Liq"/>
                             </constraints>
                             <state key="normal" title="error">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,11 +78,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-qa-VNF">
-                            <rect key="frame" x="0.0" y="165" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="180" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="fVu-me-JqP"/>
-                                <constraint firstAttribute="width" constant="150" id="zUo-fs-SmH"/>
                             </constraints>
                             <state key="normal" title="progress">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,11 +96,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKF-r5-mxr">
-                            <rect key="frame" x="0.0" y="220" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="240" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="Roj-5R-X9t"/>
-                                <constraint firstAttribute="width" constant="150" id="bdx-qm-GPS"/>
                             </constraints>
                             <state key="normal" title="image">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,7 +120,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ZDM-kL-cNP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5we-we-rHA"/>
+                <constraint firstItem="ZDM-kL-cNP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="AHX-4r-DHZ"/>
                 <constraint firstItem="ZDM-kL-cNP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="paQ-no-QhL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZDM-kL-cNP" secondAttribute="trailing" constant="20" id="rL9-MD-yoh"/>
             </constraints>
             <point key="canvasLocation" x="139" y="137"/>
         </view>

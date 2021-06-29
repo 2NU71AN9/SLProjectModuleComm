@@ -83,7 +83,8 @@ extension SLHomeViewController {
             let vc = CarouselViewController()
             navigationController?.pushViewController(vc, animated: true)
         case [3, 0]:
-            SL.pickerImage
+            let vc = ImagePickerViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [3, 1]:
             SL.pickerFile.complete { url, _ in
                 SLFileBrowser(url).show()
@@ -102,7 +103,7 @@ extension SLHomeViewController {
         case [3, 4]:
             SL.pickerNormal
                 .titles(["标签1", "标签2", "标签3", "标签4", "标签5", "标签6", "标签7", "标签8", "标签9", "标签10"])
-                .complete { index, text in
+                .complete { _, text in
                     SLHUD.showToast(text)
                 }.show()
         case [4, 0]:

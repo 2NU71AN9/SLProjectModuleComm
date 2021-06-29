@@ -9,5 +9,7 @@
 		<string>applinks:bo5k.t4m.cn</string>
 		<string>applinks:bo5k.t4m.cn/myCommProject/</string>
 	</array>
+	<key>com.apple.developer.networking.wifi-info</key>
+	<true/>
 </dict>
 </plist>

@@ -20,15 +20,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QxX-iG-wgz">
-                    <rect key="frame" x="20" y="64" width="374" height="485"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="QxX-iG-wgz">
+                    <rect key="frame" x="20" y="64" width="374" height="525"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRG-vV-bM7">
-                            <rect key="frame" x="112" y="0.0" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="MGw-W5-pqV"/>
-                                <constraint firstAttribute="width" constant="150" id="dtp-ct-z7b"/>
                             </constraints>
                             <state key="normal" title="soft">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,11 +42,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tv-iS-wR0">
-                            <rect key="frame" x="112" y="55" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="60" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="qln-24-cMe"/>
-                                <constraint firstAttribute="width" constant="150" id="s0m-ve-6mg"/>
                             </constraints>
                             <state key="normal" title="light">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,10 +60,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9O-LS-wma">
-                            <rect key="frame" x="112" y="110" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="120" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="DcL-rL-1Ru"/>
                                 <constraint firstAttribute="height" constant="45" id="HUW-TR-rj8"/>
                             </constraints>
                             <state key="normal" title="medium">
@@ -81,11 +78,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFY-L9-qVL">
-                            <rect key="frame" x="112" y="165" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="180" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="Dzq-Js-6Sq"/>
-                                <constraint firstAttribute="width" constant="150" id="lKL-Rv-iwY"/>
                             </constraints>
                             <state key="normal" title="heavy">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,10 +96,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXY-3e-Mco">
-                            <rect key="frame" x="112" y="220" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="240" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="7bs-cg-uBT"/>
                                 <constraint firstAttribute="height" constant="45" id="n52-KP-nYO"/>
                             </constraints>
                             <state key="normal" title="rigid">
@@ -119,10 +114,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ly5-rB-1Ew">
-                            <rect key="frame" x="112" y="275" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="300" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="1GQ-2p-9GT"/>
                                 <constraint firstAttribute="height" constant="45" id="n14-mc-yN4"/>
                             </constraints>
                             <state key="normal" title="success">
@@ -138,10 +132,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiY-e4-CVU">
-                            <rect key="frame" x="112" y="330" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="360" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="150" id="6bf-Hl-hkV"/>
                                 <constraint firstAttribute="height" constant="45" id="mTL-Cg-BQd"/>
                             </constraints>
                             <state key="normal" title="warning">
@@ -157,11 +150,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbt-bx-rVG">
-                            <rect key="frame" x="112" y="385" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="420" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="5Ap-B5-hM4"/>
-                                <constraint firstAttribute="width" constant="150" id="kNM-cJ-Foa"/>
                             </constraints>
                             <state key="normal" title="error">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,11 +168,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIs-yL-YxB">
-                            <rect key="frame" x="112" y="440" width="150" height="45"/>
+                            <rect key="frame" x="0.0" y="480" width="374" height="45"/>
                             <color key="backgroundColor" name="prime"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="7SQ-sq-n7a"/>
-                                <constraint firstAttribute="width" constant="150" id="Idh-X9-Pcf"/>
                             </constraints>
                             <state key="normal" title="自定义">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -114,12 +114,16 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 15 colors.
+  /// This `R.color` struct is generated, and contains static references to 17 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
     /// Color `prime`.
     static let prime = Rswift.ColorResource(bundle: R.hostingBundle, name: "prime")
+    /// Color `tableViewStyleBackCell`.
+    static let tableViewStyleBackCell = Rswift.ColorResource(bundle: R.hostingBundle, name: "tableViewStyleBackCell")
+    /// Color `tableViewStyleBackground`.
+    static let tableViewStyleBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "tableViewStyleBackground")
     /// Color `text_gray1`.
     static let text_gray1 = Rswift.ColorResource(bundle: R.hostingBundle, name: "text_gray1")
     /// Color `text_gray2`.
@@ -162,6 +166,24 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func prime(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.prime, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "tableViewStyleBackCell", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func tableViewStyleBackCell(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.tableViewStyleBackCell, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "tableViewStyleBackground", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func tableViewStyleBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.tableViewStyleBackground, compatibleWith: traitCollection)
     }
     #endif
 
@@ -299,6 +321,22 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "tableViewStyleBackCell", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func tableViewStyleBackCell(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.tableViewStyleBackCell.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "tableViewStyleBackground", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func tableViewStyleBackground(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.tableViewStyleBackground.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "text_gray1", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func text_gray1(_: Void = ()) -> UIKit.UIColor? {
@@ -405,9 +443,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.entitlements` struct is generated, and contains static references to 2 properties.
+  /// This `R.entitlements` struct is generated, and contains static references to 3 properties.
   struct entitlements {
     static let apsEnvironment = infoPlistString(path: [], key: "aps-environment") ?? "development"
+    static let comAppleDeveloperNetworkingWifiInfo = true
 
     struct comAppleDeveloperAssociatedDomains {
       static let applinksBo5kT4mCn = infoPlistString(path: ["com.apple.developer.associated-domains"], key: "applinks:bo5k.t4m.cn") ?? "applinks:bo5k.t4m.cn"
@@ -590,7 +629,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 14 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 16 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -598,6 +637,10 @@ struct R: Rswift.Validatable {
     static let commNavigationBar = _R.nib._CommNavigationBar()
     /// Nib `FaceRecognitionViewController`.
     static let faceRecognitionViewController = _R.nib._FaceRecognitionViewController()
+    /// Nib `HXPPImageCell`.
+    static let hxppImageCell = _R.nib._HXPPImageCell()
+    /// Nib `ImagePicker1ViewController`.
+    static let imagePicker1ViewController = _R.nib._ImagePicker1ViewController()
     /// Nib `JGSharePlatformPicker`.
     static let jgSharePlatformPicker = _R.nib._JGSharePlatformPicker()
     /// Nib `QRCodeViewController`.
@@ -642,6 +685,22 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.faceRecognitionViewController) instead")
     static func faceRecognitionViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.faceRecognitionViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "HXPPImageCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.hxppImageCell) instead")
+    static func hxppImageCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.hxppImageCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ImagePicker1ViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.imagePicker1ViewController) instead")
+    static func imagePicker1ViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.imagePicker1ViewController)
     }
     #endif
 
@@ -745,6 +804,14 @@ struct R: Rswift.Validatable {
       return R.nib.faceRecognitionViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func hxppImageCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HXPPImageCell? {
+      return R.nib.hxppImageCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HXPPImageCell
+    }
+
+    static func imagePicker1ViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.imagePicker1ViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func jgSharePlatformPicker(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.jgSharePlatformPicker.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -788,6 +855,14 @@ struct R: Rswift.Validatable {
     static func toastViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.toastViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `HXPPImageCell`.
+    static let hxppImageCell: Rswift.ReuseIdentifier<HXPPImageCell> = Rswift.ReuseIdentifier(identifier: "HXPPImageCell")
 
     fileprivate init() {}
   }
@@ -865,6 +940,31 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "switchCamera40", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'switchCamera40' is used in nib 'FaceRecognitionViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _HXPPImageCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = HXPPImageCell
+
+      let bundle = R.hostingBundle
+      let identifier = "HXPPImageCell"
+      let name = "HXPPImageCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HXPPImageCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HXPPImageCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ImagePicker1ViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ImagePicker1ViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
