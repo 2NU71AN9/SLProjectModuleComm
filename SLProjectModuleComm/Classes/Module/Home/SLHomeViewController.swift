@@ -82,10 +82,29 @@ extension SLHomeViewController {
         case [2, 6]:
             let vc = CarouselViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [3, 0]:
+            SL.pickerImage
         case [3, 1]:
             SL.pickerFile.complete { url, _ in
                 SLFileBrowser(url).show()
             }.show()
+        case [3, 2]:
+            SL.pickerDate.date(Date()).mode(.dateAndTime).complete { date in
+                SLHUD.showToast(date.description)
+            }.show()
+        case [3, 3]:
+            SL.pickerTag
+                .titles(["标签1", "标签2", "标签3", "标签4", "标签5", "标签6", "标签7", "标签8", "标签9", "标签10"])
+                .maxNum(1)
+                .complete { array in
+                    SLHUD.showToast(array.first?.1)
+                }.show()
+        case [3, 4]:
+            SL.pickerNormal
+                .titles(["标签1", "标签2", "标签3", "标签4", "标签5", "标签6", "标签7", "标签8", "标签9", "标签10"])
+                .complete { index, text in
+                    SLHUD.showToast(text)
+                }.show()
         case [4, 0]:
             if let url = URL(string: "App-Prefs:root") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
