@@ -30,6 +30,10 @@ target 'SLProjectModuleComm' do
   pod 'NewPopMenu'
   pod 'Peep'
   pod 'GDPerformanceView-Swift'
+  pod 'MarqueeLabel'
+  pod 'RollingNotice-Swift' #滚动消息
+  pod 'SwiftMessages' #应用内消息弹窗
+  pod 'EAIntroView' #引导页
   
   #友盟
   pod 'UMCommon'
