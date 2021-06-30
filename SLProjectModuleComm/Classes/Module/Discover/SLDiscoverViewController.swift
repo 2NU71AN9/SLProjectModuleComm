@@ -23,6 +23,14 @@ class SLDiscoverViewController: BaseViewController {
                 .registerClass(UITableViewCell.self)
         }
     }
+    
+    private let dataArray = [
+        ["友盟分享", "极光分享", "微信支付#######", "支付宝支付########", "App内购########", "融云IM#######"],
+        ["网络请求(Moya+RxSwift+HandyJSON)#########", "socket#########"],
+        ["组件化调用########", "AOP#########", "字符串插值#########", "自定义操作符#######", "JS交互#######", "WebView########"],
+        ["权限申请#######", "定位########", "手势冲突解决方案#########", "加解密相关#######"],
+        ["视频播放器#######", "音频播放器#######"]
+    ]
 }
 
 // MARK: - LifeCyle
@@ -35,15 +43,18 @@ extension SLDiscoverViewController {
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SLDiscoverViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int { 1 }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { 10 }
+    func numberOfSections(in tableView: UITableView) -> Int { dataArray.count }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { dataArray[section].count }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row + 1)"
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = dataArray[indexPath.section][indexPath.row]
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cellDidSelectAction(indexPath)
+    }
 }
-
 
 // MARK: - Privater Methods
 extension SLDiscoverViewController {
@@ -54,5 +65,16 @@ extension SLDiscoverViewController {
 
 // MARK: - Event
 extension SLDiscoverViewController {
-    
+    private func cellDidSelectAction(_ indexPath: IndexPath) {
+        switch indexPath {
+        case [0, 0]:
+            let vc = ShareViewController(0)
+            navigationController?.pushViewController(vc, animated: true)
+        case [0, 1]:
+            let vc = ShareViewController(1)
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
+    }
 }

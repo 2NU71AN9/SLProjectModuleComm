@@ -12,7 +12,7 @@ class WaterfallFlowViewController: BaseViewController {
     private lazy var layout: MyFlowLayout = {
         let layout = MyFlowLayout()
         layout.flowLayoutWithItemWidth(80, itemHeightArr)
-        var nCountCell = (self.view.bounds.width - 10)/(layout.itemSize.width + 10)
+        var nCountCell = (self.view.bounds.width - 10) / (layout.itemSize.width + 10)
         // 平均后的间距
         var fSpacing = (self.view.bounds.width - layout.itemSize.width * nCountCell) / (nCountCell + 1)
         layout.minimumInteritemSpacing = fSpacing
@@ -32,7 +32,7 @@ class WaterfallFlowViewController: BaseViewController {
     private lazy var itemHeightArr: [CGFloat] = {
         var array: [CGFloat] = []
         for _ in 0 ..< 60 {
-            array.append(CGFloat(40 + arc4random()%40))
+            array.append(CGFloat(40 + arc4random() % 40))
         }
         return array
     }()
@@ -54,7 +54,7 @@ extension WaterfallFlowViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .orange
+        cell.backgroundColor = R.color.prime()
         var label = cell.viewWithTag(10) as? UILabel
         if label == nil {
             label = UILabel()
@@ -72,16 +72,4 @@ extension WaterfallFlowViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row + 1)
     }
-}
-
-// MARK: - Privater Methods
-extension WaterfallFlowViewController {
-    override func bind() {
-        super.bind()
-    }
-}
-
-// MARK: - Event
-extension WaterfallFlowViewController {
-    
 }

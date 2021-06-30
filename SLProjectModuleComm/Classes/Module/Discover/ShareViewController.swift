@@ -132,15 +132,3 @@ extension ShareViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
-// MARK: - Privater Methods
-extension ShareViewController {
-    override func bind() {
-        super.bind()
-    }
-}
-
-// MARK: - Event
-extension ShareViewController {
-    
-}

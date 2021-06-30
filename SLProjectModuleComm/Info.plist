@@ -60,6 +60,8 @@
 	<string>访问相机以拍摄图片</string>
 	<key>NSContactsUsageDescription</key>
 	<string>访问通讯录以获取使用该应用的联系人</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string></string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>定位以获取所在区域</string>
 	<key>NSLocationAlwaysUsageDescription</key>

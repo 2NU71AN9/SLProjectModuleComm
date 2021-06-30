@@ -20,7 +20,11 @@ class SLMineViewController: BaseViewController {
         .estimatedSectionFooterHeight(0)
         .base
     
-    private let dataArray = [["本机IP", "WIFI IP", "WIFI名称", "WIFI mac地址"], ["清除缓存"]]
+    private let dataArray = [
+        ["本机IP", "WIFI IP", "WIFI名称", "WIFI mac地址", "网络状态#########", "时间#######", "电量#######"],
+        ["清除缓存", "黑色模式########"],
+        ["前往系统设置", "前往自己应用设置", "前往AppStore"]
+    ]
 }
 
 // MARK: - LifeCyle
@@ -103,6 +107,16 @@ extension SLMineViewController {
             SLFileManager.cleanCache { [weak self] in
                 self?.tableView.cellForRow(at: indexPath)?.detailTextLabel?.text = SLFileManager.access2Cache()
             }
+        case [2, 0]:
+            if let url = URL(string: "App-Prefs:root") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        case [2, 1]:
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        case [2, 2]:
+            SL.tools.goAppStore(APPID)
         default:
             break
         }

@@ -629,12 +629,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 16 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 17 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
+    /// Nib `FaceIDViewController`.
+    static let faceIDViewController = _R.nib._FaceIDViewController()
     /// Nib `FaceRecognitionViewController`.
     static let faceRecognitionViewController = _R.nib._FaceRecognitionViewController()
     /// Nib `HXPPImageCell`.
@@ -677,6 +679,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.commNavigationBar) instead")
     static func commNavigationBar(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.commNavigationBar)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FaceIDViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.faceIDViewController) instead")
+    static func faceIDViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.faceIDViewController)
     }
     #endif
 
@@ -798,6 +808,10 @@ struct R: Rswift.Validatable {
 
     static func commNavigationBar(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CommNavigationBar? {
       return R.nib.commNavigationBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommNavigationBar
+    }
+
+    static func faceIDViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.faceIDViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func faceRecognitionViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -923,6 +937,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "navi_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'navi_back' is used in nib 'CommNavigationBar', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FaceIDViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "FaceIDViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
