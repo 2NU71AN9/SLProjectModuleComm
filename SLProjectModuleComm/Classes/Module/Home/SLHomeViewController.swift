@@ -85,6 +85,9 @@ extension SLHomeViewController {
         case [1, 8]:
             let vc = MessageAlertViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [1, 9]:
+            let vc = PopMenuCustomViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [1, 10]:
             let vc = MarqueeViewController()
             navigationController?.pushViewController(vc, animated: true)

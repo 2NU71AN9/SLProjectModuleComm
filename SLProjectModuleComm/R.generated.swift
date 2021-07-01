@@ -629,7 +629,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 21 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 22 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -651,6 +651,8 @@ struct R: Rswift.Validatable {
     static let marqueeViewController = _R.nib._MarqueeViewController()
     /// Nib `MessageAlertViewController`.
     static let messageAlertViewController = _R.nib._MessageAlertViewController()
+    /// Nib `PopMenuCustomViewController`.
+    static let popMenuCustomViewController = _R.nib._PopMenuCustomViewController()
     /// Nib `QRCodeViewController`.
     static let qrCodeViewController = _R.nib._QRCodeViewController()
     /// Nib `SLDiscoverViewController`.
@@ -751,6 +753,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.messageAlertViewController) instead")
     static func messageAlertViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.messageAlertViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "PopMenuCustomViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.popMenuCustomViewController) instead")
+    static func popMenuCustomViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.popMenuCustomViewController)
     }
     #endif
 
@@ -880,6 +890,10 @@ struct R: Rswift.Validatable {
 
     static func messageAlertViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.messageAlertViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func popMenuCustomViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.popMenuCustomViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func qrCodeViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1096,6 +1110,17 @@ struct _R: Rswift.Validatable {
     struct _MessageAlertViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "MessageAlertViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _PopMenuCustomViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "PopMenuCustomViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

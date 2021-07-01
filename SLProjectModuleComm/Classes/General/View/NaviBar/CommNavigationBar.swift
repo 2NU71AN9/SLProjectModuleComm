@@ -105,11 +105,11 @@ class CommNavigationBar: UIView {
     }
     @IBOutlet private weak var effectView: UIToolbar!
     @IBOutlet private weak var titleContainerView: UIView!
-    @IBOutlet private weak var backBtn: UIButton!
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var item1: UIButton!
-    @IBOutlet private weak var item2: UIButton!
-    @IBOutlet private weak var item3: UIButton!
+    @IBOutlet public weak var backBtn: UIButton!
+    @IBOutlet public weak var titleLabel: UILabel!
+    @IBOutlet public weak var item1: UIButton!
+    @IBOutlet public weak var item2: UIButton!
+    @IBOutlet public weak var item3: UIButton!
     @IBOutlet private weak var itemContainerView: UIStackView!
         
     private let bag = DisposeBag()
