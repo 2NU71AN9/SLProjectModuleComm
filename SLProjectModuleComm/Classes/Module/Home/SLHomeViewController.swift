@@ -85,6 +85,9 @@ extension SLHomeViewController {
         case [1, 10]:
             let vc = MarqueeViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [1, 11]:
+            let vc = ScrollMsgViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [2, 0]:
             let vc = ImagePickerViewController()
             navigationController?.pushViewController(vc, animated: true)

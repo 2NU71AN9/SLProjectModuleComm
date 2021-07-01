@@ -629,7 +629,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 18 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 19 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -661,6 +661,8 @@ struct R: Rswift.Validatable {
     static let slNoNetworkView = _R.nib._SLNoNetworkView()
     /// Nib `SLVisitorViewController`.
     static let slVisitorViewController = _R.nib._SLVisitorViewController()
+    /// Nib `ScrollMsgCell`.
+    static let scrollMsgCell = _R.nib._ScrollMsgCell()
     /// Nib `SoundViewController`.
     static let soundViewController = _R.nib._SoundViewController()
     /// Nib `TapticViewController`.
@@ -789,6 +791,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ScrollMsgCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.scrollMsgCell) instead")
+    static func scrollMsgCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.scrollMsgCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SoundViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.soundViewController) instead")
     static func soundViewController(_: Void = ()) -> UIKit.UINib {
@@ -846,6 +856,10 @@ struct R: Rswift.Validatable {
 
     static func qrCodeViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.qrCodeViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func scrollMsgCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScrollMsgCell? {
+      return R.nib.scrollMsgCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScrollMsgCell
     }
 
     static func slDiscoverViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -926,6 +940,7 @@ struct _R: Rswift.Validatable {
       try _JGSharePlatformPicker.validate()
       try _SLNoNetworkViewController.validate()
       try _SLVisitorViewController.validate()
+      try _ScrollMsgCell.validate()
     }
 
     struct _CarouselViewController: Rswift.NibResourceType {
@@ -1128,6 +1143,23 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "text_gray2", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'text_gray2' is used in nib 'SLVisitorViewController', but couldn't be loaded.") }
           if UIKit.UIColor(named: "view_able1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_able1' is used in nib 'SLVisitorViewController', but couldn't be loaded.") }
           if UIKit.UIColor(named: "view_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_background' is used in nib 'SLVisitorViewController', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ScrollMsgCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "ScrollMsgCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ScrollMsgCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ScrollMsgCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "cry100", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cry100' is used in nib 'ScrollMsgCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
 
