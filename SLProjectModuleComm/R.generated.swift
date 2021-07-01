@@ -629,12 +629,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 19 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 21 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
     /// Nib `CommNavigationBar`.
     static let commNavigationBar = _R.nib._CommNavigationBar()
+    /// Nib `CustomMessageView`.
+    static let customMessageView = _R.nib._CustomMessageView()
     /// Nib `FaceIDViewController`.
     static let faceIDViewController = _R.nib._FaceIDViewController()
     /// Nib `FaceRecognitionViewController`.
@@ -647,6 +649,8 @@ struct R: Rswift.Validatable {
     static let jgSharePlatformPicker = _R.nib._JGSharePlatformPicker()
     /// Nib `MarqueeViewController`.
     static let marqueeViewController = _R.nib._MarqueeViewController()
+    /// Nib `MessageAlertViewController`.
+    static let messageAlertViewController = _R.nib._MessageAlertViewController()
     /// Nib `QRCodeViewController`.
     static let qrCodeViewController = _R.nib._QRCodeViewController()
     /// Nib `SLDiscoverViewController`.
@@ -683,6 +687,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.commNavigationBar) instead")
     static func commNavigationBar(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.commNavigationBar)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CustomMessageView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.customMessageView) instead")
+    static func customMessageView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.customMessageView)
     }
     #endif
 
@@ -731,6 +743,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.marqueeViewController) instead")
     static func marqueeViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.marqueeViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MessageAlertViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.messageAlertViewController) instead")
+    static func messageAlertViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.messageAlertViewController)
     }
     #endif
 
@@ -830,6 +850,10 @@ struct R: Rswift.Validatable {
       return R.nib.commNavigationBar.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CommNavigationBar
     }
 
+    static func customMessageView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomMessageView? {
+      return R.nib.customMessageView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomMessageView
+    }
+
     static func faceIDViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.faceIDViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -852,6 +876,10 @@ struct R: Rswift.Validatable {
 
     static func marqueeViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.marqueeViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func messageAlertViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.messageAlertViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func qrCodeViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -971,6 +999,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _CustomMessageView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CustomMessageView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomMessageView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomMessageView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _FaceIDViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "FaceIDViewController"
@@ -1046,6 +1085,17 @@ struct _R: Rswift.Validatable {
     struct _MarqueeViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "MarqueeViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _MessageAlertViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MessageAlertViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

@@ -82,6 +82,9 @@ extension SLHomeViewController {
         case [1, 7]:
             let images = [1, 2, 3, 4, 5, 6, 7].compactMap { UIImage(named: "\($0)") }
             SLImageBrower.browser(images).show()
+        case [1, 8]:
+            let vc = MessageAlertViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [1, 10]:
             let vc = MarqueeViewController()
             navigationController?.pushViewController(vc, animated: true)
