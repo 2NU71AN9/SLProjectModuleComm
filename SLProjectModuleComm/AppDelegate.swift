@@ -56,18 +56,17 @@ extension AppDelegate {
 
     private func whetherLoged() {
         window = UIWindow(frame: UIScreen.main.bounds)
-//        AccountServicer.service.isLogin ? goMainPage() : goLoginPage()
-        goMainPage()
+        AccountServicer.service.isLogin ? goMainPage() : goLoginPage()
     }
     private func goMainPage() {
         window?.rootViewController = SLTabBar.customStyle()
         window?.makeKeyAndVisible()
-//        whetherGuide()
+        whetherGuide()
     }
     private func goLoginPage() {
         window?.rootViewController = BaseNavigationController(rootViewController: SLLoginViewController())
         window?.makeKeyAndVisible()
-//        whetherGuide()
+        whetherGuide()
     }
     private func whetherGuide() {
         guard let infoDictionary = Bundle.main.infoDictionary,
@@ -79,7 +78,7 @@ extension AppDelegate {
             return
         }
         UserDefaults.standard.set(app_Version, forKey: "version")
-//        window?.rootViewController?.present(GuideViewController(), animated: false, completion: nil)
+        GuideManager.show()
     }
 
     private func config(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {

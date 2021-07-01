@@ -7,6 +7,7 @@
 
 import UIKit
 import SLIKit
+import EAIntroView
 
 class SLHomeViewController: BaseViewController {
     
@@ -94,6 +95,8 @@ extension SLHomeViewController {
         case [1, 11]:
             let vc = ScrollMsgViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [1, 12]:
+            GuideManager.show()
         case [2, 0]:
             let vc = ImagePickerViewController()
             navigationController?.pushViewController(vc, animated: true)

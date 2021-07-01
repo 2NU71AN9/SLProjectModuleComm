@@ -488,8 +488,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 15 images.
+  /// This `R.image` struct is generated, and contains static references to 19 images.
   struct image {
+    /// Image `EMOJI01-200`.
+    static let emoji01200 = Rswift.ImageResource(bundle: R.hostingBundle, name: "EMOJI01-200")
+    /// Image `EMOJI02-200`.
+    static let emoji02200 = Rswift.ImageResource(bundle: R.hostingBundle, name: "EMOJI02-200")
+    /// Image `EMOJI03-200`.
+    static let emoji03200 = Rswift.ImageResource(bundle: R.hostingBundle, name: "EMOJI03-200")
+    /// Image `EMOJI04-200`.
+    static let emoji04200 = Rswift.ImageResource(bundle: R.hostingBundle, name: "EMOJI04-200")
     /// Image `cry100`.
     static let cry100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cry100")
     /// Image `icon_cat`.
@@ -520,6 +528,34 @@ struct R: Rswift.Validatable {
     static let wechat50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "wechat50")
     /// Image `wechatTimeLine50`.
     static let wechatTimeLine50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "wechatTimeLine50")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "EMOJI01-200", bundle: ..., traitCollection: ...)`
+    static func emoji01200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.emoji01200, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "EMOJI02-200", bundle: ..., traitCollection: ...)`
+    static func emoji02200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.emoji02200, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "EMOJI03-200", bundle: ..., traitCollection: ...)`
+    static func emoji03200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.emoji03200, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "EMOJI04-200", bundle: ..., traitCollection: ...)`
+    static func emoji04200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.emoji04200, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "cry100", bundle: ..., traitCollection: ...)`
@@ -1297,7 +1333,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
-        if UIKit.UIImage(named: "cry100", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cry100' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "EMOJI04-200", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'EMOJI04-200' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
