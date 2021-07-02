@@ -36,6 +36,7 @@ target 'SLProjectModuleComm' do
   pod 'EAIntroView' #引导页
   pod 'Instructions' #功能引导
   pod 'SkeletonView' # 加载动画
+  pod 'JFCitySelector'
   
   #友盟
   pod 'UMCommon'

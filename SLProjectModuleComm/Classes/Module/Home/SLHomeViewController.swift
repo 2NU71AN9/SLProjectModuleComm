@@ -7,6 +7,7 @@
 
 import UIKit
 import SLIKit
+import JFCitySelector
 
 class SLHomeViewController: BaseViewController {
     let guideManager = GuideManager()
@@ -123,8 +124,21 @@ extension SLHomeViewController {
                 .complete { _, text in
                     SLHUD.showToast(text)
                 }.show()
+        case [2, 7]:
+            let config = JFCSConfiguration()
+            config.isPinyinSearch = false
+            let vc = JFCSTableViewController(configuration: config, delegate: self)
+            vc.title = "选择城市"
+            present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
         default:
             break
         }
+    }
+}
+
+extension SLHomeViewController: JFCSTableViewControllerDelegate {
+    func viewController(_ viewController: JFCSTableViewController, didSelectCity model: JFCSBaseInfoModel) {
+        viewController.dismiss(animated: true, completion: nil)
+        SLHUD.showToast(model.name)
     }
 }
