@@ -69,16 +69,7 @@ extension AppDelegate {
         whetherGuide()
     }
     private func whetherGuide() {
-        guard let infoDictionary = Bundle.main.infoDictionary,
-            let app_Version = infoDictionary["CFBundleShortVersionString"] as? String else {
-                return
-        }
-        if let version = UserDefaults.standard.value(forKey: "version") as? String,
-            version == app_Version {
-            return
-        }
-        UserDefaults.standard.set(app_Version, forKey: "version")
-        GuideManager.show()
+        GuideManager.showGuide()
     }
 
     private func config(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {

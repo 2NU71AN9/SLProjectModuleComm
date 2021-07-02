@@ -7,10 +7,9 @@
 
 import UIKit
 import SLIKit
-import EAIntroView
 
 class SLHomeViewController: BaseViewController {
-    
+    let guideManager = GuideManager()
 }
 
 // MARK: - LifeCyle
@@ -18,6 +17,7 @@ extension SLHomeViewController {
     override func setMasterView() {
         super.setMasterView()
         title = "首页"
+        guideManager.showMarks(over: self, complete: nil)
     }
 }
 
@@ -96,7 +96,9 @@ extension SLHomeViewController {
             let vc = ScrollMsgViewController()
             navigationController?.pushViewController(vc, animated: true)
         case [1, 12]:
-            GuideManager.show()
+            GuideManager.showGuide(false)
+        case [1, 13]:
+            guideManager.showMarks(false, over: self, complete: nil)
         case [2, 0]:
             let vc = ImagePickerViewController()
             navigationController?.pushViewController(vc, animated: true)

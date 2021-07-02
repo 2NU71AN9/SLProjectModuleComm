@@ -8,9 +8,23 @@
 import UIKit
 import EAIntroView
 import SLIKit
+import Instructions
 
-class GuideManager: NSObject {
-    static func show() {
+public class GuideManager: NSObject {
+    
+    /// 引导页
+    /// - Parameter onlyFirst: 仅首次
+    public static func showGuide(_ onlyFirst: Bool = true) {
+        guard let infoDictionary = Bundle.main.infoDictionary,
+            let app_Version = infoDictionary["CFBundleShortVersionString"] as? String else {
+                return
+        }
+        if onlyFirst, let local_version = UserDefaults.standard.value(forKey: "version_guide") as? String,
+           local_version == app_Version {
+            return
+        }
+        UserDefaults.standard.set(app_Version, forKey: "version_guide")
+        
         let page1 = EAIntroPage()
         page1.title = "关雎"
         page1.desc = "关关雎鸠，在河之洲。窈窕淑女，君子好逑。\n参差荇菜，左右流之。窈窕淑女，寤寐求之。\n求之不得，寤寐思服。悠哉悠哉，辗转反侧。\n参差荇菜，左右采之。窈窕淑女，琴瑟友之。\n参差荇菜，左右芼之。窈窕淑女，钟鼓乐之。"
@@ -49,6 +63,78 @@ class GuideManager: NSObject {
         intro?.skipButtonAlignment = .center
         intro?.skipButtonY = 80 + SL.bottomHeight
         intro?.pageControlY = 42 + SL.bottomHeight
-        intro?.show(in: UIApplication.shared.windows.last, animateDuration: 0.3)
+        intro?.show(in: SL.WINDOW, animateDuration: 0.3)
+    }
+    
+    private lazy var marksController: CoachMarksController = {
+        let control = CoachMarksController()
+        control.delegate = self
+        control.dataSource = self
+        control.overlay.isUserInteractionEnabled = true
+        control.overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+        let skipView = CoachMarkSkipDefaultView()
+        skipView.setTitle("跳过", for: .normal)
+        control.skipView = skipView
+        return control
+    }()
+    private let markMsgs = ["这是导航栏,这是导航栏,这是导航栏,这是导航栏,这是导航栏,这是导航栏,这是导航栏", "这是tabBar", "这是首页", "这是发现", "这是我的"]
+    private var complete: (() -> Void)?
+    
+    /// 操作引导页
+    /// - Parameters:
+    ///   - onlyFirst: 仅首次
+    ///   - over: 在哪个vc上展示
+    ///   - complete: 完成回调
+    func showMarks(_ onlyFirst: Bool = true, over: UIViewController, complete: (() -> Void)?) {
+        guard let infoDictionary = Bundle.main.infoDictionary,
+            let app_Version = infoDictionary["CFBundleShortVersionString"] as? String else {
+                return
+        }
+        if onlyFirst, let local_version = UserDefaults.standard.value(forKey: "version_marks") as? String,
+           local_version == app_Version {
+            return
+        }
+        UserDefaults.standard.set(app_Version, forKey: "version_marks")
+        
+        self.complete = complete
+        marksController.start(in: .window(over: over))
+    }
+}
+
+extension GuideManager: CoachMarksControllerDelegate, CoachMarksControllerDataSource {
+    public func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        markMsgs.count
+    }
+    public func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: (UIView & CoachMarkBodyView), arrowView: (UIView & CoachMarkArrowView)?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(
+            withArrow: true,
+            arrowOrientation: coachMark.arrowOrientation,
+            hintText: markMsgs[index],
+            nextText: nil
+        )
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    public func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        switch index {
+        case 0:
+            return marksController.helper.makeCoachMark(for: SL.visibleVC?.navigationController?.navigationBar) { (frame: CGRect) -> UIBezierPath in
+                return UIBezierPath(rect: frame)
+            }
+        case 1:
+            return marksController.helper.makeCoachMark(for: SL.visibleVC?.tabBarController?.tabBar) { (frame: CGRect) -> UIBezierPath in
+                return UIBezierPath(rect: frame)
+            }
+        case 2:
+            return marksController.helper.makeCoachMark(forFrame: CGRect(x: 0, y: 5, width: SL.SCREEN_WIDTH / 3, height: 44), in: SL.visibleVC?.tabBarController?.tabBar)
+        case 3:
+            return marksController.helper.makeCoachMark(forFrame: CGRect(x: SL.SCREEN_WIDTH / 3, y: 5, width: SL.SCREEN_WIDTH / 3, height: 44), in: SL.visibleVC?.tabBarController?.tabBar)
+        case 4:
+            return marksController.helper.makeCoachMark(forFrame: CGRect(x: SL.SCREEN_WIDTH / 3 * 2, y: 5, width: SL.SCREEN_WIDTH / 3, height: 44), in: SL.visibleVC?.tabBarController?.tabBar)
+        default:
+            return marksController.helper.makeCoachMark()
+        }
+    }
+    public func coachMarksController(_ coachMarksController: CoachMarksController, didEndShowingBySkipping skipped: Bool) {
+        complete?()
     }
 }

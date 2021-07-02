@@ -34,6 +34,8 @@ target 'SLProjectModuleComm' do
   pod 'RollingNotice-Swift' #滚动消息
   pod 'SwiftMessages' #应用内消息弹窗
   pod 'EAIntroView' #引导页
+  pod 'Instructions' #功能引导
+  pod 'SkeletonView' # 加载动画
   
   #友盟
   pod 'UMCommon'
