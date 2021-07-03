@@ -124,12 +124,19 @@ extension SLHomeViewController {
                 .complete { _, text in
                     SLHUD.showToast(text)
                 }.show()
+        case [2, 5]:
+            SL.pickerAddress.type(.city).complete { p, c, a in
+                SLHUD.showToast("\(p?.name ?? "")\(c?.name ?? "")\(a?.name ?? "")")
+            }.show()
         case [2, 7]:
             let config = JFCSConfiguration()
             config.isPinyinSearch = false
             let vc = JFCSTableViewController(configuration: config, delegate: self)
             vc.title = "选择城市"
             present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        case [3, 0]:
+            let vc = CustomNavigationViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

@@ -32,7 +32,7 @@ class CommNavigationBar: UIView {
     var barColor: UIColor? {
         didSet {
             effect = false
-            effectView.tintColor = barColor
+            effectView.barTintColor = barColor
         }
     }
     /// 标题
@@ -45,19 +45,19 @@ class CommNavigationBar: UIView {
     /// 右侧按钮1, 2, 3图片
     var item1Image: UIImage? {
         didSet {
-            item1.setImage(item1Image, for: .normal)
+            item1.setImage(item1Image?.withRenderingMode(.alwaysOriginal), for: .normal)
             item1.isHidden = item1Image == nil && item1Title?.isEmpty ?? true
         }
     }
     var item2Image: UIImage? {
         didSet {
-            item2.setImage(item2Image, for: .normal)
+            item2.setImage(item2Image?.withRenderingMode(.alwaysOriginal), for: .normal)
             item2.isHidden = item2Image == nil && item2Title?.isEmpty ?? true
         }
     }
     var item3Image: UIImage? {
         didSet {
-            item3.setImage(item3Image, for: .normal)
+            item3.setImage(item3Image?.withRenderingMode(.alwaysOriginal), for: .normal)
             item3.isHidden = item3Image == nil && item3Title?.isEmpty ?? true
         }
     }
@@ -107,9 +107,24 @@ class CommNavigationBar: UIView {
     @IBOutlet private weak var titleContainerView: UIView!
     @IBOutlet public weak var backBtn: UIButton!
     @IBOutlet public weak var titleLabel: UILabel!
-    @IBOutlet public weak var item1: UIButton!
-    @IBOutlet public weak var item2: UIButton!
-    @IBOutlet public weak var item3: UIButton!
+    @IBOutlet public weak var item1: UIButton! {
+        didSet {
+            item1.setTitle(item1Title, for: .normal)
+            item1.setImage(item1Image, for: .normal)
+        }
+    }
+    @IBOutlet public weak var item2: UIButton! {
+        didSet {
+            item2.setTitle(item2Title, for: .normal)
+            item2.setImage(item2Image, for: .normal)
+        }
+    }
+    @IBOutlet public weak var item3: UIButton! {
+        didSet {
+            item3.setTitle(item3Title, for: .normal)
+            item3.setImage(item3Image, for: .normal)
+        }
+    }
     @IBOutlet private weak var itemContainerView: UIStackView!
         
     private let bag = DisposeBag()

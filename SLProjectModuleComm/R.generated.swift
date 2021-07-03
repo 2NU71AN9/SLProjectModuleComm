@@ -665,7 +665,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 22 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 23 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -673,6 +673,8 @@ struct R: Rswift.Validatable {
     static let commNavigationBar = _R.nib._CommNavigationBar()
     /// Nib `CustomMessageView`.
     static let customMessageView = _R.nib._CustomMessageView()
+    /// Nib `CustomNavigationViewController`.
+    static let customNavigationViewController = _R.nib._CustomNavigationViewController()
     /// Nib `FaceIDViewController`.
     static let faceIDViewController = _R.nib._FaceIDViewController()
     /// Nib `FaceRecognitionViewController`.
@@ -733,6 +735,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.customMessageView) instead")
     static func customMessageView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.customMessageView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CustomNavigationViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.customNavigationViewController) instead")
+    static func customNavigationViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.customNavigationViewController)
     }
     #endif
 
@@ -900,6 +910,10 @@ struct R: Rswift.Validatable {
       return R.nib.customMessageView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomMessageView
     }
 
+    static func customNavigationViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.customNavigationViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func faceIDViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.faceIDViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1055,6 +1069,17 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomMessageView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomMessageView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CustomNavigationViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CustomNavigationViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
