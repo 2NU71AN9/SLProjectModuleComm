@@ -458,7 +458,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 3 files.
+  /// This `R.file` struct is generated, and contains static references to 5 files.
   struct file {
     /// Resource file `CityCode.json`.
     static let cityCodeJson = Rswift.FileResource(bundle: R.hostingBundle, name: "CityCode", pathExtension: "json")
@@ -466,6 +466,10 @@ struct R: Rswift.Validatable {
     static let example_SuccessM4a = Rswift.FileResource(bundle: R.hostingBundle, name: "Example_Success", pathExtension: "m4a")
     /// Resource file `area.plist`.
     static let areaPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "area", pathExtension: "plist")
+    /// Resource file `locationPoint@2x.png`.
+    static let locationPoint2xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "locationPoint@2x", pathExtension: "png")
+    /// Resource file `locationPoint@3x.png`.
+    static let locationPoint3xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "locationPoint@3x", pathExtension: "png")
 
     /// `bundle.url(forResource: "CityCode", withExtension: "json")`
     static func cityCodeJson(_: Void = ()) -> Foundation.URL? {
@@ -485,10 +489,22 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "locationPoint@2x", withExtension: "png")`
+    static func locationPoint2xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.locationPoint2xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "locationPoint@3x", withExtension: "png")`
+    static func locationPoint3xPng(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.locationPoint3xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 19 images.
+  /// This `R.image` struct is generated, and contains static references to 22 images.
   struct image {
     /// Image `EMOJI01-200`.
     static let emoji01200 = Rswift.ImageResource(bundle: R.hostingBundle, name: "EMOJI01-200")
@@ -498,12 +514,18 @@ struct R: Rswift.Validatable {
     static let emoji03200 = Rswift.ImageResource(bundle: R.hostingBundle, name: "EMOJI03-200")
     /// Image `EMOJI04-200`.
     static let emoji04200 = Rswift.ImageResource(bundle: R.hostingBundle, name: "EMOJI04-200")
+    /// Image `arrow_fat_down_35`.
+    static let arrow_fat_down_35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow_fat_down_35")
+    /// Image `arrow_fat_top_35`.
+    static let arrow_fat_top_35 = Rswift.ImageResource(bundle: R.hostingBundle, name: "arrow_fat_top_35")
     /// Image `cry100`.
     static let cry100 = Rswift.ImageResource(bundle: R.hostingBundle, name: "cry100")
     /// Image `icon_cat`.
     static let icon_cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_cat")
     /// Image `icon_footprint`.
     static let icon_footprint = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_footprint")
+    /// Image `locationPoint`.
+    static let locationPoint = Rswift.ImageResource(bundle: R.hostingBundle, name: "locationPoint")
     /// Image `navi_back_white`.
     static let navi_back_white = Rswift.ImageResource(bundle: R.hostingBundle, name: "navi_back_white")
     /// Image `navi_back`.
@@ -558,6 +580,20 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "arrow_fat_down_35", bundle: ..., traitCollection: ...)`
+    static func arrow_fat_down_35(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.arrow_fat_down_35, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "arrow_fat_top_35", bundle: ..., traitCollection: ...)`
+    static func arrow_fat_top_35(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.arrow_fat_top_35, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "cry100", bundle: ..., traitCollection: ...)`
     static func cry100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.cry100, compatibleWith: traitCollection)
@@ -575,6 +611,13 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "icon_footprint", bundle: ..., traitCollection: ...)`
     static func icon_footprint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.icon_footprint, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "locationPoint", bundle: ..., traitCollection: ...)`
+    static func locationPoint(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.locationPoint, compatibleWith: traitCollection)
     }
     #endif
 
@@ -665,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 23 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 27 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -675,6 +718,14 @@ struct R: Rswift.Validatable {
     static let customMessageView = _R.nib._CustomMessageView()
     /// Nib `CustomNavigationViewController`.
     static let customNavigationViewController = _R.nib._CustomNavigationViewController()
+    /// Nib `FGChoosCitySearchView`.
+    static let fgChoosCitySearchView = _R.nib._FGChoosCitySearchView()
+    /// Nib `FGChooseAddressBgView`.
+    static let fgChooseAddressBgView = _R.nib._FGChooseAddressBgView()
+    /// Nib `FGCurAddressCell`.
+    static let fgCurAddressCell = _R.nib._FGCurAddressCell()
+    /// Nib `FGSearchHeaderView`.
+    static let fgSearchHeaderView = _R.nib._FGSearchHeaderView()
     /// Nib `FaceIDViewController`.
     static let faceIDViewController = _R.nib._FaceIDViewController()
     /// Nib `FaceRecognitionViewController`.
@@ -743,6 +794,38 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.customNavigationViewController) instead")
     static func customNavigationViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.customNavigationViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FGChoosCitySearchView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.fgChoosCitySearchView) instead")
+    static func fgChoosCitySearchView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.fgChoosCitySearchView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FGChooseAddressBgView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.fgChooseAddressBgView) instead")
+    static func fgChooseAddressBgView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.fgChooseAddressBgView)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FGCurAddressCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.fgCurAddressCell) instead")
+    static func fgCurAddressCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.fgCurAddressCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "FGSearchHeaderView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.fgSearchHeaderView) instead")
+    static func fgSearchHeaderView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.fgSearchHeaderView)
     }
     #endif
 
@@ -922,6 +1005,22 @@ struct R: Rswift.Validatable {
       return R.nib.faceRecognitionViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func fgChoosCitySearchView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGChoosCitySearchView? {
+      return R.nib.fgChoosCitySearchView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGChoosCitySearchView
+    }
+
+    static func fgChooseAddressBgView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGChooseAddressBgView? {
+      return R.nib.fgChooseAddressBgView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGChooseAddressBgView
+    }
+
+    static func fgCurAddressCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGCurAddressCell? {
+      return R.nib.fgCurAddressCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGCurAddressCell
+    }
+
+    static func fgSearchHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGSearchHeaderView? {
+      return R.nib.fgSearchHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGSearchHeaderView
+    }
+
     static func hxppImageCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HXPPImageCell? {
       return R.nib.hxppImageCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? HXPPImageCell
     }
@@ -993,8 +1092,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `FGCurAddressCell`.
+    static let fgCurAddressCell: Rswift.ReuseIdentifier<FGCurAddressCell> = Rswift.ReuseIdentifier(identifier: "FGCurAddressCell")
     /// Reuse identifier `HXPPImageCell`.
     static let hxppImageCell: Rswift.ReuseIdentifier<HXPPImageCell> = Rswift.ReuseIdentifier(identifier: "HXPPImageCell")
 
@@ -1028,6 +1129,8 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _CommNavigationBar.validate()
+      try _FGChoosCitySearchView.validate()
+      try _FGChooseAddressBgView.validate()
       try _FaceRecognitionViewController.validate()
       try _JGSharePlatformPicker.validate()
       try _SLNoNetworkViewController.validate()
@@ -1080,6 +1183,69 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FGChoosCitySearchView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "FGChoosCitySearchView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGChoosCitySearchView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGChoosCitySearchView
+      }
+
+      static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "magnifyingglass") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'magnifyingglass' is used in nib 'FGChoosCitySearchView', but couldn't be loaded.") } }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "text_gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'text_gray1' is used in nib 'FGChoosCitySearchView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "text_gray3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'text_gray3' is used in nib 'FGChoosCitySearchView', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "view_gray3", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_gray3' is used in nib 'FGChoosCitySearchView', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FGChooseAddressBgView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "FGChooseAddressBgView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGChooseAddressBgView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGChooseAddressBgView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "arrow_fat_top_35", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrow_fat_top_35' is used in nib 'FGChooseAddressBgView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "text_gray4", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'text_gray4' is used in nib 'FGChooseAddressBgView', but couldn't be loaded.") }
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FGCurAddressCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = FGCurAddressCell
+
+      let bundle = R.hostingBundle
+      let identifier = "FGCurAddressCell"
+      let name = "FGCurAddressCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGCurAddressCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGCurAddressCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _FGSearchHeaderView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "FGSearchHeaderView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGSearchHeaderView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGSearchHeaderView
       }
 
       fileprivate init() {}

@@ -18,3 +18,6 @@
 #import <JANALYTICSService.h>
 #import <JSHAREService.h>
 #import <JPUSHService.h>
+
+// 高德
+#import <MAMapKit/MAMapKit.h>

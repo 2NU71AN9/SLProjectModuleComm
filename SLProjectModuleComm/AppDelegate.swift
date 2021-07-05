@@ -97,6 +97,8 @@ extension AppDelegate {
         
         SLBuglyServicer.shared.config(AppID_bugly)
         
+        SLGaodeServicer.shared.regist(AppKey_gaode)
+        
         #if DEBUG
         PerformanceMonitor.shared().start()
         PerformanceMonitor.shared().performanceViewConfigurator.options = [.performance, .memory]

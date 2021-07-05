@@ -53,5 +53,10 @@ target 'SLProjectModuleComm' do
   
   #Bugly
   pod 'Bugly'
-
+  
+  #高德
+  pod 'AMapSearch'
+  pod 'AMapLocation'
+  pod 'AMap2DMap'
+  
 end

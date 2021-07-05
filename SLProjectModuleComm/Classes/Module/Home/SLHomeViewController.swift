@@ -125,9 +125,16 @@ extension SLHomeViewController {
                     SLHUD.showToast(text)
                 }.show()
         case [2, 5]:
-            SL.pickerAddress.type(.city).complete { p, c, a in
+            SL.pickerAddress.type(.area).complete { p, c, a in
                 SLHUD.showToast("\(p?.name ?? "")\(c?.name ?? "")\(a?.name ?? "")")
             }.show()
+        case [2, 6]:
+            let vc = FGMapChooseAddressViewController { (poi) in
+                SLHUD.showToast(poi.addressDetailDesc)
+            }
+            let navi = UINavigationController(rootViewController: vc)
+            navi.modalPresentationStyle = .fullScreen
+            present(navi, animated: true, completion: nil)
         case [2, 7]:
             let config = JFCSConfiguration()
             config.isPinyinSearch = false

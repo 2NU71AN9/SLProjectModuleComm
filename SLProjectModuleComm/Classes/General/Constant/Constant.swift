@@ -58,3 +58,5 @@ public let MiniApp_webpageUrl = ""
 public let MiniApp_userName = ""
 // bugly
 public let AppID_bugly = "033ecfa00a"
+/// 高德
+public let AppKey_gaode = "e09625bcdf8bbf3f8b3964a186ee13b6"

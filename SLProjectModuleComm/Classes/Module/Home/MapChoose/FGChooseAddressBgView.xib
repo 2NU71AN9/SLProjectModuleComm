@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FGChooseAddressBgView" customModule="SLProjectModuleComm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="575"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLg-gR-OOc">
+                    <rect key="frame" x="0.0" y="44" width="414" height="531"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4KC-Q9-FYW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="531"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hlS-g8-FQc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="531"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8B-kz-WJM">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
+                                        <state key="normal" image="arrow_fat_top_35"/>
+                                        <connections>
+                                            <action selector="showBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="qe4-RJ-aNl"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vy5-Z5-mcJ">
+                                        <rect key="frame" x="0.0" y="35" width="414" height="496"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="separatorColor" name="text_gray4"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hlS-g8-FQc" firstAttribute="top" secondItem="4KC-Q9-FYW" secondAttribute="top" id="0vB-CT-JgY"/>
+                            <constraint firstAttribute="trailing" secondItem="hlS-g8-FQc" secondAttribute="trailing" id="Dbn-6X-dJ6"/>
+                            <constraint firstAttribute="bottom" secondItem="hlS-g8-FQc" secondAttribute="bottom" id="bd0-63-dN3"/>
+                            <constraint firstItem="hlS-g8-FQc" firstAttribute="leading" secondItem="4KC-Q9-FYW" secondAttribute="leading" id="knk-Rs-WwM"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="regular"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </visualEffectView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fLg-gR-OOc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="BVT-IT-VyY"/>
+                <constraint firstAttribute="bottom" secondItem="fLg-gR-OOc" secondAttribute="bottom" id="bm3-9k-w5o"/>
+                <constraint firstItem="fLg-gR-OOc" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="itW-HS-LtF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fLg-gR-OOc" secondAttribute="trailing" id="qws-vA-u8e"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="showBtn" destination="w8B-kz-WJM" id="Cbb-yR-h96"/>
+                <outlet property="tableView" destination="vy5-Z5-mcJ" id="yqy-Bd-Q8G"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="-210.60267857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow_fat_top_35" width="35" height="35"/>
+        <namedColor name="text_gray4">
+            <color red="0.47600001096725464" green="0.47600001096725464" blue="0.47600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
