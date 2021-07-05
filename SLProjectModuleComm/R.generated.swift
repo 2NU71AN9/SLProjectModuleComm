@@ -708,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 27 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 28 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -730,6 +730,8 @@ struct R: Rswift.Validatable {
     static let faceIDViewController = _R.nib._FaceIDViewController()
     /// Nib `FaceRecognitionViewController`.
     static let faceRecognitionViewController = _R.nib._FaceRecognitionViewController()
+    /// Nib `GridViewController`.
+    static let gridViewController = _R.nib._GridViewController()
     /// Nib `HXPPImageCell`.
     static let hxppImageCell = _R.nib._HXPPImageCell()
     /// Nib `ImagePicker1ViewController`.
@@ -842,6 +844,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.faceRecognitionViewController) instead")
     static func faceRecognitionViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.faceRecognitionViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GridViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.gridViewController) instead")
+    static func gridViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.gridViewController)
     }
     #endif
 
@@ -1019,6 +1029,10 @@ struct R: Rswift.Validatable {
 
     static func fgSearchHeaderView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> FGSearchHeaderView? {
       return R.nib.fgSearchHeaderView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? FGSearchHeaderView
+    }
+
+    static func gridViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.gridViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func hxppImageCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> HXPPImageCell? {
@@ -1274,6 +1288,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "switchCamera40", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'switchCamera40' is used in nib 'FaceRecognitionViewController', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GridViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GridViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
