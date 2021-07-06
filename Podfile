@@ -37,7 +37,8 @@ target 'SLProjectModuleComm' do
   pod 'Instructions' #功能引导
   pod 'SkeletonView' # 加载动画
   pod 'JFCitySelector'
-  pod "TTGTagCollectionView"
+  pod 'TTGTagCollectionView'
+  pod 'SideMenu'
   
   #友盟
   pod 'UMCommon'

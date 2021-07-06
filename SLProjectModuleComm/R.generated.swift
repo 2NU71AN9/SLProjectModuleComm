@@ -708,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 28 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 31 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -718,6 +718,12 @@ struct R: Rswift.Validatable {
     static let customMessageView = _R.nib._CustomMessageView()
     /// Nib `CustomNavigationViewController`.
     static let customNavigationViewController = _R.nib._CustomNavigationViewController()
+    /// Nib `DrawerInfoViewController`.
+    static let drawerInfoViewController = _R.nib._DrawerInfoViewController()
+    /// Nib `DrawerLeftViewController`.
+    static let drawerLeftViewController = _R.nib._DrawerLeftViewController()
+    /// Nib `DrawerViewController`.
+    static let drawerViewController = _R.nib._DrawerViewController()
     /// Nib `FGChoosCitySearchView`.
     static let fgChoosCitySearchView = _R.nib._FGChoosCitySearchView()
     /// Nib `FGChooseAddressBgView`.
@@ -796,6 +802,30 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.customNavigationViewController) instead")
     static func customNavigationViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.customNavigationViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DrawerInfoViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.drawerInfoViewController) instead")
+    static func drawerInfoViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.drawerInfoViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DrawerLeftViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.drawerLeftViewController) instead")
+    static func drawerLeftViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.drawerLeftViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "DrawerViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.drawerViewController) instead")
+    static func drawerViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.drawerViewController)
     }
     #endif
 
@@ -1007,6 +1037,18 @@ struct R: Rswift.Validatable {
       return R.nib.customNavigationViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func drawerInfoViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.drawerInfoViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func drawerLeftViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.drawerLeftViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func drawerViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.drawerViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func faceIDViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.faceIDViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1194,6 +1236,39 @@ struct _R: Rswift.Validatable {
     struct _CustomNavigationViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "CustomNavigationViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DrawerInfoViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DrawerInfoViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DrawerLeftViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DrawerLeftViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _DrawerViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "DrawerViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

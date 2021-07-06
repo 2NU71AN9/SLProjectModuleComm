@@ -144,7 +144,10 @@ extension SLHomeViewController {
         case [3, 0]:
             let vc = CustomNavigationViewController()
             navigationController?.pushViewController(vc, animated: true)
-        case [3, 3]:
+        case [3, 1]:
+            let vc = DrawerViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [3, 2]:
             let vc = GridViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:
