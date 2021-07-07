@@ -12,6 +12,10 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>zh_CN</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
@@ -54,6 +58,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>访问蓝牙以连接设备</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>访问蓝牙以连接设备</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>访问日历以用于获取待办事项</string>
 	<key>NSCameraUsageDescription</key>
