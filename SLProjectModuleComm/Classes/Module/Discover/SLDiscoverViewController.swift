@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Hero
 
 class SLDiscoverViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
+            navigationController?.hero.isEnabled = true
             tableView.sl
                 .showsVerticalScrollIndicator(false)
                 .showsHorizontalScrollIndicator(false)
@@ -21,6 +23,7 @@ class SLDiscoverViewController: BaseViewController {
                 .estimatedSectionHeaderHeight(0)
                 .estimatedSectionFooterHeight(0)
                 .registerClass(UITableViewCell.self)
+            tableView.hero.modifiers = [.cascade]
         }
     }
     
@@ -49,6 +52,7 @@ extension SLDiscoverViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = dataArray[indexPath.section][indexPath.row]
+        cell.hero.modifiers = [.fade, .scale(0.5)]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

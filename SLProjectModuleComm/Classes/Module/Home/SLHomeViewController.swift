@@ -33,6 +33,7 @@ extension SLHomeViewController {
         viewModel.cellDidSelectSubject.subscribe(onNext: { [weak self] (value) in
             self?.cellDidSelectAction(value)
         }).disposed(by: bag)
+        contentView.startAnim()
     }
 }
 
@@ -150,6 +151,14 @@ extension SLHomeViewController {
         case [3, 2]:
             let vc = GridViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [4, 0]:
+            let vc = TransitionViewController()
+            let navi = UINavigationController(rootViewController: vc)
+            navi.modalPresentationStyle = .fullScreen
+            present(navi, animated: true, completion: nil)
+        case [4, 1]:
+            guard let contentView = contentView as? SLHomeView else { return }
+            contentView.startAnim()
         default:
             break
         }

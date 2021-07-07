@@ -30,7 +30,7 @@ target 'SLProjectModuleComm' do
   pod 'NewPopMenu'
   pod 'Peep'
   pod 'GDPerformanceView-Swift'
-  pod 'MarqueeLabel'
+  pod 'MarqueeLabel' #跑马灯
   pod 'RollingNotice-Swift' #滚动消息
   pod 'SwiftMessages' #应用内消息弹窗
   pod 'EAIntroView' #引导页
@@ -38,7 +38,9 @@ target 'SLProjectModuleComm' do
   pod 'SkeletonView' # 加载动画
   pod 'JFCitySelector'
   pod 'TTGTagCollectionView'
-  pod 'SideMenu'
+  pod 'SideMenu' #抽屉
+  pod 'ViewAnimator' #TableView动画
+  pod 'Hero'
   
   #友盟
   pod 'UMCommon'

@@ -708,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 31 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 33 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -772,6 +772,10 @@ struct R: Rswift.Validatable {
     static let tapticViewController = _R.nib._TapticViewController()
     /// Nib `ToastViewController`.
     static let toastViewController = _R.nib._ToastViewController()
+    /// Nib `Transition2ViewController`.
+    static let transition2ViewController = _R.nib._Transition2ViewController()
+    /// Nib `TransitionViewController`.
+    static let transitionViewController = _R.nib._TransitionViewController()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CarouselViewController", in: bundle)`
@@ -1021,6 +1025,22 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "Transition2ViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transition2ViewController) instead")
+    static func transition2ViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transition2ViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TransitionViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.transitionViewController) instead")
+    static func transitionViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.transitionViewController)
+    }
+    #endif
+
     static func carouselViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.carouselViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1143,6 +1163,14 @@ struct R: Rswift.Validatable {
 
     static func toastViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.toastViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func transition2ViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.transition2ViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func transitionViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.transitionViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     fileprivate init() {}
@@ -1593,6 +1621,28 @@ struct _R: Rswift.Validatable {
     struct _ToastViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ToastViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _Transition2ViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "Transition2ViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _TransitionViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TransitionViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

@@ -69,6 +69,11 @@ extension BaseViewController {
         AccountServicer.service.isLogin ? setMasterView() : setVisitorPage()
         if SLNetworkListenManager.shared.networkStatus == .noNet { setNoNetworkPage() }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        naviBar.setBackItemShow()
+    }
 }
 
 extension BaseViewController {

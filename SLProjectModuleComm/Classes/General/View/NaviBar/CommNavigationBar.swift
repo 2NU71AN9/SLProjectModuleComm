@@ -170,7 +170,7 @@ extension CommNavigationBar {
     }
     
     /// 是否显示返回按钮
-    private func setBackItemShow() {
+    public func setBackItemShow() {
         guard let viewController = viewController else { return }
         guard let navigationController = viewController.navigationController else {
             backBtn.isHidden = viewController.presentingViewController == nil
