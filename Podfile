@@ -41,6 +41,30 @@ target 'SLProjectModuleComm' do
   pod 'SideMenu' #抽屉
   pod 'ViewAnimator' #TableView动画
   pod 'Hero'
+  pod 'Cosmos' #星星
+  pod 'SwiftyStoreKit' #内购
+  
+  # ===============权限===============
+  pod 'SPPermissions' #所有, 上架时使用子项
+  # ---------------子项---------------
+  pod 'SPPermissions/Camera'
+  pod 'SPPermissions/Contacts'
+  pod 'SPPermissions/Calendar'
+  pod 'SPPermissions/PhotoLibrary'
+  pod 'SPPermissions/Notification'
+  pod 'SPPermissions/Microphone'
+  pod 'SPPermissions/Reminders'
+  pod 'SPPermissions/SpeechRecognizer'
+  pod 'SPPermissions/LocationWhenInUse'
+  pod 'SPPermissions/LocationAlways'
+  pod 'SPPermissions/Motion'
+  pod 'SPPermissions/Music'
+  pod 'SPPermissions/Bluetooth'
+  pod 'SPPermissions/Tracking'
+#  pod 'SPPermissions/FaceID'
+  pod 'SPPermissions/Siri'
+  pod 'SPPermissions/Health'
+  # ===============权限===============
   
   #友盟
   pod 'UMCommon'

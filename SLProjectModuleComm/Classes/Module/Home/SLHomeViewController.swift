@@ -159,6 +159,9 @@ extension SLHomeViewController {
         case [4, 1]:
             guard let contentView = contentView as? SLHomeView else { return }
             contentView.startAnim()
+        case [4, 2]:
+            let vc = StarViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

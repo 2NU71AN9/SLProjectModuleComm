@@ -708,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 33 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 34 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -768,6 +768,8 @@ struct R: Rswift.Validatable {
     static let scrollMsgCell = _R.nib._ScrollMsgCell()
     /// Nib `SoundViewController`.
     static let soundViewController = _R.nib._SoundViewController()
+    /// Nib `StarViewController`.
+    static let starViewController = _R.nib._StarViewController()
     /// Nib `TapticViewController`.
     static let tapticViewController = _R.nib._TapticViewController()
     /// Nib `ToastViewController`.
@@ -1010,6 +1012,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "StarViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.starViewController) instead")
+    static func starViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.starViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TapticViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.tapticViewController) instead")
     static func tapticViewController(_: Void = ()) -> UIKit.UINib {
@@ -1157,6 +1167,10 @@ struct R: Rswift.Validatable {
       return R.nib.soundViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func starViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.starViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func tapticViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.tapticViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1220,6 +1234,7 @@ struct _R: Rswift.Validatable {
       try _SLNoNetworkViewController.validate()
       try _SLVisitorViewController.validate()
       try _ScrollMsgCell.validate()
+      try _StarViewController.validate()
     }
 
     struct _CarouselViewController: Rswift.NibResourceType {
@@ -1602,6 +1617,26 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _StarViewController: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "StarViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "EMOJI03-200", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'EMOJI03-200' is used in nib 'StarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "EMOJI04-200", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'EMOJI04-200' is used in nib 'StarViewController', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "prime", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'prime' is used in nib 'StarViewController', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "view_able_no1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_able_no1' is used in nib 'StarViewController', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}
