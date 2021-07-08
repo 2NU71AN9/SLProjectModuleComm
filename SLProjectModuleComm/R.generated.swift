@@ -708,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 34 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 35 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -744,6 +744,8 @@ struct R: Rswift.Validatable {
     static let imagePicker1ViewController = _R.nib._ImagePicker1ViewController()
     /// Nib `JGSharePlatformPicker`.
     static let jgSharePlatformPicker = _R.nib._JGSharePlatformPicker()
+    /// Nib `LocationViewController`.
+    static let locationViewController = _R.nib._LocationViewController()
     /// Nib `MarqueeViewController`.
     static let marqueeViewController = _R.nib._MarqueeViewController()
     /// Nib `MessageAlertViewController`.
@@ -912,6 +914,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.jgSharePlatformPicker) instead")
     static func jgSharePlatformPicker(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.jgSharePlatformPicker)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "LocationViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.locationViewController) instead")
+    static func locationViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.locationViewController)
     }
     #endif
 
@@ -1117,6 +1127,10 @@ struct R: Rswift.Validatable {
 
     static func jgSharePlatformPicker(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.jgSharePlatformPicker.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func locationViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.locationViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func marqueeViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1461,6 +1475,17 @@ struct _R: Rswift.Validatable {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "view_gray1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_gray1' is used in nib 'JGSharePlatformPicker', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _LocationViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LocationViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
