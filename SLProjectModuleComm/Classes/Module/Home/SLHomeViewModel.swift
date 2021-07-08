@@ -14,9 +14,9 @@ class SLHomeViewModel: BaseViewModel {
     
     private let dataArray = [
         ["FaceID / TouchID", "人脸检测", "Taptic", "音效", "二维码扫描", "生成二维码"],
-        ["瀑布流", "上拉加载/下拉刷新", "空白状态页", "Toast", "多页面", "列表嵌套", "轮播", "图片浏览",
+        ["瀑布流", "上拉加载/下拉刷新(MJRefresh)", "空白状态页", "Toast(PKHUD)", "多页面(JXPagingView)", "列表嵌套(JXPagingView)", "轮播(FSPagerView)", "图片浏览",
          "弹窗(SwiftMessages)", "弹出菜单(NewPopMenu)", "跑马灯(MarqueeLabel)", "滚动消息(RollingNotice-Swift)", "引导页(EAIntroView)", "功能引导(Instructions)"],
-        ["图片选择", "文件选择+文件预览", "时间选择", "标签选择1", "标签选择2", "地址选择(三联)", "地址选择(高德)", "城市选择"],
+        ["图片选择(HXPhotoPicker)", "文件选择+文件预览", "时间选择", "标签选择1", "标签选择2", "地址选择(三联)", "地址选择(高德)", "城市选择"],
         ["自定义导航栏", "抽屉(SideMenu)", "GridView"],
         ["转场动画(Hero)", "TabviewCell动画", "星星评分", "粒子特效"]
     ]

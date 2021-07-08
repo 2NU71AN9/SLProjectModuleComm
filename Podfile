@@ -70,7 +70,8 @@ target 'SLProjectModuleComm' do
   pod 'UMCommon'
 #  pod 'UMCCommonLog' #开发阶段进行调试SDK及相关功能使用，可在发布 App 前移除
   pod 'UMShare/UI' #分享
-  pod 'UMShare/Social/WeChat'
+#  pod 'UMShare/Social/WeChat' #完整版
+  pod 'UMShare/Social/ReducedWeChat' #精简版, 和微信支付SDK同时集成时使用这个
   pod 'UMPush' #推送
   
   #极光
@@ -86,5 +87,10 @@ target 'SLProjectModuleComm' do
   pod 'AMapSearch'
   pod 'AMapLocation'
   pod 'AMap2DMap'
+  
+  #微信
+  pod 'WechatOpenSDK'
+  #支付宝
+  pod 'AlipaySDK-iOS'
   
 end

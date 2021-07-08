@@ -21,3 +21,11 @@
 
 // 高德
 #import <MAMapKit/MAMapKit.h>
+
+// 支付宝
+#import <AlipaySDK/AlipaySDK.h>
+#import "APOrderInfo.h"
+#import "APRSASigner.h"
+#import "APAuthInfo.h"
+// 微信
+#import <WXApi.h>
