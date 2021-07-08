@@ -7,8 +7,8 @@
 //
 
 import UIKit
-//import SwiftDate
 
+/// 找不到 openssl.h解决方法: Header Search Path 添加 openssl文件夹的上一层路径
 class AliManager: NSObject {
     @objc static let shared = AliManager()
     private override init() { super.init()
