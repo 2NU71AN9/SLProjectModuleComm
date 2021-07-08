@@ -162,6 +162,9 @@ extension SLHomeViewController {
         case [4, 2]:
             let vc = StarViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [4, 3]:
+            let vc = EmitterViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

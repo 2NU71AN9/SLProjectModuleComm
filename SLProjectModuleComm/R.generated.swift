@@ -708,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 35 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 36 nibs.
   struct nib {
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
@@ -724,6 +724,8 @@ struct R: Rswift.Validatable {
     static let drawerLeftViewController = _R.nib._DrawerLeftViewController()
     /// Nib `DrawerViewController`.
     static let drawerViewController = _R.nib._DrawerViewController()
+    /// Nib `EmitterViewController`.
+    static let emitterViewController = _R.nib._EmitterViewController()
     /// Nib `FGChoosCitySearchView`.
     static let fgChoosCitySearchView = _R.nib._FGChoosCitySearchView()
     /// Nib `FGChooseAddressBgView`.
@@ -834,6 +836,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.drawerViewController) instead")
     static func drawerViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.drawerViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "EmitterViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.emitterViewController) instead")
+    static func emitterViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.emitterViewController)
     }
     #endif
 
@@ -1089,6 +1099,10 @@ struct R: Rswift.Validatable {
       return R.nib.drawerViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func emitterViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.emitterViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func faceIDViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.faceIDViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1326,6 +1340,17 @@ struct _R: Rswift.Validatable {
     struct _DrawerViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "DrawerViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _EmitterViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "EmitterViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
