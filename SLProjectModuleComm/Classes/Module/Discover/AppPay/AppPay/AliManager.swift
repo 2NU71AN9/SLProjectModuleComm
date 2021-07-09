@@ -9,14 +9,15 @@
 import UIKit
 
 /// 找不到 openssl.h解决方法: Header Search Path 添加 openssl文件夹的上一层路径
-class AliManager: NSObject {
-    @objc static let shared = AliManager()
+public class AliManager: NSObject {
+    @objc public static let shared = AliManager()
+    
     private override init() { super.init()
         AlipaySDK.defaultService()
     }
 }
 
-extension AliManager {
+public extension AliManager {
     /// 跳转支付
     func pay(_ model: PayAliModel?) {
         guard let paymodel = model else { return }
@@ -34,7 +35,7 @@ extension AliManager {
         order.biz_content.seller_id = paymodel.seller
         order.biz_content.subject = paymodel.product_name
         order.biz_content.out_trade_no = paymodel.trade_no
-        order.biz_content.timeout_express = "30m" //超时时间设置
+        order.biz_content.timeout_express = "30m" // 超时时间设置
         order.biz_content.total_amount = paymodel.amount
 
         guard let orderInfo = order.orderInfoEncoded(false),

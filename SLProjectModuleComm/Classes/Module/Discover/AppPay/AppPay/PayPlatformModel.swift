@@ -9,43 +9,44 @@
 import UIKit
 import HandyJSON
 
-class PayPlatformModel: NSObject, HandyJSON {
-    var payment_platform = 0
-    var prepare_id: String?
-    var ali_param: PayAliModel?
-    var we_chat_param: PayWechatModel?
+public class PayPlatformModel: NSObject, HandyJSON {
+    public var payment_platform = 0
+    public var prepare_id: String?
+    public var ali_param: PayAliModel?
+    public var we_chat_param: PayWechatModel?
 
-    required override init() {
+    required public override init() {
         super.init()
     }
 }
 
-class PayWechatModel: NSObject, HandyJSON {
-    var partnerid: String?
-    var prepayid: String?
-    var noncestr: String?
-    var package: String?
-    var sign: String?
-    var timestamp: UInt32 = 0
-    var appid: String?
+public class PayWechatModel: NSObject, HandyJSON {
+    public var partnerid: String?
+    public var prepayid: String?
+    public var noncestr: String?
+    public var package: String?
+    public var sign: String?
+    public var timestamp: UInt32 = 0
+    public var appid: String?
 
-    required override init() {
+    required public override init() {
         super.init()
     }
 }
-class PayAliModel: NSObject, HandyJSON {
-    var seller: String?
-    var time_expire: String?
-    var private_key_pck8: String?
-    var product_name: String?
-    var notify_url: String?
-    var trade_no: String?
-    var partner: String?
-    var private_key: String?
-    var app_id: String?
-    var amount: String?
 
-    required override init() {
+public class PayAliModel: NSObject, HandyJSON {
+    public var seller: String?
+    public var time_expire: String?
+    public var private_key_pck8: String?
+    public var product_name: String?
+    public var notify_url: String?
+    public var trade_no: String?
+    public var partner: String?
+    public var private_key: String?
+    public var app_id: String?
+    public var amount: String?
+
+    required public override init() {
         super.init()
     }
 }

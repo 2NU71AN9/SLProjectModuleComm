@@ -708,8 +708,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 36 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 37 nibs.
   struct nib {
+    /// Nib `AppPayViewController`.
+    static let appPayViewController = _R.nib._AppPayViewController()
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
     /// Nib `CommNavigationBar`.
@@ -782,6 +784,14 @@ struct R: Rswift.Validatable {
     static let transition2ViewController = _R.nib._Transition2ViewController()
     /// Nib `TransitionViewController`.
     static let transitionViewController = _R.nib._TransitionViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AppPayViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.appPayViewController) instead")
+    static func appPayViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.appPayViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CarouselViewController", in: bundle)`
@@ -1071,6 +1081,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func appPayViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.appPayViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func carouselViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.carouselViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1263,6 +1277,17 @@ struct _R: Rswift.Validatable {
       try _SLVisitorViewController.validate()
       try _ScrollMsgCell.validate()
       try _StarViewController.validate()
+    }
+
+    struct _AppPayViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AppPayViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
     }
 
     struct _CarouselViewController: Rswift.NibResourceType {

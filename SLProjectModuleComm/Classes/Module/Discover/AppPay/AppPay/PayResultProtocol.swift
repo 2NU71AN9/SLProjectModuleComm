@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 
-public protocol PayResultProtocol {
+public protocol PayResultProtocol: NSObjectProtocol {
     func paySuccess()
     func payFailure()
     func unKnow()

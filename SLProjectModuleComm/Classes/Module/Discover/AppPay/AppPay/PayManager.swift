@@ -13,7 +13,7 @@ public class PayManager: NSObject {
     @objc static let shared = PayManager()
     private override init() { super.init() }
 
-    public var delegate: PayResultProtocol?
+    public weak var delegate: PayResultProtocol?
 
     @objc public func processingResults(_ url: URL) {
         if url.host == "safepay" {

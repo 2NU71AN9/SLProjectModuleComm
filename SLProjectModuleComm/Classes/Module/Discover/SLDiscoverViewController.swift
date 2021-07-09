@@ -29,7 +29,7 @@ class SLDiscoverViewController: BaseViewController {
     }
     
     private let dataArray = [
-        ["友盟分享", "极光分享", "微信支付#######", "支付宝支付########", "App内购########", "融云IM#######"],
+        ["友盟分享", "极光分享", "微信支付/支付宝支付", "App内购########", "融云IM#######"],
         ["网络请求(Moya+RxSwift+HandyJSON)#########", "socket#########"],
         ["组件化调用########", "AOP#########", "字符串插值#########", "自定义操作符#######", "JS交互#######", "WebView########"],
         ["权限申请", "定位", "手势冲突解决方案#########", "加解密相关#######"],
@@ -77,6 +77,9 @@ extension SLDiscoverViewController {
             navigationController?.pushViewController(vc, animated: true)
         case [0, 1]:
             let vc = ShareViewController(1)
+            navigationController?.pushViewController(vc, animated: true)
+        case [0, 2]:
+            let vc = AppPayViewController()
             navigationController?.pushViewController(vc, animated: true)
         case [3, 0]:
             let ctr = SPPermissions.list([.reminders, .camera, .photoLibrary, .locationWhenInUse, .locationAlways, .calendar, .bluetooth, .contacts, .microphone])
