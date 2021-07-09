@@ -29,7 +29,7 @@ class SLDiscoverViewController: BaseViewController {
     }
     
     private let dataArray = [
-        ["友盟分享", "极光分享", "微信支付/支付宝支付", "App内购########", "融云IM#######"],
+        ["友盟分享", "极光分享", "微信支付/支付宝支付", "App内购", "融云IM#######"],
         ["网络请求(Moya+RxSwift+HandyJSON)#########", "socket#########"],
         ["组件化调用", "AOP", "字符串插值", "自定义/重载操作符", "JS交互#######", "WebView"],
         ["权限申请", "定位", "手势冲突解决方案#########", "加解密相关#######"],
@@ -43,7 +43,7 @@ extension SLDiscoverViewController {
         super.setMasterView()
         title = "发现"
         
-        /// 转场TableviewCell动画
+         // 转场TableviewCell动画
 //        navigationController?.hero.isEnabled = true
 //        tableView.hero.modifiers = [.cascade]
     }

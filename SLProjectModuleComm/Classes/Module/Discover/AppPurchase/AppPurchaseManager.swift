@@ -9,6 +9,11 @@ import UIKit
 import SwiftyStoreKit
 import StoreKit
 
+/**
+ 沙盒测试
+ sunliang1145373054@qq.com
+ Qw1491859758
+ */
 public class AppPurchaseManager: NSObject {
     public static let shared = AppPurchaseManager()
     private override init() {
