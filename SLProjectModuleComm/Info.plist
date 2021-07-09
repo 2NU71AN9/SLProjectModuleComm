@@ -44,7 +44,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>wechat</string>
@@ -58,6 +58,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>访问媒体资料库以获取媒体资料</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>访问蓝牙以连接设备</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
@@ -69,7 +71,11 @@
 	<key>NSContactsUsageDescription</key>
 	<string>访问通讯录以获取使用该应用的联系人</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string></string>
+	<string>访问Face ID以验证身份</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>访问健康以获取运动信息</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>访问健康以获取运动信息</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>定位以获取所在区域</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -80,12 +86,18 @@
 	<string>定位以获取所在区域</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>访问麦克风以用于语音输入</string>
+	<key>NSMotionUsageDescription</key>
+	<string>访问传感器以获取设备状态</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>访问相册以保存图片</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>访问相册以获取图片</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>同意以获得消息推送及提醒事项</string>
+	<key>NSSiriUsageDescription</key>
+	<string>访问Siri以通过Siri控制设备</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>访问语音识别以捕捉语音</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -109,5 +121,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>访问音乐以分享音频</string>
 </dict>
 </plist>

@@ -99,6 +99,8 @@ extension AppDelegate {
         
         SLGaodeServicer.shared.regist(AppKey_gaode)
         
+        AppPurchaseManager.shared.completeTransactions()
+        
         #if DEBUG
         PerformanceMonitor.shared().start()
         PerformanceMonitor.shared().performanceViewConfigurator.options = [.performance, .memory]

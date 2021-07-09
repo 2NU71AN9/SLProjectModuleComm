@@ -27,7 +27,10 @@ extension AppPayViewController {
     override func setMasterView() {
         super.setMasterView()
         title = "微信/支付宝支付"
+        
+        // 不应该设置某个类未代理, 应该设置全局代理, 全局接收支付结果通知
         PayManager.shared.delegate = self
+        
         // 微信支付
         WechatManager.shared.pay(PayWechatModel())
         // 支付宝支付

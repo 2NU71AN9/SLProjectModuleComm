@@ -708,10 +708,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 37 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 38 nibs.
   struct nib {
     /// Nib `AppPayViewController`.
     static let appPayViewController = _R.nib._AppPayViewController()
+    /// Nib `AppPurchaseViewController`.
+    static let appPurchaseViewController = _R.nib._AppPurchaseViewController()
     /// Nib `CarouselViewController`.
     static let carouselViewController = _R.nib._CarouselViewController()
     /// Nib `CommNavigationBar`.
@@ -790,6 +792,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.appPayViewController) instead")
     static func appPayViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.appPayViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AppPurchaseViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.appPurchaseViewController) instead")
+    static func appPurchaseViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.appPurchaseViewController)
     }
     #endif
 
@@ -1085,6 +1095,10 @@ struct R: Rswift.Validatable {
       return R.nib.appPayViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func appPurchaseViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.appPurchaseViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func carouselViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.carouselViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1282,6 +1296,17 @@ struct _R: Rswift.Validatable {
     struct _AppPayViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "AppPayViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _AppPurchaseViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AppPurchaseViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView

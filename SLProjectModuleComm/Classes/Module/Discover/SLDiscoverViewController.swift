@@ -81,6 +81,9 @@ extension SLDiscoverViewController {
         case [0, 2]:
             let vc = AppPayViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [0, 3]:
+            let vc = AppPurchaseViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [3, 0]:
             let ctr = SPPermissions.list([.reminders, .camera, .photoLibrary, .locationWhenInUse, .locationAlways, .calendar, .bluetooth, .contacts, .microphone])
             ctr.present(on: self)
