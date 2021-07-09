@@ -708,8 +708,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 38 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 42 nibs.
   struct nib {
+    /// Nib `AOPViewController`.
+    static let aopViewController = _R.nib._AOPViewController()
     /// Nib `AppPayViewController`.
     static let appPayViewController = _R.nib._AppPayViewController()
     /// Nib `AppPurchaseViewController`.
@@ -722,6 +724,8 @@ struct R: Rswift.Validatable {
     static let customMessageView = _R.nib._CustomMessageView()
     /// Nib `CustomNavigationViewController`.
     static let customNavigationViewController = _R.nib._CustomNavigationViewController()
+    /// Nib `CustomOperatorViewController`.
+    static let customOperatorViewController = _R.nib._CustomOperatorViewController()
     /// Nib `DrawerInfoViewController`.
     static let drawerInfoViewController = _R.nib._DrawerInfoViewController()
     /// Nib `DrawerLeftViewController`.
@@ -756,6 +760,8 @@ struct R: Rswift.Validatable {
     static let marqueeViewController = _R.nib._MarqueeViewController()
     /// Nib `MessageAlertViewController`.
     static let messageAlertViewController = _R.nib._MessageAlertViewController()
+    /// Nib `ModuleViewController`.
+    static let moduleViewController = _R.nib._ModuleViewController()
     /// Nib `PopMenuCustomViewController`.
     static let popMenuCustomViewController = _R.nib._PopMenuCustomViewController()
     /// Nib `QRCodeViewController`.
@@ -778,6 +784,8 @@ struct R: Rswift.Validatable {
     static let soundViewController = _R.nib._SoundViewController()
     /// Nib `StarViewController`.
     static let starViewController = _R.nib._StarViewController()
+    /// Nib `StringInterpolationViewController`.
+    static let stringInterpolationViewController = _R.nib._StringInterpolationViewController()
     /// Nib `TapticViewController`.
     static let tapticViewController = _R.nib._TapticViewController()
     /// Nib `ToastViewController`.
@@ -786,6 +794,14 @@ struct R: Rswift.Validatable {
     static let transition2ViewController = _R.nib._Transition2ViewController()
     /// Nib `TransitionViewController`.
     static let transitionViewController = _R.nib._TransitionViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AOPViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.aopViewController) instead")
+    static func aopViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.aopViewController)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AppPayViewController", in: bundle)`
@@ -832,6 +848,14 @@ struct R: Rswift.Validatable {
     @available(*, deprecated, message: "Use UINib(resource: R.nib.customNavigationViewController) instead")
     static func customNavigationViewController(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.customNavigationViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CustomOperatorViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.customOperatorViewController) instead")
+    static func customOperatorViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.customOperatorViewController)
     }
     #endif
 
@@ -972,6 +996,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ModuleViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.moduleViewController) instead")
+    static func moduleViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.moduleViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PopMenuCustomViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.popMenuCustomViewController) instead")
     static func popMenuCustomViewController(_: Void = ()) -> UIKit.UINib {
@@ -1060,6 +1092,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "StringInterpolationViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.stringInterpolationViewController) instead")
+    static func stringInterpolationViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.stringInterpolationViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "TapticViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.tapticViewController) instead")
     static func tapticViewController(_: Void = ()) -> UIKit.UINib {
@@ -1091,6 +1131,10 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func aopViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.aopViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func appPayViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.appPayViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1113,6 +1157,10 @@ struct R: Rswift.Validatable {
 
     static func customNavigationViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.customNavigationViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func customOperatorViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.customOperatorViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func drawerInfoViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1183,6 +1231,10 @@ struct R: Rswift.Validatable {
       return R.nib.messageAlertViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func moduleViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.moduleViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
     static func popMenuCustomViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.popMenuCustomViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1225,6 +1277,10 @@ struct R: Rswift.Validatable {
 
     static func starViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.starViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func stringInterpolationViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.stringInterpolationViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func tapticViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1293,6 +1349,17 @@ struct _R: Rswift.Validatable {
       try _StarViewController.validate()
     }
 
+    struct _AOPViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "AOPViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _AppPayViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "AppPayViewController"
@@ -1357,6 +1424,17 @@ struct _R: Rswift.Validatable {
     struct _CustomNavigationViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "CustomNavigationViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _CustomOperatorViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "CustomOperatorViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
@@ -1588,6 +1666,17 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    struct _ModuleViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "ModuleViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
     struct _PopMenuCustomViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "PopMenuCustomViewController"
@@ -1737,6 +1826,17 @@ struct _R: Rswift.Validatable {
           if UIKit.UIColor(named: "prime", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'prime' is used in nib 'StarViewController', but couldn't be loaded.") }
           if UIKit.UIColor(named: "view_able_no1", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'view_able_no1' is used in nib 'StarViewController', but couldn't be loaded.") }
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _StringInterpolationViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "StringInterpolationViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}

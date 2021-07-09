@@ -30,16 +30,17 @@ file_length: #文件内容行数
     warning: 600
     error: 1200
     
-type_name: # 类型命名时字符个数限制
-    min_length: 2 # warning
-    max_length:
-        warning: 40
-        error: 50
-    excluded: # 排除
-        - iPhone
-        - R
+#type_name: # 类型命名时字符个数限制
+#    min_length: 2 # warning
+#    max_length:
+#        warning: 40
+#        error: 50
+#    excluded: # 排除
+#        - iPhone
+#        - R
 
 disabled_rules: #需要关闭的强制性规则
+    - type_name
     - identifier_name
     - missing_docs
     - notification_center_detachment

@@ -8,12 +8,13 @@
 import UIKit
 import Hero
 import SPPermissions
+import SLIKit
+import CTMediator
 
 class SLDiscoverViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            navigationController?.hero.isEnabled = true
             tableView.sl
                 .showsVerticalScrollIndicator(false)
                 .showsHorizontalScrollIndicator(false)
@@ -24,14 +25,13 @@ class SLDiscoverViewController: BaseViewController {
                 .estimatedSectionHeaderHeight(0)
                 .estimatedSectionFooterHeight(0)
                 .registerClass(UITableViewCell.self)
-            tableView.hero.modifiers = [.cascade]
         }
     }
     
     private let dataArray = [
         ["友盟分享", "极光分享", "微信支付/支付宝支付", "App内购########", "融云IM#######"],
         ["网络请求(Moya+RxSwift+HandyJSON)#########", "socket#########"],
-        ["组件化调用########", "AOP#########", "字符串插值#########", "自定义操作符#######", "JS交互#######", "WebView########"],
+        ["组件化调用", "AOP", "字符串插值", "自定义/重载操作符", "JS交互#######", "WebView"],
         ["权限申请", "定位", "手势冲突解决方案#########", "加解密相关#######"],
         ["视频播放器#######", "音频播放器#######"]
     ]
@@ -42,6 +42,10 @@ extension SLDiscoverViewController {
     override func setMasterView() {
         super.setMasterView()
         title = "发现"
+        
+        /// 转场TableviewCell动画
+//        navigationController?.hero.isEnabled = true
+//        tableView.hero.modifiers = [.cascade]
     }
 }
 
@@ -84,6 +88,23 @@ extension SLDiscoverViewController {
         case [0, 3]:
             let vc = AppPurchaseViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [2, 0]:
+            if let vc = CTMediator.sharedInstance().moduleVC(title: "组件化调用") {
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        case [2, 1]:
+            let vc = AOPViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [2, 2]:
+            let vc = StringInterpolationViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [2, 3]:
+            let vc = CustomOperatorViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [2, 5]:
+            let vc = SLWebViewController(URL(string: "https://www.baidu.com"))
+            let navi = UINavigationController(rootViewController: vc)
+            present(navi, animated: true, completion: nil)
         case [3, 0]:
             let ctr = SPPermissions.list([.reminders, .camera, .photoLibrary, .locationWhenInUse, .locationAlways, .calendar, .bluetooth, .contacts, .microphone])
             ctr.present(on: self)
