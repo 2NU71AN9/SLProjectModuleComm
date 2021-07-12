@@ -14,7 +14,14 @@ import Alamofire
 
 class NetworkHandler: NSObject {
 
-    static let APIProvider = MoyaProvider<APIService>(plugins: [ShowProgress(), CheckNetStatus()])
+    static var APIProvider: MoyaProvider<APIService> = {
+        var plugins: [PluginType] = [ShowProgress(), CheckNetStatus()]
+        #if DEBUG
+        plugins.append(Print())
+        #endif
+        let provider = MoyaProvider<APIService>(plugins: plugins)
+        return provider
+    }()
     
     /// 网络请求
     /// - Parameter target: API
@@ -26,9 +33,6 @@ class NetworkHandler: NSObject {
                 case .success(let jsonValue):
                     if let jsonStr = try? jsonValue.mapJSON(),
                         var response = NetworkResponse.deserialize(from: JSON(jsonStr).dictionaryObject) {
-                        #if DEBUG
-                        print(String(format: "%@==>%@", target.path, JSON(jsonStr).description))
-                        #endif
                         target.responsePath?.components(separatedBy: ".").forEach { (str) in
                             if let result = response.result as? [String: Any] {
                                 response.result = result[str]
@@ -37,21 +41,10 @@ class NetworkHandler: NSObject {
                         obsever.onNext(response)
                         obsever.onCompleted()
                     } else {
-
-                        #if DEBUG
-                        print(target.path + "==>数据错误")
-                        #endif
-
                         obsever.onNext(NetworkResponse(code: 300, message: "数据错误", data: nil))
                         obsever.onCompleted()
                     }
-
                 case .failure(let error):
-
-                    #if DEBUG
-                    print(error.errorDescription ?? "请求失败")
-                    #endif
-
                     obsever.onNext(NetworkResponse(code: 300, message: error.errorDescription, data: nil))
                     obsever.onCompleted()
                 }
@@ -78,7 +71,9 @@ class NetworkHandler: NSObject {
                     switch result {
                     case .success:
                         obsever.onNext(target.localLocation)
+                        #if DEBUG
                         print("下载成功==>" + target.localLocation.absoluteString)
+                        #endif
                         obsever.onCompleted()
                     case .failure(let error):
                         #if DEBUG

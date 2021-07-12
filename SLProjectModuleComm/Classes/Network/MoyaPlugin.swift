@@ -81,3 +81,33 @@ internal final class ShowCoverProgress: PluginType {
         Self.kRequestTargetEnd.onNext(target)
     }
 }
+
+/// Moya插件: 控制台打印网络请求信息
+internal final class Print: PluginType {
+    /// 在通过网络发送请求(或存根)之前立即调用
+    func willSend(_ request: RequestType, target: TargetType) {
+        guard let target = target as? APIService else { return }
+        print("""
+            #############↓网络请求参数↓#################
+            \(target.baseURL)\(target.path)
+            \(target.parameters)
+            #############↑网络请求参数↑#################
+            """)
+    }
+    
+    func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+        guard let target = target as? APIService else { return }
+        print("#############↓网络请求数据↓#################")
+        switch result {
+        case .success(let jsonValue):
+            if let jsonStr = try? jsonValue.mapJSON() {
+                print(String(format: "%@%@==>%@", target.baseURL.absoluteString, target.path, JSON(jsonStr).description))
+            } else {
+                print(String(format: "%@%@==>数据错误", target.baseURL.absoluteString, target.path))
+            }
+        case .failure(let error):
+            print(String(format: "%@%@==>%@", target.baseURL.absoluteString, target.path, error.errorDescription ?? "请求失败"))
+        }
+        print("#############↑网络请求数据↑#################")
+    }
+}

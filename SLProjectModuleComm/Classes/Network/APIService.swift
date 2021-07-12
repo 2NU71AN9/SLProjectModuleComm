@@ -14,6 +14,8 @@ public enum APIService {
     case login(account: String, password: String)
     /// 下载
     case downloadFile(_ url: String)
+    /// 上传
+    case uploadFile(_ data: Data)
     
     // 默认下载保存地址
     static let kDefaultDownloadDir: URL = {
@@ -29,15 +31,12 @@ extension APIService: TargetType {
 
     public var baseURL: URL {
         var urlStr = ""
-        switch self {
-        default:
-            #if DEBUG
-            urlStr = APIService.kDebugBaseURL
-            #else
-            urlStr = APIService.kReleaseBaseURL
-            #endif
-        }
-        return URL(string: urlStr + path)!
+        #if DEBUG
+        urlStr = APIService.kDebugBaseURL
+        #else
+        urlStr = APIService.kReleaseBaseURL
+        #endif
+        return URL(string: urlStr) ?? URL(fileURLWithPath: "")
     }
 
     public var path: String { "" }
@@ -52,32 +51,54 @@ extension APIService: TargetType {
     public var sampleData: Data { "".data(using: .utf8) ?? Data() }
 
     public var task: Task {
-        print("""
-            #############↓请求参数↓#################
-            \(baseURL)
-            \(parameters)
-            ######################################
-            """)
-        var para = parameters
-        para["token"] = AccountServicer.service.token
         switch self {
         case .downloadFile:
             return .downloadDestination(downloadDestination)
         case .login:
-            return .requestCompositeData(bodyData: Data(), urlParameters: para)
+            return .requestCompositeData(bodyData: Data(), urlParameters: parameters)
 //        case .uploadImage(let images):
 //            return .uploadMultipart(images.compactMap {$0.formData})
+        case .uploadFile(let data):
+            return .uploadMultipart([MultipartFormData(provider: .data(data), name: "file", fileName: "123.images")])
         default:
-            return .requestParameters(parameters: para, encoding: JSONEncoding.default)
+            return .requestParameters(parameters: parameters, encoding: parameterEncoding)
         }
     }
 
     public var headers: [String: String]? {
         let token = AccountServicer.service.token ?? ""
-        return ["Authorization": !token.isEmpty ? "Bearer " + token : "",
+        let authorization = token.isEmpty ? "" : "Bearer " + token
+        return ["Authorization": authorization,
 //                "Content-Type": "application/x-www-form-urlencoded"
                 "Content-Type": "application/json; charset=utf-8"
         ]
+    }
+    public var parameterEncoding: ParameterEncoding {
+        switch self {
+        default:
+//            return URLEncoding.default // application/x-www-form-urlencoded
+            return JSONEncoding.default // application/json; charset=utf-8
+        }
+    }
+
+    /// 参数
+    public var parameters: [String: Any] {
+        var parameters: [String: Any] = [:]
+        switch self {
+        case .login(let account, let password):
+            parameters = ["mobile": account, "password": password]
+        default:
+            break
+        }
+        for i in commParameters {
+            parameters[i.key] = i.value
+        }
+        return parameters
+    }
+    
+    /// 公共参数
+    public var commParameters: [String: Any?] {
+        ["token": AccountServicer.service.token]
     }
     
     /// 下载后的保存路径
@@ -94,16 +115,6 @@ extension APIService: TargetType {
     var downloadDestination: DownloadDestination {
         { _, _ in
             return (localLocation, [.removePreviousFile, .createIntermediateDirectories])
-        }
-    }
-
-    /// 参数
-    public var parameters: [String: Any] {
-        switch self {
-        case .login(let account, let password):
-            return ["mobile": account, "password": password]
-        default:
-            return [:]
         }
     }
 

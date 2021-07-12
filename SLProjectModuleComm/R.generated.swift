@@ -708,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 42 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 43 nibs.
   struct nib {
     /// Nib `AOPViewController`.
     static let aopViewController = _R.nib._AOPViewController()
@@ -762,6 +762,8 @@ struct R: Rswift.Validatable {
     static let messageAlertViewController = _R.nib._MessageAlertViewController()
     /// Nib `ModuleViewController`.
     static let moduleViewController = _R.nib._ModuleViewController()
+    /// Nib `NetworkViewController`.
+    static let networkViewController = _R.nib._NetworkViewController()
     /// Nib `PopMenuCustomViewController`.
     static let popMenuCustomViewController = _R.nib._PopMenuCustomViewController()
     /// Nib `QRCodeViewController`.
@@ -1004,6 +1006,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "NetworkViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.networkViewController) instead")
+    static func networkViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.networkViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "PopMenuCustomViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.popMenuCustomViewController) instead")
     static func popMenuCustomViewController(_: Void = ()) -> UIKit.UINib {
@@ -1233,6 +1243,10 @@ struct R: Rswift.Validatable {
 
     static func moduleViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.moduleViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func networkViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.networkViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func popMenuCustomViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1669,6 +1683,17 @@ struct _R: Rswift.Validatable {
     struct _ModuleViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "ModuleViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _NetworkViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NetworkViewController"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
