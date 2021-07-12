@@ -17,10 +17,6 @@ extension NetworkViewController {
         super.setMasterView()
         title = "网络请求"
     }
-    
-    override func setVisitorPage() {
-        setMasterView()
-    }
 }
 
 // MARK: - Privater Methods

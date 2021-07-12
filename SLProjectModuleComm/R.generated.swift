@@ -708,7 +708,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 43 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 44 nibs.
   struct nib {
     /// Nib `AOPViewController`.
     static let aopViewController = _R.nib._AOPViewController()
@@ -782,6 +782,8 @@ struct R: Rswift.Validatable {
     static let slVisitorViewController = _R.nib._SLVisitorViewController()
     /// Nib `ScrollMsgCell`.
     static let scrollMsgCell = _R.nib._ScrollMsgCell()
+    /// Nib `SocketViewController`.
+    static let socketViewController = _R.nib._SocketViewController()
     /// Nib `SoundViewController`.
     static let soundViewController = _R.nib._SoundViewController()
     /// Nib `StarViewController`.
@@ -1086,6 +1088,14 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SocketViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.socketViewController) instead")
+    static func socketViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.socketViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UINib(name: "SoundViewController", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.soundViewController) instead")
     static func soundViewController(_: Void = ()) -> UIKit.UINib {
@@ -1283,6 +1293,10 @@ struct R: Rswift.Validatable {
 
     static func slVisitorViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.slVisitorViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func socketViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.socketViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
     static func soundViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
@@ -1820,6 +1834,17 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "cry100", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'cry100' is used in nib 'ScrollMsgCell', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _SocketViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SocketViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
       }
 
       fileprivate init() {}
