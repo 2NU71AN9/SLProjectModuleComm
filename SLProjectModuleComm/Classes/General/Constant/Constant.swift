@@ -15,6 +15,7 @@ public let APP_YSZC_URL = "https://www.baidu.com" // 隐私政策
 public let PAGE_SIZE = 10
 // 导航栏
 public let naviBar_zPosition: CGFloat = 10000
+public let NavigationBarHeight: CGFloat = 44
 // 持久化key
 public let userDateStandKey = "USERDATA"
 public let tokenStandKey = "TOKEN"
@@ -32,8 +33,6 @@ public let defaultCity = "济南市"
 public let defaultLongitude: Double = 113.123
 // 默认定位纬度
 public let defaultLatitude: Double = 36.123
-
-public let NavigationBarHeight: CGFloat = 44
 // 登录页图片
 public let visitorPageImage = "cry100"
 // 登录页文字
@@ -45,12 +44,11 @@ public let noNetworkPageDesc = "您的网络好像出了点问题\n请前往 设
 // 无网络页是否有重新加载按钮
 public let noNetworkPageHaveRefresh = true
 
-// 友盟AppKey
+// 友盟
 public let AppKey_UM = "5fd97b5f498d9e0d4d90761a"
 // 极光
 public let AppKey_JG = "99846b6fcc88b4168c3fe69f"
 public let AppSecret_JG = "578613872257ee82cf246697"
-
 // 微信
 public let AppID_wechat = "wxac7f360237a214cc"
 public let AppSecret_wechat = "08196524f27704095dbe7ece0d7dc304"
