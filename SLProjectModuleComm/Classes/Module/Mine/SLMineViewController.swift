@@ -7,6 +7,7 @@
 
 import UIKit
 import SLIKit
+import DeviceKit
 
 class SLMineViewController: BaseViewController {
     private lazy var tableView = UITableView(frame: CGRect.zero, style: .insetGrouped).sl
@@ -21,7 +22,7 @@ class SLMineViewController: BaseViewController {
         .base
     
     private let dataArray = [
-        ["本机IP", "WIFI IP", "WIFI名称", "WIFI mac地址", "网络状态#########", "时间#######", "电量#######"],
+        ["iPhone名称", "设备型号", "系统名称", "系统版本号", "电量", "网络状态", "本机IP", "WIFI IP", "WIFI名称", "WIFI mac地址"],
         ["清除缓存", "黑色模式########", "国际化#########"],
         ["前往系统设置", "前往自己应用设置", "前往AppStore"]
     ]
@@ -50,6 +51,11 @@ extension SLMineViewController {
             make.center.equalToSuperview()
         }
     }
+    
+    override func networkStatusChanged(_ status: SLNetworkStatus) {
+        super.networkStatusChanged(status)
+        tableView.reloadSections([0], with: .fade)
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -70,14 +76,32 @@ extension SLMineViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath {
         case [0, 0]:
             cell?.accessoryType = .none
-            cell?.detailTextLabel?.text = SL.tools.getIPAddress()
+            cell?.detailTextLabel?.text = Device.current.name
         case [0, 1]:
             cell?.accessoryType = .none
-            cell?.detailTextLabel?.text = SL.tools.getWiFiIP()
+            cell?.detailTextLabel?.text = Device.current.description
         case [0, 2]:
             cell?.accessoryType = .none
-            cell?.detailTextLabel?.text = SL.tools.getWifiNameWithMac().0
+            cell?.detailTextLabel?.text = Device.current.systemName
         case [0, 3]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = Device.current.systemVersion
+        case [0, 4]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = "\(Device.current.batteryLevel ?? 0)"
+        case [0, 5]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = SLNetworkListenManager.shared.networkStatus.desc
+        case [0, 6]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = SL.tools.getIPAddress()
+        case [0, 7]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = SL.tools.getWiFiIP()
+        case [0, 8]:
+            cell?.accessoryType = .none
+            cell?.detailTextLabel?.text = SL.tools.getWifiNameWithMac().0
+        case [0, 9]:
             cell?.accessoryType = .none
             cell?.detailTextLabel?.text = SL.tools.getWifiNameWithMac().1
         case [1, 0]:

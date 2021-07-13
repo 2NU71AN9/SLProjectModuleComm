@@ -98,4 +98,15 @@ extension SLNetworkListenManager {
     case noNet = 0
     case wifi = 1
     case wwan = 2
+    
+    public var desc: String {
+        switch self {
+        case .noNet:
+            return "无网络"
+        case .wifi:
+            return "wifi"
+        case .wwan:
+            return "蜂窝网络"
+        }
+    }
 }

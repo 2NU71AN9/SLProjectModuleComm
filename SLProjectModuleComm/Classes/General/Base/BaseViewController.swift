@@ -183,7 +183,8 @@ extension BaseViewController {
         vcPageStatus = visitorPage == nil ? .mainPage : .visitorPage
     }
     
-    @objc private func networkStatusChanged(_ status: SLNetworkStatus) {
+    /// 网络状态改变
+    @objc public func networkStatusChanged(_ status: SLNetworkStatus) {
         switch status {
         case .wifi, .wwan:
             removeNonetworkPage()

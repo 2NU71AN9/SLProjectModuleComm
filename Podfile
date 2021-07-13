@@ -45,6 +45,7 @@ target 'SLProjectModuleComm' do
   pod 'SwiftyStoreKit' #内购
   pod 'CryptoSwift' #加密
   pod 'DDGScreenShot' #截图
+  pod 'DeviceKit'
   
   # ===============权限===============
   pod 'SPPermissions' #所有, 上架时使用子项
