@@ -32,14 +32,19 @@ extension CryptoViewController {
         super.setMasterView()
         title = "加解密"
         view.addSubview(tableView)
-        MD5()
-        SHA()
-        CRC()
-        MAC_HMAC()
-        MAC_Poly1305()
-        PBKDF2()
-        AES()
-        tableView.reloadData()
+        
+        DispatchQueue.global().async { [weak self] in
+            self?.MD5()
+            self?.SHA()
+            self?.CRC()
+            self?.MAC_HMAC()
+            self?.MAC_Poly1305()
+            self?.PBKDF2()
+            self?.AES()
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillLayoutSubviews() {
