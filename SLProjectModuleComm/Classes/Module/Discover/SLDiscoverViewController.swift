@@ -31,7 +31,7 @@ class SLDiscoverViewController: BaseViewController {
     private let dataArray = [
         ["友盟分享", "极光分享", "微信支付/支付宝支付", "App内购", "融云IM#######"],
         ["网络请求(Moya+RxSwift+HandyJSON)", "socket长连接", "多线程GCD"],
-        ["组件化调用", "AOP", "字符串插值", "自定义/重载操作符", "JS交互#######", "WebView"],
+        ["组件化调用", "AOP", "字符串插值", "自定义/重载操作符", "JS交互", "WebView"],
         ["权限申请", "定位", "加解密(CryptoSwift)"],
         ["视频播放器#######", "音频播放器#######"]
     ]
@@ -109,6 +109,9 @@ extension SLDiscoverViewController {
             navigationController?.pushViewController(vc, animated: true)
         case [2, 3]:
             let vc = CustomOperatorViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [2, 4]:
+            let vc = SLJSViewController("https://www.baidu.com")
             navigationController?.pushViewController(vc, animated: true)
         case [2, 5]:
             let vc = SLWebViewController(URL(string: "https://www.baidu.com"))
