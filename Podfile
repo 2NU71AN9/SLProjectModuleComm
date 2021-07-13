@@ -43,6 +43,8 @@ target 'SLProjectModuleComm' do
   pod 'Hero'
   pod 'Cosmos' #星星
   pod 'SwiftyStoreKit' #内购
+  pod 'CryptoSwift' #加密
+  pod 'DDGScreenShot' #截图
   
   # ===============权限===============
   pod 'SPPermissions' #所有, 上架时使用子项

@@ -22,7 +22,7 @@ class SLMineViewController: BaseViewController {
     
     private let dataArray = [
         ["本机IP", "WIFI IP", "WIFI名称", "WIFI mac地址", "网络状态#########", "时间#######", "电量#######"],
-        ["清除缓存", "黑色模式########"],
+        ["清除缓存", "黑色模式########", "国际化#########"],
         ["前往系统设置", "前往自己应用设置", "前往AppStore"]
     ]
 }

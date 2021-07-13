@@ -8,6 +8,7 @@
 import UIKit
 import SLIKit
 import JFCitySelector
+import DDGScreenShot
 
 class SLHomeViewController: BaseViewController {
     let guideManager = GuideManager()
@@ -101,6 +102,10 @@ extension SLHomeViewController {
             GuideManager.showGuide(false)
         case [1, 13]:
             guideManager.showMarks(false, over: self, complete: nil)
+        case [1, 14]:
+            (contentView as? SLHomeView)?.tableView.DDGContentScrollScreenShot { image in
+                image?.sl.save2PhotoAlbum()
+            }
         case [2, 0]:
             let vc = ImagePickerViewController()
             navigationController?.pushViewController(vc, animated: true)
