@@ -47,9 +47,9 @@ class SLTabBar {
         let navi2 = BaseNavigationController(rootViewController: vc2)
         let navi3 = BaseNavigationController(rootViewController: vc3)
 
-        vc1.tabBarItem = ESTabBarItem(CustomBasicContentView(), title: "首页", image: R.image.tab1_normal(), selectedImage: R.image.tab1_selected())
-        vc2.tabBarItem = ESTabBarItem(CustomBasicContentView(), title: "发现", image: R.image.tab2_normal(), selectedImage: R.image.tab2_selected())
-        vc3.tabBarItem = ESTabBarItem(CustomBasicContentView(), title: "我的", image: R.image.tab3_normal(), selectedImage: R.image.tab3_selected())
+        vc1.tabBarItem = ESTabBarItem(CustomBasicContentView(), title: SLLocalText.tab_home.text, image: R.image.tab1_normal(), selectedImage: R.image.tab1_selected())
+        vc2.tabBarItem = ESTabBarItem(CustomBasicContentView(), title: SLLocalText.tab_discover.text, image: R.image.tab2_normal(), selectedImage: R.image.tab2_selected())
+        vc3.tabBarItem = ESTabBarItem(CustomBasicContentView(), title: SLLocalText.tab_my.text, image: R.image.tab3_normal(), selectedImage: R.image.tab3_selected())
         tabBarController.viewControllers = [navi1, navi2, navi3]
         return tabBarController
     }

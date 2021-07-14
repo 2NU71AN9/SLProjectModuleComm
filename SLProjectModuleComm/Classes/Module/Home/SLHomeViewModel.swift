@@ -13,12 +13,12 @@ class SLHomeViewModel: BaseViewModel {
     let cellDidSelectSubject = PublishSubject<IndexPath>()
     
     private let dataArray = [
-        ["FaceID / TouchID", "人脸检测", "Taptic", "音效", "二维码扫描", "生成二维码"],
-        ["瀑布流", "上拉加载/下拉刷新(MJRefresh)", "空白状态页", "Toast(PKHUD)", "多页面(JXPagingView)", "列表嵌套(JXPagingView)", "轮播(FSPagerView)", "图片浏览",
-         "弹窗(SwiftMessages)", "弹出菜单(NewPopMenu)", "跑马灯(MarqueeLabel)", "滚动消息(RollingNotice-Swift)", "引导页(EAIntroView)", "功能引导(Instructions)", "截屏"],
-        ["图片选择(HXPhotoPicker)", "文件选择+文件预览", "时间选择", "标签选择1", "标签选择2", "地址选择(三联)", "地址选择(高德)", "城市选择"],
-        ["自定义导航栏", "抽屉(SideMenu)", "GridView"],
-        ["转场动画(Hero)", "TabviewCell动画", "星星评分", "粒子特效"]
+        [SLLocalText.home_faceId_TouchID, SLLocalText.home_faceDetector, SLLocalText.home_taptic, SLLocalText.home_sound, SLLocalText.home_QRCodeScan, SLLocalText.home_QRCodeMaker],
+        [SLLocalText.home_waterfall, SLLocalText.home_refreshAndLoad, SLLocalText.home_emptyPage, SLLocalText.home_toast, SLLocalText.home_naviPage, SLLocalText.home_listNest, SLLocalText.home_carouse, SLLocalText.home_imageBrowser,
+         SLLocalText.home_alert, SLLocalText.home_popMenu, SLLocalText.home_marquee, SLLocalText.home_rollingNotice, SLLocalText.home_guide, SLLocalText.home_instruction, SLLocalText.home_screenShot],
+        [SLLocalText.home_imagePicker, SLLocalText.home_filePicker, SLLocalText.home_datePicker, SLLocalText.home_tagPicker1, SLLocalText.home_tagPicker2, SLLocalText.home_addressPicker, SLLocalText.home_addressPicker_gaode, SLLocalText.home_cityPicker],
+        [SLLocalText.home_customNavigation, SLLocalText.home_drawer, SLLocalText.home_gridView],
+        [SLLocalText.home_transitionAnimation, SLLocalText.home_tableViewCellAnimation, SLLocalText.home_star, SLLocalText.home_emitter]
     ]
 }
 
@@ -29,7 +29,7 @@ extension SLHomeViewModel: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = dataArray[indexPath.section][indexPath.row]
+        cell.textLabel?.text = dataArray[indexPath.section][indexPath.row].text
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

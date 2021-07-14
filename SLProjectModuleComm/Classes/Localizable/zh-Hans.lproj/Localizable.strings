@@ -1,0 +1,88 @@
+/* 
+  Localizable.strings
+  SLProjectModuleComm
+
+  Created by 孙梁 on 2021/7/14.
+  
+*/
+
+"login" = "登录";
+"logout" = "退出";
+
+"tab_home" = "首页";
+"tab_discover" = "发现";
+"tab_my" = "我的";
+
+"home_faceId_TouchID" = "FaceID / TouchID";
+"home_faceDetector" = "人脸检测";
+"home_taptic" = "Taptic";
+"home_sound" = "音效";
+"home_QRCodeScan" = "二维码扫描";
+"home_QRCodeMaker" = "生成二维码";
+"home_waterfall" = "瀑布流";
+"home_refreshAndLoad" = "上拉加载/下拉刷新(MJRefresh)";
+"home_emptyPage" = "空白状态页";
+"home_toast" = "Toast(PKHUD)";
+"home_naviPage" = "导航页面(JXPagingView)";
+"home_listNest" = "列表嵌套(JXPagingView)";
+"home_carouse" = "轮播(FSPagerView)";
+"home_imageBrowser" = "图片浏览";
+"home_alert" = "弹窗(SwiftMessages)";
+"home_popMenu" = "弹出菜单(NewPopMenu)";
+"home_marquee" = "跑马灯(MarqueeLabel)";
+"home_rollingNotice" = "滚动消息(RollingNotice-Swift)";
+"home_guide" = "引导页(EAIntroView)";
+"home_instruction" = "功能引导(Instructions)";
+"home_screenShot" = "截屏";
+"home_imagePicker" = "图片选择(HXPhotoPicker)";
+"home_filePicker" = "文件选择/预览";
+"home_datePicker" = "时间选择";
+"home_tagPicker1" = "标签选择1";
+"home_tagPicker2" = "标签选择2";
+"home_addressPicker" = "地址选择(三联)";
+"home_addressPicker_gaode" = "地址选择(高德)";
+"home_cityPicker" = "城市选择";
+"home_customNavigation" = "自定义导航栏";
+"home_drawer" = "抽屉(SideMenu)";
+"home_gridView" = "GridView";
+"home_transitionAnimation" = "转场动画(Hero)";
+"home_tableViewCellAnimation" = "TableViewCell动画";
+"home_star" = "星星评分";
+"home_emitter" = "粒子特效";
+
+"discover_UMShare" = "友盟分享";
+"discover_JGShare" = "极光分享";
+"discover_wechatPayAndAliPay" = "微信支付/支付宝支付";
+"discover_inPurchase" = "App内购";
+"discover_RYIM" = "融云IM########";
+"discover_netWork" = "网络请求(Moya+RxSwift+HandyJSON)";
+"discover_socket" = "socket长连接";
+"discover_GCD" = "多线程GCD";
+"discover_component" = "组件化调用";
+"discover_AOP" = "AOP";
+"discover_stringInterpolation" = "字符串插值";
+"discover_customOperator" = "自定义/重载操作符";
+"discover_JS" = "JS交互";
+"discover_webView" = "WebView";
+"discover_authority" = "权限申请";
+"discover_location" = "定位";
+"discover_crypto" = "加解密(CryptoSwift)";
+"discover_videoPlayer" = "视频播放器#######";
+"discover_audeoPlayer" = "音频播放器#######";
+
+"my_iPhoneName" = "iPhone名称";
+"my_iPhoneDesc" = "设备型号";
+"my_sysName" = "系统名称";
+"my_systemVersion" = "系统版本号";
+"my_batteryLevel" = "电量";
+"my_networkStatus" = "网络状态";
+"my_IP" = "本机IP";
+"my_wifiIP" = "WIFI IP";
+"my_wifiName" = "WIFI名称";
+"my_wifiMacAddress" = "WIFI mac地址";
+"my_cleanCache" = "清除缓存";
+"my_localizable" = "国际化#########";
+"my_darkMode" = "黑色模式";
+"my_goSysSet" = "前往系统设置";
+"my_goAppSet" = "前往应用设置";
+"my_goAppStore" = "前往AppStore";

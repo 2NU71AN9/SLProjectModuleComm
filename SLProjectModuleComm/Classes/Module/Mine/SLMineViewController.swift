@@ -22,9 +22,9 @@ class SLMineViewController: BaseViewController {
         .base
     
     private let dataArray = [
-        ["iPhone名称", "设备型号", "系统名称", "系统版本号", "电量", "网络状态", "本机IP", "WIFI IP", "WIFI名称", "WIFI mac地址"],
-        ["清除缓存", "国际化#########", "黑色模式"],
-        ["前往系统设置", "前往自己应用设置", "前往AppStore"]
+        [SLLocalText.my_iPhoneName, SLLocalText.my_iPhoneDesc, SLLocalText.my_sysName, SLLocalText.my_systemVersion, SLLocalText.my_batteryLevel, SLLocalText.my_networkStatus, SLLocalText.my_IP, SLLocalText.my_wifiIP, SLLocalText.my_wifiName, SLLocalText.my_wifiMacAddress],
+        [SLLocalText.my_cleanCache, SLLocalText.my_localizable, SLLocalText.my_darkMode],
+        [SLLocalText.my_goSysSet, SLLocalText.my_goAppSet, SLLocalText.my_goAppStore]
     ]
     
     private lazy var segView: UISegmentedControl = {
@@ -40,8 +40,8 @@ class SLMineViewController: BaseViewController {
 extension SLMineViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "我的"
-        naviBar.item1Title = "退出"
+        title = SLLocalText.tab_my.text
+        naviBar.item1Title = SLLocalText.logout.text
         naviBar.item1Event = { AccountServicer.service.logout() }
         view.addSubview(tableView)
     }
@@ -89,7 +89,7 @@ extension SLMineViewController: UITableViewDelegate, UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
         }
-        cell?.textLabel?.text = dataArray[indexPath.section][indexPath.row]
+        cell?.textLabel?.text = dataArray[indexPath.section][indexPath.row].text
         cell?.accessoryType = .disclosureIndicator
         switch indexPath {
         case [0, 0]:

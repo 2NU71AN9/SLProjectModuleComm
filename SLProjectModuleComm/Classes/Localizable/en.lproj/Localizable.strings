@@ -1,0 +1,88 @@
+/* 
+  Localizable.strings
+  SLProjectModuleComm
+
+  Created by 孙梁 on 2021/7/14.
+  
+*/
+
+"login" = "Sign In";
+"logout" = "Log Out";
+
+"tab_home" = "Home";
+"tab_discover" = "Discover";
+"tab_my" = "My";
+
+"home_faceId_TouchID" = "FaceID / TouchID";
+"home_faceDetector" = "Face detector";
+"home_taptic" = "Taptic";
+"home_sound" = "Sound";
+"home_QRCodeScan" = "Scan qrCode";
+"home_QRCodeMaker" = "Make QRCode";
+"home_waterfall" = "Waterfall";
+"home_refreshAndLoad" = "Refresh&Load(MJRefresh)";
+"home_emptyPage" = "Empty page";
+"home_toast" = "Toast(PKHUD)";
+"home_naviPage" = "Navigation page(JXPagingView)";
+"home_listNest" = "ListNest(JXPagingView)";
+"home_carouse" = "Carouse(FSPagerView)";
+"home_imageBrowser" = "Image browser";
+"home_alert" = "Alert(SwiftMessages)";
+"home_popMenu" = "PopMenu(NewPopMenu)";
+"home_marquee" = "Marquee(MarqueeLabel)";
+"home_rollingNotice" = "Rolling notice(RollingNotice-Swift)";
+"home_guide" = "Guide page(EAIntroView)";
+"home_instruction" = "Instruction(Instructions)";
+"home_screenShot" = "Screen shot";
+"home_imagePicker" = "Image picker(HXPhotoPicker)";
+"home_filePicker" = "File picker";
+"home_datePicker" = "Date picker";
+"home_tagPicker1" = "Tag picker1";
+"home_tagPicker2" = "Tag picker2";
+"home_addressPicker" = "Address picker(trigeminy)";
+"home_addressPicker_gaode" = "Address picker(GaoDe)";
+"home_cityPicker" = "City picker";
+"home_customNavigation" = "Custom navigation";
+"home_drawer" = "Drawer(SideMenu)";
+"home_gridView" = "Grid view";
+"home_transitionAnimation" = "Transition animation(Hero)";
+"home_tableViewCellAnimation" = "TableViewCell animation";
+"home_star" = "Star";
+"home_emitter" = "Emitter";
+
+"discover_UMShare" = "UM-Share";
+"discover_JGShare" = "JG-Share";
+"discover_wechatPayAndAliPay" = "WechatPay&AliPay";
+"discover_inPurchase" = "InPurchase";
+"discover_RYIM" = "RY-IM########";
+"discover_netWork" = "Net work(Moya+RxSwift+HandyJSON)";
+"discover_socket" = "socket";
+"discover_GCD" = "GCD";
+"discover_component" = "Component";
+"discover_AOP" = "AOP";
+"discover_stringInterpolation" = "String interpolation";
+"discover_customOperator" = "Custom operator";
+"discover_JS" = "JS";
+"discover_webView" = "WebView";
+"discover_authority" = "Authority";
+"discover_location" = "Location";
+"discover_crypto" = "Crypto(CryptoSwift)";
+"discover_videoPlayer" = "VideoPlayer#######";
+"discover_audeoPlayer" = "AideoPlayer#######";
+
+"my_iPhoneName" = "iPhone name";
+"my_iPhoneDesc" = "iPhone description";
+"my_sysName" = "System name";
+"my_systemVersion" = "System version";
+"my_batteryLevel" = "Battery level";
+"my_networkStatus" = "Network status";
+"my_IP" = "iPhone IP";
+"my_wifiIP" = "WIFI IP";
+"my_wifiName" = "WIFI name";
+"my_wifiMacAddress" = "WIFI mac address";
+"my_cleanCache" = "Clean cache";
+"my_localizable" = "Localizable#########";
+"my_darkMode" = "Dark mode";
+"my_goSysSet" = "Go system set";
+"my_goAppSet" = "Go App set";
+"my_goAppStore" = "Go AppStore";

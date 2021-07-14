@@ -29,11 +29,11 @@ class SLDiscoverViewController: BaseViewController {
     }
     
     private let dataArray = [
-        ["友盟分享", "极光分享", "微信支付/支付宝支付", "App内购", "融云IM#######"],
-        ["网络请求(Moya+RxSwift+HandyJSON)", "socket长连接", "多线程GCD"],
-        ["组件化调用", "AOP", "字符串插值", "自定义/重载操作符", "JS交互", "WebView"],
-        ["权限申请", "定位", "加解密(CryptoSwift)"],
-        ["视频播放器#######", "音频播放器#######"]
+        [SLLocalText.discover_UMShare, SLLocalText.discover_JGShare, SLLocalText.discover_wechatPayAndAliPay, SLLocalText.discover_inPurchase, SLLocalText.discover_RYIM],
+        [SLLocalText.discover_netWork, SLLocalText.discover_socket, SLLocalText.discover_GCD],
+        [SLLocalText.discover_component, SLLocalText.discover_AOP, SLLocalText.discover_stringInterpolation, SLLocalText.discover_customOperator, SLLocalText.discover_JS, SLLocalText.discover_webView],
+        [SLLocalText.discover_authority, SLLocalText.discover_location, SLLocalText.discover_crypto],
+        [SLLocalText.discover_videoPlayer, SLLocalText.discover_audeoPlayer]
     ]
 }
 
@@ -41,7 +41,7 @@ class SLDiscoverViewController: BaseViewController {
 extension SLDiscoverViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "发现"
+        title = SLLocalText.tab_discover.text
         
          // 转场TableviewCell动画
 //        navigationController?.hero.isEnabled = true
@@ -56,7 +56,7 @@ extension SLDiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = dataArray[indexPath.section][indexPath.row]
+        cell.textLabel?.text = dataArray[indexPath.section][indexPath.row].text
         cell.hero.modifiers = [.fade, .scale(0.5)]
         return cell
     }

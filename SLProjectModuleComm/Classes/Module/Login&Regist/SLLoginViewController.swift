@@ -19,7 +19,7 @@ extension SLLoginViewController {
     
     override func setMasterView() {
         super.setMasterView()
-        title = "登录"
+        title = SLLocalText.login.text
     }
     
     override func setVisitorPage() {

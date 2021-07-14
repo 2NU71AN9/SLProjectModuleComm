@@ -29,13 +29,14 @@
                         <constraint firstAttribute="height" constant="45" id="I1z-xi-Vid"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="15"/>
-                    <state key="normal" title="登录">
+                    <state key="normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
                             <real key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="ltTitleNormal" value="login"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="loginAction:" destination="-1" eventType="touchUpInside" id="5j5-vG-SuN"/>

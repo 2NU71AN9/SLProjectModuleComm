@@ -1354,6 +1354,1496 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.string` struct is generated, and contains static references to 4 localization tables.
+  struct string {
+    /// This `R.string.infoPlist` struct is generated, and contains static references to 1 localization keys.
+    struct infoPlist {
+      /// en translation: My🥳
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let cfBundleDisplayName = Rswift.StringResource(key: "CFBundleDisplayName", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+
+      /// en translation: My🥳
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func cfBundleDisplayName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("CFBundleDisplayName", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "CFBundleDisplayName"
+        }
+
+        return NSLocalizedString("CFBundleDisplayName", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      fileprivate init() {}
+    }
+
+    /// This `R.string.localizable` struct is generated, and contains static references to 76 localization keys.
+    struct localizable {
+      /// en translation: AOP
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_AOP = Rswift.StringResource(key: "discover_AOP", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Address picker(GaoDe)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_addressPicker_gaode = Rswift.StringResource(key: "home_addressPicker_gaode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Address picker(trigeminy)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_addressPicker = Rswift.StringResource(key: "home_addressPicker", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: AideoPlayer#######
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_audeoPlayer = Rswift.StringResource(key: "discover_audeoPlayer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Alert(SwiftMessages)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_alert = Rswift.StringResource(key: "home_alert", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Authority
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_authority = Rswift.StringResource(key: "discover_authority", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Battery level
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_batteryLevel = Rswift.StringResource(key: "my_batteryLevel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Carouse(FSPagerView)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_carouse = Rswift.StringResource(key: "home_carouse", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: City picker
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_cityPicker = Rswift.StringResource(key: "home_cityPicker", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Clean cache
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_cleanCache = Rswift.StringResource(key: "my_cleanCache", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Component
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_component = Rswift.StringResource(key: "discover_component", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Crypto(CryptoSwift)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_crypto = Rswift.StringResource(key: "discover_crypto", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Custom navigation
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_customNavigation = Rswift.StringResource(key: "home_customNavigation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Custom operator
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_customOperator = Rswift.StringResource(key: "discover_customOperator", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Dark mode
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_darkMode = Rswift.StringResource(key: "my_darkMode", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Date picker
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_datePicker = Rswift.StringResource(key: "home_datePicker", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Discover
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let tab_discover = Rswift.StringResource(key: "tab_discover", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Drawer(SideMenu)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_drawer = Rswift.StringResource(key: "home_drawer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Emitter
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_emitter = Rswift.StringResource(key: "home_emitter", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Empty page
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_emptyPage = Rswift.StringResource(key: "home_emptyPage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Face detector
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_faceDetector = Rswift.StringResource(key: "home_faceDetector", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: FaceID / TouchID
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_faceId_TouchID = Rswift.StringResource(key: "home_faceId_TouchID", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: File picker
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_filePicker = Rswift.StringResource(key: "home_filePicker", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: GCD
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_GCD = Rswift.StringResource(key: "discover_GCD", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Go App set
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_goAppSet = Rswift.StringResource(key: "my_goAppSet", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Go AppStore
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_goAppStore = Rswift.StringResource(key: "my_goAppStore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Go system set
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_goSysSet = Rswift.StringResource(key: "my_goSysSet", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Grid view
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_gridView = Rswift.StringResource(key: "home_gridView", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Guide page(EAIntroView)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_guide = Rswift.StringResource(key: "home_guide", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Home
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let tab_home = Rswift.StringResource(key: "tab_home", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Image browser
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_imageBrowser = Rswift.StringResource(key: "home_imageBrowser", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Image picker(HXPhotoPicker)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_imagePicker = Rswift.StringResource(key: "home_imagePicker", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: InPurchase
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_inPurchase = Rswift.StringResource(key: "discover_inPurchase", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Instruction(Instructions)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_instruction = Rswift.StringResource(key: "home_instruction", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: JG-Share
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_JGShare = Rswift.StringResource(key: "discover_JGShare", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: JS
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_JS = Rswift.StringResource(key: "discover_JS", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: ListNest(JXPagingView)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_listNest = Rswift.StringResource(key: "home_listNest", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Localizable#########
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_localizable = Rswift.StringResource(key: "my_localizable", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Location
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_location = Rswift.StringResource(key: "discover_location", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Log Out
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let logout = Rswift.StringResource(key: "logout", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Make QRCode
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_QRCodeMaker = Rswift.StringResource(key: "home_QRCodeMaker", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Marquee(MarqueeLabel)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_marquee = Rswift.StringResource(key: "home_marquee", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: My
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let tab_my = Rswift.StringResource(key: "tab_my", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Navigation page(JXPagingView)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_naviPage = Rswift.StringResource(key: "home_naviPage", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Net work(Moya+RxSwift+HandyJSON)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_netWork = Rswift.StringResource(key: "discover_netWork", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Network status
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_networkStatus = Rswift.StringResource(key: "my_networkStatus", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: PopMenu(NewPopMenu)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_popMenu = Rswift.StringResource(key: "home_popMenu", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: RY-IM########
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_RYIM = Rswift.StringResource(key: "discover_RYIM", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Refresh&Load(MJRefresh)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_refreshAndLoad = Rswift.StringResource(key: "home_refreshAndLoad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Rolling notice(RollingNotice-Swift)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_rollingNotice = Rswift.StringResource(key: "home_rollingNotice", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Scan qrCode
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_QRCodeScan = Rswift.StringResource(key: "home_QRCodeScan", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Screen shot
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_screenShot = Rswift.StringResource(key: "home_screenShot", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Sign In
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let login = Rswift.StringResource(key: "login", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Sound
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_sound = Rswift.StringResource(key: "home_sound", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Star
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_star = Rswift.StringResource(key: "home_star", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: String interpolation
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_stringInterpolation = Rswift.StringResource(key: "discover_stringInterpolation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: System name
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_sysName = Rswift.StringResource(key: "my_sysName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: System version
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_systemVersion = Rswift.StringResource(key: "my_systemVersion", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: TableViewCell animation
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_tableViewCellAnimation = Rswift.StringResource(key: "home_tableViewCellAnimation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Tag picker1
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_tagPicker1 = Rswift.StringResource(key: "home_tagPicker1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Tag picker2
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_tagPicker2 = Rswift.StringResource(key: "home_tagPicker2", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Taptic
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_taptic = Rswift.StringResource(key: "home_taptic", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Toast(PKHUD)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_toast = Rswift.StringResource(key: "home_toast", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Transition animation(Hero)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_transitionAnimation = Rswift.StringResource(key: "home_transitionAnimation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: UM-Share
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_UMShare = Rswift.StringResource(key: "discover_UMShare", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: VideoPlayer#######
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_videoPlayer = Rswift.StringResource(key: "discover_videoPlayer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: WIFI IP
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_wifiIP = Rswift.StringResource(key: "my_wifiIP", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: WIFI mac address
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_wifiMacAddress = Rswift.StringResource(key: "my_wifiMacAddress", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: WIFI name
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_wifiName = Rswift.StringResource(key: "my_wifiName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Waterfall
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_waterfall = Rswift.StringResource(key: "home_waterfall", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: WebView
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_webView = Rswift.StringResource(key: "discover_webView", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: WechatPay&AliPay
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_wechatPayAndAliPay = Rswift.StringResource(key: "discover_wechatPayAndAliPay", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: iPhone IP
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_IP = Rswift.StringResource(key: "my_IP", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: iPhone description
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_iPhoneDesc = Rswift.StringResource(key: "my_iPhoneDesc", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: iPhone name
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let my_iPhoneName = Rswift.StringResource(key: "my_iPhoneName", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: socket
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_socket = Rswift.StringResource(key: "discover_socket", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+
+      /// en translation: AOP
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_AOP(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_AOP", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_AOP"
+        }
+
+        return NSLocalizedString("discover_AOP", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Address picker(GaoDe)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_addressPicker_gaode(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_addressPicker_gaode", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_addressPicker_gaode"
+        }
+
+        return NSLocalizedString("home_addressPicker_gaode", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Address picker(trigeminy)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_addressPicker(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_addressPicker", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_addressPicker"
+        }
+
+        return NSLocalizedString("home_addressPicker", bundle: bundle, comment: "")
+      }
+
+      /// en translation: AideoPlayer#######
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_audeoPlayer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_audeoPlayer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_audeoPlayer"
+        }
+
+        return NSLocalizedString("discover_audeoPlayer", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Alert(SwiftMessages)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_alert(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_alert", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_alert"
+        }
+
+        return NSLocalizedString("home_alert", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Authority
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_authority(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_authority", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_authority"
+        }
+
+        return NSLocalizedString("discover_authority", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Battery level
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_batteryLevel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_batteryLevel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_batteryLevel"
+        }
+
+        return NSLocalizedString("my_batteryLevel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Carouse(FSPagerView)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_carouse(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_carouse", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_carouse"
+        }
+
+        return NSLocalizedString("home_carouse", bundle: bundle, comment: "")
+      }
+
+      /// en translation: City picker
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_cityPicker(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_cityPicker", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_cityPicker"
+        }
+
+        return NSLocalizedString("home_cityPicker", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Clean cache
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_cleanCache(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_cleanCache", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_cleanCache"
+        }
+
+        return NSLocalizedString("my_cleanCache", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Component
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_component(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_component", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_component"
+        }
+
+        return NSLocalizedString("discover_component", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Crypto(CryptoSwift)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_crypto(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_crypto", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_crypto"
+        }
+
+        return NSLocalizedString("discover_crypto", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Custom navigation
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_customNavigation(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_customNavigation", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_customNavigation"
+        }
+
+        return NSLocalizedString("home_customNavigation", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Custom operator
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_customOperator(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_customOperator", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_customOperator"
+        }
+
+        return NSLocalizedString("discover_customOperator", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Dark mode
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_darkMode(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_darkMode", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_darkMode"
+        }
+
+        return NSLocalizedString("my_darkMode", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Date picker
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_datePicker(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_datePicker", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_datePicker"
+        }
+
+        return NSLocalizedString("home_datePicker", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Discover
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func tab_discover(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tab_discover", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tab_discover"
+        }
+
+        return NSLocalizedString("tab_discover", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Drawer(SideMenu)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_drawer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_drawer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_drawer"
+        }
+
+        return NSLocalizedString("home_drawer", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Emitter
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_emitter(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_emitter", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_emitter"
+        }
+
+        return NSLocalizedString("home_emitter", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Empty page
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_emptyPage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_emptyPage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_emptyPage"
+        }
+
+        return NSLocalizedString("home_emptyPage", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Face detector
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_faceDetector(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_faceDetector", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_faceDetector"
+        }
+
+        return NSLocalizedString("home_faceDetector", bundle: bundle, comment: "")
+      }
+
+      /// en translation: FaceID / TouchID
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_faceId_TouchID(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_faceId_TouchID", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_faceId_TouchID"
+        }
+
+        return NSLocalizedString("home_faceId_TouchID", bundle: bundle, comment: "")
+      }
+
+      /// en translation: File picker
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_filePicker(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_filePicker", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_filePicker"
+        }
+
+        return NSLocalizedString("home_filePicker", bundle: bundle, comment: "")
+      }
+
+      /// en translation: GCD
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_GCD(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_GCD", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_GCD"
+        }
+
+        return NSLocalizedString("discover_GCD", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Go App set
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_goAppSet(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_goAppSet", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_goAppSet"
+        }
+
+        return NSLocalizedString("my_goAppSet", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Go AppStore
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_goAppStore(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_goAppStore", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_goAppStore"
+        }
+
+        return NSLocalizedString("my_goAppStore", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Go system set
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_goSysSet(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_goSysSet", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_goSysSet"
+        }
+
+        return NSLocalizedString("my_goSysSet", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Grid view
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_gridView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_gridView", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_gridView"
+        }
+
+        return NSLocalizedString("home_gridView", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Guide page(EAIntroView)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_guide(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_guide", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_guide"
+        }
+
+        return NSLocalizedString("home_guide", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Home
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func tab_home(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tab_home", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tab_home"
+        }
+
+        return NSLocalizedString("tab_home", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Image browser
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_imageBrowser(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_imageBrowser", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_imageBrowser"
+        }
+
+        return NSLocalizedString("home_imageBrowser", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Image picker(HXPhotoPicker)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_imagePicker(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_imagePicker", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_imagePicker"
+        }
+
+        return NSLocalizedString("home_imagePicker", bundle: bundle, comment: "")
+      }
+
+      /// en translation: InPurchase
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_inPurchase(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_inPurchase", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_inPurchase"
+        }
+
+        return NSLocalizedString("discover_inPurchase", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Instruction(Instructions)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_instruction(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_instruction", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_instruction"
+        }
+
+        return NSLocalizedString("home_instruction", bundle: bundle, comment: "")
+      }
+
+      /// en translation: JG-Share
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_JGShare(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_JGShare", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_JGShare"
+        }
+
+        return NSLocalizedString("discover_JGShare", bundle: bundle, comment: "")
+      }
+
+      /// en translation: JS
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_JS(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_JS", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_JS"
+        }
+
+        return NSLocalizedString("discover_JS", bundle: bundle, comment: "")
+      }
+
+      /// en translation: ListNest(JXPagingView)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_listNest(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_listNest", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_listNest"
+        }
+
+        return NSLocalizedString("home_listNest", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Localizable#########
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_localizable(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_localizable", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_localizable"
+        }
+
+        return NSLocalizedString("my_localizable", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Location
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_location(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_location", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_location"
+        }
+
+        return NSLocalizedString("discover_location", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Log Out
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func logout(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("logout", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "logout"
+        }
+
+        return NSLocalizedString("logout", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Make QRCode
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_QRCodeMaker(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_QRCodeMaker", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_QRCodeMaker"
+        }
+
+        return NSLocalizedString("home_QRCodeMaker", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Marquee(MarqueeLabel)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_marquee(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_marquee", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_marquee"
+        }
+
+        return NSLocalizedString("home_marquee", bundle: bundle, comment: "")
+      }
+
+      /// en translation: My
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func tab_my(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("tab_my", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "tab_my"
+        }
+
+        return NSLocalizedString("tab_my", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Navigation page(JXPagingView)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_naviPage(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_naviPage", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_naviPage"
+        }
+
+        return NSLocalizedString("home_naviPage", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Net work(Moya+RxSwift+HandyJSON)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_netWork(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_netWork", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_netWork"
+        }
+
+        return NSLocalizedString("discover_netWork", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Network status
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_networkStatus(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_networkStatus", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_networkStatus"
+        }
+
+        return NSLocalizedString("my_networkStatus", bundle: bundle, comment: "")
+      }
+
+      /// en translation: PopMenu(NewPopMenu)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_popMenu(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_popMenu", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_popMenu"
+        }
+
+        return NSLocalizedString("home_popMenu", bundle: bundle, comment: "")
+      }
+
+      /// en translation: RY-IM########
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_RYIM(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_RYIM", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_RYIM"
+        }
+
+        return NSLocalizedString("discover_RYIM", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Refresh&Load(MJRefresh)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_refreshAndLoad(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_refreshAndLoad", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_refreshAndLoad"
+        }
+
+        return NSLocalizedString("home_refreshAndLoad", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Rolling notice(RollingNotice-Swift)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_rollingNotice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_rollingNotice", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_rollingNotice"
+        }
+
+        return NSLocalizedString("home_rollingNotice", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Scan qrCode
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_QRCodeScan(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_QRCodeScan", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_QRCodeScan"
+        }
+
+        return NSLocalizedString("home_QRCodeScan", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Screen shot
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_screenShot(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_screenShot", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_screenShot"
+        }
+
+        return NSLocalizedString("home_screenShot", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sign In
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func login(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("login", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "login"
+        }
+
+        return NSLocalizedString("login", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Sound
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_sound(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_sound", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_sound"
+        }
+
+        return NSLocalizedString("home_sound", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Star
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_star(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_star", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_star"
+        }
+
+        return NSLocalizedString("home_star", bundle: bundle, comment: "")
+      }
+
+      /// en translation: String interpolation
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_stringInterpolation(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_stringInterpolation", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_stringInterpolation"
+        }
+
+        return NSLocalizedString("discover_stringInterpolation", bundle: bundle, comment: "")
+      }
+
+      /// en translation: System name
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_sysName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_sysName", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_sysName"
+        }
+
+        return NSLocalizedString("my_sysName", bundle: bundle, comment: "")
+      }
+
+      /// en translation: System version
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_systemVersion(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_systemVersion", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_systemVersion"
+        }
+
+        return NSLocalizedString("my_systemVersion", bundle: bundle, comment: "")
+      }
+
+      /// en translation: TableViewCell animation
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_tableViewCellAnimation(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_tableViewCellAnimation", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_tableViewCellAnimation"
+        }
+
+        return NSLocalizedString("home_tableViewCellAnimation", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tag picker1
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_tagPicker1(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_tagPicker1", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_tagPicker1"
+        }
+
+        return NSLocalizedString("home_tagPicker1", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Tag picker2
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_tagPicker2(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_tagPicker2", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_tagPicker2"
+        }
+
+        return NSLocalizedString("home_tagPicker2", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Taptic
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_taptic(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_taptic", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_taptic"
+        }
+
+        return NSLocalizedString("home_taptic", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Toast(PKHUD)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_toast(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_toast", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_toast"
+        }
+
+        return NSLocalizedString("home_toast", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Transition animation(Hero)
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_transitionAnimation(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_transitionAnimation", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_transitionAnimation"
+        }
+
+        return NSLocalizedString("home_transitionAnimation", bundle: bundle, comment: "")
+      }
+
+      /// en translation: UM-Share
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_UMShare(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_UMShare", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_UMShare"
+        }
+
+        return NSLocalizedString("discover_UMShare", bundle: bundle, comment: "")
+      }
+
+      /// en translation: VideoPlayer#######
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_videoPlayer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_videoPlayer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_videoPlayer"
+        }
+
+        return NSLocalizedString("discover_videoPlayer", bundle: bundle, comment: "")
+      }
+
+      /// en translation: WIFI IP
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_wifiIP(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_wifiIP", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_wifiIP"
+        }
+
+        return NSLocalizedString("my_wifiIP", bundle: bundle, comment: "")
+      }
+
+      /// en translation: WIFI mac address
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_wifiMacAddress(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_wifiMacAddress", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_wifiMacAddress"
+        }
+
+        return NSLocalizedString("my_wifiMacAddress", bundle: bundle, comment: "")
+      }
+
+      /// en translation: WIFI name
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_wifiName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_wifiName", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_wifiName"
+        }
+
+        return NSLocalizedString("my_wifiName", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Waterfall
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_waterfall(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_waterfall", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_waterfall"
+        }
+
+        return NSLocalizedString("home_waterfall", bundle: bundle, comment: "")
+      }
+
+      /// en translation: WebView
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_webView(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_webView", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_webView"
+        }
+
+        return NSLocalizedString("discover_webView", bundle: bundle, comment: "")
+      }
+
+      /// en translation: WechatPay&AliPay
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_wechatPayAndAliPay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_wechatPayAndAliPay", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_wechatPayAndAliPay"
+        }
+
+        return NSLocalizedString("discover_wechatPayAndAliPay", bundle: bundle, comment: "")
+      }
+
+      /// en translation: iPhone IP
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_IP(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_IP", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_IP"
+        }
+
+        return NSLocalizedString("my_IP", bundle: bundle, comment: "")
+      }
+
+      /// en translation: iPhone description
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_iPhoneDesc(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_iPhoneDesc", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_iPhoneDesc"
+        }
+
+        return NSLocalizedString("my_iPhoneDesc", bundle: bundle, comment: "")
+      }
+
+      /// en translation: iPhone name
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func my_iPhoneName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("my_iPhoneName", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "my_iPhoneName"
+        }
+
+        return NSLocalizedString("my_iPhoneName", bundle: bundle, comment: "")
+      }
+
+      /// en translation: socket
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_socket(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_socket", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_socket"
+        }
+
+        return NSLocalizedString("discover_socket", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.string.main` struct is generated, and contains static references to 0 localization keys.
+    struct main {
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()

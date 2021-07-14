@@ -18,7 +18,7 @@ class SLHomeViewController: BaseViewController {
 extension SLHomeViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "首页"
+        title = SLLocalText.tab_home.text
         guideManager.showMarks(over: self, complete: nil)
     }
 }
