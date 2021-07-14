@@ -11,6 +11,7 @@ import PKHUD
 import SVProgressHUD
 import SLEmptyPage
 import GDPerformanceView_Swift
+import SLIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -73,6 +74,7 @@ extension AppDelegate {
     }
 
     private func config(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        SLDisplayModeManager.shared.setup()
         SLNetworkListenManager.shared.listen()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true

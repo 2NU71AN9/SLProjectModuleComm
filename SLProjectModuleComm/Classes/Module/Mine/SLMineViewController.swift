@@ -23,9 +23,17 @@ class SLMineViewController: BaseViewController {
     
     private let dataArray = [
         ["iPhone名称", "设备型号", "系统名称", "系统版本号", "电量", "网络状态", "本机IP", "WIFI IP", "WIFI名称", "WIFI mac地址"],
-        ["清除缓存", "黑色模式########", "国际化#########"],
+        ["清除缓存", "国际化#########", "黑色模式"],
         ["前往系统设置", "前往自己应用设置", "前往AppStore"]
     ]
+    
+    private lazy var segView: UISegmentedControl = {
+        var items = ["跟随系统", "普通", "黑色"]
+        let view = UISegmentedControl(items: items)
+        view.selectedSegmentIndex = SLDisplayModeManager.shared.currentMode.rawValue
+        view.addTarget(self, action: #selector(changeMode), for: .valueChanged)
+        return view
+    }()
 }
 
 // MARK: - LifeCyle
@@ -64,7 +72,17 @@ extension SLMineViewController: UITableViewDelegate, UITableViewDataSource {
         dataArray.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataArray[section].count
+        switch section {
+        case 1:
+            if #available(iOS 13.0, *) {
+                return dataArray[section].count
+            } else {
+                return dataArray[section].count - 1
+            }
+        default:
+            return dataArray[section].count
+        }
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")
@@ -106,6 +124,8 @@ extension SLMineViewController: UITableViewDelegate, UITableViewDataSource {
             cell?.detailTextLabel?.text = SL.tools.getWifiNameWithMac().1
         case [1, 0]:
             cell?.detailTextLabel?.text = SLFileManager.access2Cache()
+        case [1, 2]:
+            cell?.accessoryView = segView
         default:
             cell?.detailTextLabel?.text = nil
         }
@@ -141,6 +161,19 @@ extension SLMineViewController {
             }
         case [2, 2]:
             SL.tools.goAppStore(APPID)
+        default:
+            break
+        }
+    }
+    
+    @objc private func changeMode() {
+        switch segView.selectedSegmentIndex {
+        case 0:
+            SLDisplayModeManager.shared.setDisplayMode(.flowSystem(nil))
+        case 1:
+            SLDisplayModeManager.shared.setDisplayMode(.light)
+        case 2:
+            SLDisplayModeManager.shared.setDisplayMode(.dark)
         default:
             break
         }
