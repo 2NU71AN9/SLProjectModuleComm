@@ -36,6 +36,6 @@ class MarqueeViewController: BaseViewController {
 extension MarqueeViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "跑马灯"
+        title = SLLocalText.home_marquee.text
     }
 }

@@ -29,7 +29,7 @@ class FaceIDViewController: BaseViewController {
 extension FaceIDViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "FaceID / TouchID"
+        title = SLLocalText.home_faceId_TouchID.text
         if let error = manager.isValid() {
             label.text = error.descText
         }

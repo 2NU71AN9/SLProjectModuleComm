@@ -15,7 +15,7 @@ class SocketViewController: BaseViewController {
 extension SocketViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "Socket长连接"
+        title = SLLocalText.discover_socket.text
         
         socket.connect()
             .receiveText { str in

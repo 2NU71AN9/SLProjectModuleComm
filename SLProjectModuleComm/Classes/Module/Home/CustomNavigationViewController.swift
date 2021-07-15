@@ -34,7 +34,7 @@ class CustomNavigationViewController: BaseViewController {
 extension CustomNavigationViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "自定义导航栏"
+        title = SLLocalText.home_customNavigation.text
         naviBar.item1Title = "按钮1"
         naviBar.item2Image = R.image.tab1_selected()
         naviBar.item3Title = "按钮3"

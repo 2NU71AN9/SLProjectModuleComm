@@ -42,7 +42,7 @@ class WaterfallFlowViewController: BaseViewController {
 extension WaterfallFlowViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "瀑布流"
+        title = SLLocalText.home_waterfall.text
         view.addSubview(collectView)
     }
 }

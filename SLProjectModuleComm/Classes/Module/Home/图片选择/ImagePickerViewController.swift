@@ -50,7 +50,7 @@ class ImagePickerViewController: BaseViewController {
 extension ImagePickerViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "图片选择"
+        title = SLLocalText.home_imagePicker.text
         view.addSubview(segmentedView)
         view.addSubview(listContainerView)
     }

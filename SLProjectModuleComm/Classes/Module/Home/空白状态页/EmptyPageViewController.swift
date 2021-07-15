@@ -51,7 +51,7 @@ class EmptyPageViewController: BaseViewController {
 extension EmptyPageViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "空白状态页"
+        title = SLLocalText.home_emptyPage.text
         view.addSubview(segmentedView)
         view.addSubview(listContainerView)
     }

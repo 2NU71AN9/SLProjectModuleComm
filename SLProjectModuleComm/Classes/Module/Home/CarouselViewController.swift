@@ -208,7 +208,7 @@ class CarouselViewController: BaseViewController {
 extension CarouselViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "轮播"
+        title = SLLocalText.home_carouse.text
     }
     
     override func setVisitorPage() {

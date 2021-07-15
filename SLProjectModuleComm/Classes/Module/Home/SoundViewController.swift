@@ -12,7 +12,7 @@ class SoundViewController: BaseViewController {
     
     override func setMasterView() {
         super.setMasterView()
-        title = "音效"
+        title = SLLocalText.home_sound.text
     }
     
     @IBAction func btn1Action(_ sender: UIButton) {

@@ -68,7 +68,7 @@
 "discover_location" = "Location";
 "discover_crypto" = "Crypto(CryptoSwift)";
 "discover_videoPlayer" = "VideoPlayer#######";
-"discover_audeoPlayer" = "AideoPlayer#######";
+"discover_audioPlayer" = "AudioPlayer#######";
 
 "my_iPhoneName" = "iPhone name";
 "my_iPhoneDesc" = "iPhone description";
@@ -81,7 +81,7 @@
 "my_wifiName" = "WIFI name";
 "my_wifiMacAddress" = "WIFI mac address";
 "my_cleanCache" = "Clean cache";
-"my_localizable" = "Localizable#########";
+"my_localizable" = "Localizable";
 "my_darkMode" = "Dark mode";
 "my_goSysSet" = "Go system set";
 "my_goAppSet" = "Go App set";

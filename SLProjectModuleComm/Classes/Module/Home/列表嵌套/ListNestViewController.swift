@@ -58,7 +58,7 @@ class ListNestViewController: BaseViewController {
 extension ListNestViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "列表嵌套"
+        title = SLLocalText.home_listNest.text
         view.addSubview(pagingView)
     }
     override func viewWillLayoutSubviews() {

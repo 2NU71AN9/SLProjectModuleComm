@@ -64,7 +64,7 @@ class Emitter2ViewController: BaseViewController {
 extension Emitter2ViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "粒子特效2"
+        title = SLLocalText.home_emitter.text
         view.layer.addSublayer(emitter)
     }
 }

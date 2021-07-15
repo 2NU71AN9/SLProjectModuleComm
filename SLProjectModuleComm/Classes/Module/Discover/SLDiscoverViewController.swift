@@ -33,7 +33,7 @@ class SLDiscoverViewController: BaseViewController {
         [SLLocalText.discover_netWork, SLLocalText.discover_socket, SLLocalText.discover_GCD],
         [SLLocalText.discover_component, SLLocalText.discover_AOP, SLLocalText.discover_stringInterpolation, SLLocalText.discover_customOperator, SLLocalText.discover_JS, SLLocalText.discover_webView],
         [SLLocalText.discover_authority, SLLocalText.discover_location, SLLocalText.discover_crypto],
-        [SLLocalText.discover_videoPlayer, SLLocalText.discover_audeoPlayer]
+        [SLLocalText.discover_videoPlayer, SLLocalText.discover_audioPlayer]
     ]
 }
 
@@ -98,7 +98,7 @@ extension SLDiscoverViewController {
             let vc = GCDViewController()
             navigationController?.pushViewController(vc, animated: true)
         case [2, 0]:
-            if let vc = CTMediator.sharedInstance().moduleVC(title: "组件化调用") {
+            if let vc = CTMediator.sharedInstance().moduleVC(title: SLLocalText.discover_component.text) {
                 navigationController?.pushViewController(vc, animated: true)
             }
         case [2, 1]:

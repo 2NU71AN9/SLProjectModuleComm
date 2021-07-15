@@ -79,7 +79,7 @@ class MessageAlertViewController: BaseViewController {
 extension MessageAlertViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "弹窗"
+        title = SLLocalText.home_alert.text
     }
     
     override func setVisitorPage() {

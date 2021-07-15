@@ -34,6 +34,6 @@ class ToastViewController: BaseViewController {
 extension ToastViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "Toast"
+        title = SLLocalText.home_toast.text
     }
 }

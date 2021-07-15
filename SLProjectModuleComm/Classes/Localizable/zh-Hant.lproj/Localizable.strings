@@ -68,7 +68,7 @@
 "discover_location" = "定位";
 "discover_crypto" = "加解密(CryptoSwift)";
 "discover_videoPlayer" = "視頻播放器#######";
-"discover_audeoPlayer" = "音頻播放器#######";
+"discover_audioPlayer" = "音頻播放器#######";
 
 "my_iPhoneName" = "iPhone名稱";
 "my_iPhoneDesc" = "設備型號";
@@ -81,7 +81,7 @@
 "my_wifiName" = "WIFI名稱";
 "my_wifiMacAddress" = "WIFI mac地址";
 "my_cleanCache" = "清除緩存";
-"my_localizable" = "國際化#########";
+"my_localizable" = "國際化";
 "my_darkMode" = "黑色模式";
 "my_goSysSet" = "前往系統設置";
 "my_goAppSet" = "前往應用設置";

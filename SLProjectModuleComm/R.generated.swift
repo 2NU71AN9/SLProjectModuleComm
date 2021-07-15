@@ -1400,14 +1400,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let home_addressPicker = Rswift.StringResource(key: "home_addressPicker", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
-      /// en translation: AideoPlayer#######
-      ///
-      /// Locales: en, zh-Hans, zh-Hant
-      static let discover_audeoPlayer = Rswift.StringResource(key: "discover_audeoPlayer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
       /// en translation: Alert(SwiftMessages)
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let home_alert = Rswift.StringResource(key: "home_alert", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: AudioPlayer#######
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let discover_audioPlayer = Rswift.StringResource(key: "discover_audioPlayer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
       /// en translation: Authority
       ///
       /// Locales: en, zh-Hans, zh-Hant
@@ -1536,7 +1536,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let home_listNest = Rswift.StringResource(key: "home_listNest", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
-      /// en translation: Localizable#########
+      /// en translation: Localizable
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let my_localizable = Rswift.StringResource(key: "my_localizable", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
@@ -1738,21 +1738,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("home_addressPicker", bundle: bundle, comment: "")
       }
 
-      /// en translation: AideoPlayer#######
-      ///
-      /// Locales: en, zh-Hans, zh-Hant
-      static func discover_audeoPlayer(preferredLanguages: [String]? = nil) -> String {
-        guard let preferredLanguages = preferredLanguages else {
-          return NSLocalizedString("discover_audeoPlayer", bundle: hostingBundle, comment: "")
-        }
-
-        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
-          return "discover_audeoPlayer"
-        }
-
-        return NSLocalizedString("discover_audeoPlayer", bundle: bundle, comment: "")
-      }
-
       /// en translation: Alert(SwiftMessages)
       ///
       /// Locales: en, zh-Hans, zh-Hant
@@ -1766,6 +1751,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("home_alert", bundle: bundle, comment: "")
+      }
+
+      /// en translation: AudioPlayer#######
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func discover_audioPlayer(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("discover_audioPlayer", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "discover_audioPlayer"
+        }
+
+        return NSLocalizedString("discover_audioPlayer", bundle: bundle, comment: "")
       }
 
       /// en translation: Authority
@@ -2248,7 +2248,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("home_listNest", bundle: bundle, comment: "")
       }
 
-      /// en translation: Localizable#########
+      /// en translation: Localizable
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static func my_localizable(preferredLanguages: [String]? = nil) -> String {

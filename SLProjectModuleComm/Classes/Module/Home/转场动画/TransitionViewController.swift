@@ -114,6 +114,6 @@ class TransitionViewController: BaseViewController {
 extension TransitionViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "转场动画"
+        title = SLLocalText.home_transitionAnimation.text
     }
 }

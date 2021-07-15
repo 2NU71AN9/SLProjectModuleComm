@@ -34,7 +34,7 @@ class ScrollMsgViewController: BaseViewController {
 extension ScrollMsgViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "滚动消息"
+        title = SLLocalText.home_rollingNotice.text
         view.addSubview(msgView1)
         view.addSubview(msgView2)
         msgView1.reloadDataAndStartRoll()
@@ -83,16 +83,4 @@ extension ScrollMsgViewController: GYRollingNoticeViewDelegate, GYRollingNoticeV
     func rollingNoticeView(_ roolingView: GYRollingNoticeView, didClickAt index: Int) {
          print("\(index)")
     }
-}
-
-// MARK: - Privater Methods
-extension ScrollMsgViewController {
-    override func bind() {
-        super.bind()
-    }
-}
-
-// MARK: - Event
-extension ScrollMsgViewController {
-    
 }

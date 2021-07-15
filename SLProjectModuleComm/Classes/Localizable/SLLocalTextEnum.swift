@@ -67,7 +67,7 @@ public enum SLLocalText: String {
     case discover_location
     case discover_crypto
     case discover_videoPlayer
-    case discover_audeoPlayer
+    case discover_audioPlayer
     
     case my_iPhoneName
     case my_iPhoneDesc

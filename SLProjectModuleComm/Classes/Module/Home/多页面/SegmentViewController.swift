@@ -49,7 +49,7 @@ class SegmentViewController: BaseViewController {
 extension SegmentViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "多页面"
+        title = SLLocalText.home_naviPage.text
         view.addSubview(segmentedView)
         view.addSubview(listContainerView)
     }

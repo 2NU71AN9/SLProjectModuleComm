@@ -12,7 +12,7 @@ class TapticViewController: BaseViewController {
     
     override func setMasterView() {
         super.setMasterView()
-        title = "Taptic"
+        title = SLLocalText.home_taptic.text
     }
     
     @IBAction func btn1Action(_ sender: UIButton) {

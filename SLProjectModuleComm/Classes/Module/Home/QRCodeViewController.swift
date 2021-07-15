@@ -32,6 +32,6 @@ class QRCodeViewController: BaseViewController {
 extension QRCodeViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "生成二维码"
+        title = SLLocalText.home_QRCodeMaker.text
     }
 }

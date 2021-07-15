@@ -30,7 +30,7 @@ class CryptoViewController: BaseViewController {
 extension CryptoViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "加解密"
+        title = SLLocalText.discover_crypto.text
         view.addSubview(tableView)
         
         DispatchQueue.global().async { [weak self] in

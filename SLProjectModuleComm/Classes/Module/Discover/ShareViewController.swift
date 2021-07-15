@@ -40,7 +40,7 @@ class ShareViewController: BaseViewController {
 extension ShareViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "\(type == 0 ? "友盟" : "极光")分享"
+        title = type == 0 ? SLLocalText.discover_UMShare.text : SLLocalText.discover_JGShare.text
         view.addSubview(tableView)
     }
     

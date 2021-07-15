@@ -26,7 +26,7 @@ class AppPayViewController: BaseViewController {
 extension AppPayViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "微信/支付宝支付"
+        title = SLLocalText.discover_wechatPayAndAliPay.text
         
         // 不应该设置某个类未代理, 应该设置全局代理, 全局接收支付结果通知
         PayManager.shared.delegate = self

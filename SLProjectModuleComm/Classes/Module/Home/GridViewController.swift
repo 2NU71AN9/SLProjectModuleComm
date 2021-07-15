@@ -43,7 +43,7 @@ class GridViewController: BaseViewController {
 extension GridViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "GridView"
+        title = SLLocalText.home_gridView.text
         tagView1.add(tags)
         tagView1.reload()
         tagView2.add(tags)

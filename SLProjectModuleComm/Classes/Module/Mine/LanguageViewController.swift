@@ -1,15 +1,17 @@
 //
-//  RefreshViewController.swift
+//  LanguageViewController.swift
 //  SLProjectModuleComm
 //
-//  Created by 孙梁 on 2021/6/23.
+//  Created by 孙梁 on 2021/7/15.
 //
 
 import UIKit
+import SLIKit
 
-class RefreshViewController: BaseViewController {
-
+class LanguageViewController: BaseViewController {
     private lazy var tableView = UITableView(frame: CGRect.zero, style: .insetGrouped).sl
+        .showsVerticalScrollIndicator(false)
+        .showsHorizontalScrollIndicator(false)
         .delegate(self)
         .dataSource(self)
         .rowHeight(UITableView.automaticDimension)
@@ -17,22 +19,16 @@ class RefreshViewController: BaseViewController {
         .estimatedSectionHeaderHeight(0)
         .estimatedSectionFooterHeight(0)
         .registerClass(UITableViewCell.self)
-        .refreshHeader { [weak self] in
-            self?.refresh()
-        }
-        .refreshFooter { [weak self] in
-            self?.loadMore()
-        }
         .base
     
-    private var page = 1
+    private let dataArray = SLLanguageManager.shared.availableLanguages
 }
 
 // MARK: - LifeCyle
-extension RefreshViewController {
+extension LanguageViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = SLLocalText.home_refreshAndLoad.text
+        title = SLLocalText.discover_location.text
         view.addSubview(tableView)
     }
     
@@ -46,43 +42,35 @@ extension RefreshViewController {
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension RefreshViewController: UITableViewDelegate, UITableViewDataSource {
+extension LanguageViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        page
+        1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        dataArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        cell.textLabel?.text = dataArray[indexPath.row].title
+        cell.accessoryType = dataArray[indexPath.row].isCurrent ? .checkmark : .none
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let language = dataArray[indexPath.row]
+        guard !language.isCurrent, let code = language.code else { return }
+        SLLanguageManager.shared.setLanguage(with: code)
+        tableView.reloadData()
     }
 }
 
 // MARK: - Privater Methods
-extension RefreshViewController {
+extension LanguageViewController {
     override func bind() {
         super.bind()
-    }
-    
-    private func refresh() {
-        page = 1
-        loadData()
-    }
-    private func loadMore() {
-        page += 1
-        loadData()
-    }
-    private func loadData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            self?.tableView.sl.endRefreshing(PAGE_SIZE, standard: PAGE_SIZE)
-            self?.tableView.reloadData()
-        }
     }
 }
 
 // MARK: - Event
-extension RefreshViewController {
+extension LanguageViewController {
     
 }

@@ -15,7 +15,7 @@ class NetworkViewController: BaseViewController {
 extension NetworkViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "网络请求"
+        title = SLLocalText.discover_netWork.text
     }
 }
 

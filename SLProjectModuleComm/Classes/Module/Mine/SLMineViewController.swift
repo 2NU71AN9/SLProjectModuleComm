@@ -151,6 +151,9 @@ extension SLMineViewController {
             SLFileManager.cleanCache { [weak self] in
                 self?.tableView.cellForRow(at: indexPath)?.detailTextLabel?.text = SLFileManager.access2Cache()
             }
+        case [1, 1]:
+            let vc = LanguageViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case [2, 0]:
             if let url = URL(string: "App-Prefs:root") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)

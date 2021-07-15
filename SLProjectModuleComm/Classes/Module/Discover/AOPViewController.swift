@@ -23,7 +23,7 @@ class AOPViewController: BaseViewController {
 extension AOPViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "AOP"
+        title = SLLocalText.discover_AOP.text
     }
 }
 

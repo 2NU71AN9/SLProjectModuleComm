@@ -24,7 +24,7 @@ class AppPurchaseViewController: BaseViewController {
 extension AppPurchaseViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "App内购"
+        title = SLLocalText.discover_inPurchase.text
         
         AppPurchaseManager.shared.getProductList(ids: ["jb01", "jb02"]) { _, _ in
             

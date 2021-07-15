@@ -25,7 +25,7 @@ class StarViewController: BaseViewController {
 extension StarViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "星星评分"
+        title = SLLocalText.home_star.text
         setRating()
     }
     

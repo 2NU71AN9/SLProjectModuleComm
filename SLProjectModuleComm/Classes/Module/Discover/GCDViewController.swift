@@ -102,6 +102,6 @@ class GCDViewController: BaseViewController {
 extension GCDViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "多线程GCD"
+        title = SLLocalText.discover_GCD.text
     }
 }

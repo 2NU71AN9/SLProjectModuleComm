@@ -15,7 +15,7 @@ class CustomOperatorViewController: BaseViewController {
 extension CustomOperatorViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "自定义/重载操作符"
+        title = SLLocalText.discover_customOperator.text
     }
 }
 

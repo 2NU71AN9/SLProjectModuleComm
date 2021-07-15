@@ -68,7 +68,7 @@ class PopMenuCustomViewController: BaseViewController {
 extension PopMenuCustomViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "弹出菜单"
+        title = SLLocalText.home_popMenu.text
         naviBar.item1Title = "点击"
         naviBar.item1Event = { [weak self] in
             self?.showMenu1()

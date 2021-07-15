@@ -35,7 +35,7 @@ class LocationViewController: BaseViewController {
 extension LocationViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "定位"
+        title = SLLocalText.discover_location.text
         SL.location.minMeter(1).start(true).complete { [weak self] location in
             self?.location = location
         }

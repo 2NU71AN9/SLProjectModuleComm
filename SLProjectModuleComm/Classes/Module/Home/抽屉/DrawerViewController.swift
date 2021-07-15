@@ -52,7 +52,7 @@ class DrawerViewController: BaseViewController {
 extension DrawerViewController {
     override func setMasterView() {
         super.setMasterView()
-        title = "抽屉"
+        title = SLLocalText.home_drawer.text
         
         SideMenuManager.default.leftMenuNavigationController = leftMenu
         SideMenuManager.default.rightMenuNavigationController = rightMenu
