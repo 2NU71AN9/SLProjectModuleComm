@@ -1612,7 +1612,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let discover_stringInterpolation = Rswift.StringResource(key: "discover_stringInterpolation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
-      /// en translation: Swipe cell########
+      /// en translation: Swipe cell
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let home_swipeCell = Rswift.StringResource(key: "home_swipeCell", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
@@ -2537,7 +2537,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("discover_stringInterpolation", bundle: bundle, comment: "")
       }
 
-      /// en translation: Swipe cell########
+      /// en translation: Swipe cell
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static func home_swipeCell(preferredLanguages: [String]? = nil) -> String {

@@ -34,7 +34,7 @@
 "home_guide" = "引导页(EAIntroView)";
 "home_instruction" = "功能引导(Instructions)";
 "home_screenShot" = "截屏";
-"home_swipeCell" = "cell侧滑########";
+"home_swipeCell" = "cell侧滑";
 "home_imagePicker" = "图片选择(HXPhotoPicker)";
 "home_filePicker" = "文件选择/预览";
 "home_datePicker" = "时间选择";

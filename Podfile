@@ -45,7 +45,7 @@ target 'SLProjectModuleComm' do
   pod 'CryptoSwift' #加密
   pod 'DDGScreenShot' #截图
   pod 'DeviceKit'
-  pod 'SwipeCellKit' #cell侧滑
+  pod 'MGSwipeTableCell' #cell侧滑
   
   # ===============权限===============
   pod 'SPPermissions' #所有, 上架时使用子项

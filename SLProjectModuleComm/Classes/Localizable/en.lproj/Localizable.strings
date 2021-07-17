@@ -34,7 +34,7 @@
 "home_guide" = "Guide page(EAIntroView)";
 "home_instruction" = "Instruction(Instructions)";
 "home_screenShot" = "Screen shot";
-"home_swipeCell" = "Swipe cell########";
+"home_swipeCell" = "Swipe cell";
 "home_imagePicker" = "Image picker(HXPhotoPicker)";
 "home_filePicker" = "File picker";
 "home_datePicker" = "Date picker";

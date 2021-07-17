@@ -14,7 +14,9 @@ class SLHomeView: BaseView {
     
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.sl.registerClass(UITableViewCell.self)
+            tableView.sl
+                .registerClass(UITableViewCell.self)
+                .registerClass(SwipeTableViewCell.self)
         }
     }
 }
