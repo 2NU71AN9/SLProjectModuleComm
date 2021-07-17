@@ -10,8 +10,7 @@ import RxCocoa
 import RxSwift
 import Moya
 import SwiftyJSON
-import SVProgressHUD
-import PKHUD
+import SLIKit
 
 /// Moya插件: 网络请求时显示loading...
 internal final class ShowProgress: PluginType {
@@ -28,21 +27,13 @@ internal final class ShowProgress: PluginType {
         guard let target = target as? APIService else { return }
         /// 判断是否需要显示
         if target.showProgress {
-            DispatchQueue.main.async {
-                SVProgressHUD.show()
-            }
-        } else {
-            DispatchQueue.main.async {
-                SVProgressHUD.show(UIImage(), status: nil)
-            }
+            SLHUD.loading(nil, interaction: false)
         }
     }
 
     /// 在收到响应之后调用，但是在MoyaProvider调用它的完成处理程序之前调用
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
-        DispatchQueue.main.async {
-            SVProgressHUD.dismiss()
-        }
+        SLHUD.dismiss()
     }
 
     /// 调用以在完成之前修改结果
@@ -56,9 +47,7 @@ internal final class CheckNetStatus: PluginType {
         if NetReachabilityManager.shared.cur_status.value == .notReachable ||
             NetReachabilityManager.shared.cur_status.value == .unknown {
             NetworkHandler.APIProvider.session.cancelAllRequests()
-            DispatchQueue.main.async {
-                HUD.flash(.label("网络错误,请检查网络设置"), delay: 2)
-            }
+            SLHUD.message(desc: "网络错误,请检查网络设置")
         }
     }
 }

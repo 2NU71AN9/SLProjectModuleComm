@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PKHUD
+import SLIKit
 
 public class PayManager: NSObject {
     @objc static let shared = PayManager()
@@ -26,15 +26,15 @@ public class PayManager: NSObject {
 
 extension PayManager {
     func paySuccess() {
-        HUD.flash(.labeledError(title: nil, subtitle: "支付成功"), delay: 2)
+        SLHUD.message(title: nil, desc: "支付成功")
         delegate?.paySuccess()
     }
     func payFailure() {
-        HUD.flash(.labeledError(title: nil, subtitle: "支付失败, 请重新支付"), delay: 2)
+        SLHUD.message(title: nil, desc: "支付失败, 请重新支付")
         delegate?.payFailure()
     }
     func unKnow() {
-        HUD.flash(.labeledError(title: nil, subtitle: "请关闭APP并重新打开获取支付结果"), delay: 2)
+        SLHUD.message(title: nil, desc: "请关闭APP并重新打开获取支付结果")
         delegate?.unKnow()
     }
 }

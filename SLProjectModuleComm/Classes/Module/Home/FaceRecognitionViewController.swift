@@ -8,7 +8,6 @@
 import UIKit
 import AVFoundation
 import Vision
-import PKHUD
 import SLIKit
 
 class FaceRecognitionViewController: UIViewController {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 
 protocol InteractionProtocol {
     func handleUrl(_ url: URL?)

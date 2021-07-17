@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 
 public protocol PayResultProtocol: NSObjectProtocol {
     func paySuccess()

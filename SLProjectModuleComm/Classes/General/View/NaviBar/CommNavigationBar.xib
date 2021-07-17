@@ -54,7 +54,6 @@
                                     <color key="tintColor" systemColor="labelColor"/>
                                     <state key="normal" title="item3"/>
                                     <connections>
-                                        <action selector="item1Action:" destination="iN0-l3-epB" eventType="touchUpInside" id="WaC-1S-oL0"/>
                                         <action selector="item3Action:" destination="iN0-l3-epB" eventType="touchUpInside" id="MOo-pg-owu"/>
                                     </connections>
                                 </button>
@@ -67,7 +66,6 @@
                                     <color key="tintColor" systemColor="labelColor"/>
                                     <state key="normal" title="item2"/>
                                     <connections>
-                                        <action selector="item1Action:" destination="iN0-l3-epB" eventType="touchUpInside" id="Uew-as-o1Q"/>
                                         <action selector="item2Action:" destination="iN0-l3-epB" eventType="touchUpInside" id="tCi-tx-omS"/>
                                     </connections>
                                 </button>

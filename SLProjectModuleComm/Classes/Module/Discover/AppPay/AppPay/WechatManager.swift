@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PKHUD
 
 public class WechatManager: NSObject {
     @objc public static let shared = WechatManager()

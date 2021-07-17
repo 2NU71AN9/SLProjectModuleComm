@@ -10,8 +10,6 @@ import RxSwift
 import Alamofire
 import HandyJSON
 import SwiftyJSON
-import PKHUD
-import SVProgressHUD
 
 extension Observable where Element == NetworkResponse {
 
@@ -69,7 +67,9 @@ extension Observable where Element == NetworkResponse {
     public func isSuccess(_ complete: Complete) -> Observable<Element> {
         map { response in
             if response.code == HttpCode.success.rawValue {
-                complete?(response)
+                DispatchQueue.main.async {
+                    complete?(response)
+                }
                 return response
             } else {
                 /// 直接输出错误
@@ -83,7 +83,9 @@ extension Observable where Element == NetworkResponse {
     public func isFailure(_ complete: Complete) -> Observable<Element> {
         map { response in
             if response.code != HttpCode.success.rawValue {
-                complete?(response)
+                DispatchQueue.main.async {
+                    complete?(response)
+                }
                 throw SLError.failed(code: response.code, message: response.message)
             } else {
                 return response

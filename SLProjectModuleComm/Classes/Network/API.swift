@@ -7,7 +7,7 @@
 
 import UIKit
 import HandyJSON
-import PKHUD
+import SLIKit
 
 /// 网络请求返回数据结构
 public struct NetworkResponse: HandyJSON {
@@ -59,16 +59,12 @@ extension SLError: LocalizedError {
         switch self {
         case .requestFailed(let error):
             #if DEBUG
-            DispatchQueue.main.async {
-                HUD.flash(.label(String(describing: error)), delay: 1.5)
-            }
+            SLHUD.toast(String(describing: error))
             #endif
             return String(describing: error)
         case .noDataOrDataParsingFailed(let error):
             #if DEBUG
-            DispatchQueue.main.async {
-                HUD.flash(.label(String(describing: error)), delay: 1.5)
-            }
+            SLHUD.toast(String(describing: error))
             #endif
             return String(describing: error)
         case .failed(let code, let message):
@@ -76,21 +72,15 @@ extension SLError: LocalizedError {
                 AccountServicer.service.logout()
             } else {
                 #if DEBUG
-                DispatchQueue.main.async {
-                    HUD.flash(.label(String(format: "%d\n%@", code ?? 300, message ?? "")), delay: 1.5)
-                }
+                SLHUD.toast(String(format: "%d\n%@", code ?? 300, message ?? ""))
                 #else
-                DispatchQueue.main.async {
-                    HUD.flash(.label(String(format: "%@", message ?? "")), delay: 1.5)
-                }
+                SLHUD.toast(String(format: "%@", message ?? ""))
                 #endif
             }
             return String(format: "%d\n%@", code ?? 300, message ?? "")
         case .error(let error):
             #if DEBUG
-            DispatchQueue.main.async {
-                HUD.flash(.label(String(describing: error)), delay: 1.5)
-            }
+            SLHUD.toast(String(describing: error))
             #endif
             return error.debugDescription
         }

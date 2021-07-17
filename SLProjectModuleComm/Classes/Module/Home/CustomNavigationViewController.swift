@@ -39,8 +39,8 @@ extension CustomNavigationViewController {
         naviBar.item2Image = R.image.tab1_selected()
         naviBar.item3Title = "按钮3"
         
-        naviBar.item1Event = { SLHUD.showToast("item1") }
-        naviBar.item2Event = { SLHUD.showToast("item2") }
-        naviBar.item3Event = { SLHUD.showToast("item3") }
+        naviBar.item1Event = { SLHUD.message(title: nil, desc: "item1") }
+        naviBar.item2Event = { SLHUD.message(title: nil, desc: "item2") }
+        naviBar.item3Event = { SLHUD.message(title: nil, desc: "item3") }
     }
 }

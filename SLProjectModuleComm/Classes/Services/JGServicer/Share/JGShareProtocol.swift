@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import PKHUD
+import SLIKit
 
 public protocol JGShareProtocol {
     /// 注册, universalLink必须与微信开放平台设置的一样
@@ -111,7 +111,7 @@ public extension JGShareProtocol where Self: SLJGServicer {
         
         func share() {
             JSHAREService.share(message) { (state, _) in
-                HUD.flash(.label(state == .success ? "分享成功" : "分享失败"), delay: 1.5, completion: nil)
+                SLHUD.message(desc: state == .success ? "分享成功" : "分享失败")
                 complete?(state == .success)
             }
         }

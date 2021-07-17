@@ -33,6 +33,7 @@ public enum SLLocalText: String {
     case home_guide
     case home_instruction
     case home_screenShot
+    case home_swipeCell
     case home_imagePicker
     case home_filePicker
     case home_datePicker

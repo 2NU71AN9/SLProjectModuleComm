@@ -56,7 +56,7 @@ extension SLHomeViewController {
             navigationController?.pushViewController(vc, animated: true)
         case [0, 4]:
             let vc = SLQRCodeViewController { result in
-                SLHUD.showToast(result?.strScanned)
+                SLHUD.message(desc: result?.strScanned)
             }
             navigationController?.pushViewController(vc, animated: true)
         case [0, 5]:
@@ -115,28 +115,28 @@ extension SLHomeViewController {
             }.show()
         case [2, 2]:
             SL.pickerDate.date(Date()).mode(.dateAndTime).complete { date in
-                SLHUD.showToast(date.description)
+                SLHUD.message(desc: date.description)
             }.show()
         case [2, 3]:
             SL.pickerTag
                 .titles(["标签1", "标签2", "标签3", "标签4", "标签5", "标签6", "标签7", "标签8", "标签9", "标签10"])
                 .maxNum(1)
                 .complete { array in
-                    SLHUD.showToast(array.first?.1)
+                    SLHUD.message(desc: array.first?.1)
                 }.show()
         case [2, 4]:
             SL.pickerNormal
                 .titles(["标签1", "标签2", "标签3", "标签4", "标签5", "标签6", "标签7", "标签8", "标签9", "标签10"])
                 .complete { _, text in
-                    SLHUD.showToast(text)
+                    SLHUD.message(desc: text)
                 }.show()
         case [2, 5]:
             SL.pickerAddress.type(.area).complete { p, c, a in
-                SLHUD.showToast("\(p?.name ?? "")\(c?.name ?? "")\(a?.name ?? "")")
+                SLHUD.message(desc: "\(p?.name ?? "")\(c?.name ?? "")\(a?.name ?? "")")
             }.show()
         case [2, 6]:
             let vc = FGMapChooseAddressViewController { (poi) in
-                SLHUD.showToast(poi.addressDetailDesc)
+                SLHUD.message(desc: poi.addressDetailDesc)
             }
             let navi = UINavigationController(rootViewController: vc)
             navi.modalPresentationStyle = .fullScreen
@@ -179,6 +179,6 @@ extension SLHomeViewController {
 extension SLHomeViewController: JFCSTableViewControllerDelegate {
     func viewController(_ viewController: JFCSTableViewController, didSelectCity model: JFCSBaseInfoModel) {
         viewController.dismiss(animated: true, completion: nil)
-        SLHUD.showToast(model.name)
+        SLHUD.message(desc: model.name)
     }
 }

@@ -7,8 +7,6 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-import PKHUD
-import SVProgressHUD
 import SLEmptyPage
 import GDPerformanceView_Swift
 import SLIKit
@@ -79,11 +77,7 @@ extension AppDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.enableAutoToolbar = true
-        HUD.allowsInteraction = true
-        HUD.dimsBackground = false
-        SVProgressHUD.setDefaultMaskType(.clear)
-        SVProgressHUD.setDefaultStyle(.custom)
-        SVProgressHUD.setBackgroundColor(.clear)
+        SLHUD.loadingColor(R.color.prime())
         SLEmptyPageManager.enable = true
         SLEmptyPageManager.defaultEmptyViewBgColor = .clear
         

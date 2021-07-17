@@ -22,7 +22,7 @@
 "home_waterfall" = "Waterfall";
 "home_refreshAndLoad" = "Refresh&Load(MJRefresh)";
 "home_emptyPage" = "Empty page";
-"home_toast" = "Toast(PKHUD)";
+"home_toast" = "Toast";
 "home_naviPage" = "Navigation page(JXPagingView)";
 "home_listNest" = "ListNest(JXPagingView)";
 "home_carouse" = "Carouse(FSPagerView)";
@@ -34,6 +34,7 @@
 "home_guide" = "Guide page(EAIntroView)";
 "home_instruction" = "Instruction(Instructions)";
 "home_screenShot" = "Screen shot";
+"home_swipeCell" = "Swipe cell########";
 "home_imagePicker" = "Image picker(HXPhotoPicker)";
 "home_filePicker" = "File picker";
 "home_datePicker" = "Date picker";

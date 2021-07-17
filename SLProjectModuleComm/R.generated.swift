@@ -1386,7 +1386,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 76 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 77 localization keys.
     struct localizable {
       /// en translation: AOP
       ///
@@ -1612,6 +1612,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let discover_stringInterpolation = Rswift.StringResource(key: "discover_stringInterpolation", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
+      /// en translation: Swipe cell########
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static let home_swipeCell = Rswift.StringResource(key: "home_swipeCell", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
       /// en translation: System name
       ///
       /// Locales: en, zh-Hans, zh-Hant
@@ -1636,7 +1640,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let home_taptic = Rswift.StringResource(key: "home_taptic", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
-      /// en translation: Toast(PKHUD)
+      /// en translation: Toast
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let home_toast = Rswift.StringResource(key: "home_toast", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
@@ -2533,6 +2537,21 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("discover_stringInterpolation", bundle: bundle, comment: "")
       }
 
+      /// en translation: Swipe cell########
+      ///
+      /// Locales: en, zh-Hans, zh-Hant
+      static func home_swipeCell(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("home_swipeCell", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "home_swipeCell"
+        }
+
+        return NSLocalizedString("home_swipeCell", bundle: bundle, comment: "")
+      }
+
       /// en translation: System name
       ///
       /// Locales: en, zh-Hans, zh-Hant
@@ -2623,7 +2642,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("home_taptic", bundle: bundle, comment: "")
       }
 
-      /// en translation: Toast(PKHUD)
+      /// en translation: Toast
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static func home_toast(preferredLanguages: [String]? = nil) -> String {

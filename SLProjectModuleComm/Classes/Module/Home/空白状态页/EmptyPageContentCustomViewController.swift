@@ -25,7 +25,7 @@ class EmptyPageContentCustomViewController: BaseViewController {
         tableView.emptyView?.text = "没有找到数据"
         tableView.emptyView?.actionTitle = "重新加载"
         tableView.emptyView?.refreshAction = { [weak self] in
-            SLHUD.showToast("重新加载")
+            SLHUD.message(desc: "重新加载")
         }
         return tableView
     }()

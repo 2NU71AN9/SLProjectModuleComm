@@ -7,7 +7,6 @@
 
 import UIKit
 import SLIKit
-import PKHUD
 
 protocol UMShareProtocol {
     func registShare(wechatAppId: String, wechatAppSecret: String, universalLink: String) -> Self
@@ -58,7 +57,7 @@ extension UMShareProtocol where Self: SLUMServicer {
             let message = UMSocialMessageObject()
             message.text = text
             UMSocialManager.default()?.share(to: platform, messageObject: message, currentViewController: SL.visibleVC) { (_, error) in
-                HUD.flash(.label(error == nil ? "分享成功" : "分享失败"), delay: 1.5, completion: nil)
+                SLHUD.message(title: nil, desc: error == nil ? "分享成功" : "分享失败")
                 complete?(error == nil)
             }
         }
@@ -71,7 +70,7 @@ extension UMShareProtocol where Self: SLUMServicer {
             object.shareImage = image
             message.shareObject = object
             UMSocialManager.default()?.share(to: platform, messageObject: message, currentViewController: SL.visibleVC) { (_, error) in
-                HUD.flash(.label(error == nil ? "分享成功" : "分享失败"), delay: 1.5, completion: nil)
+                SLHUD.message(title: nil, desc: error == nil ? "分享成功" : "分享失败")
                 complete?(error == nil)
             }
         }
@@ -86,7 +85,7 @@ extension UMShareProtocol where Self: SLUMServicer {
             object.thumbImage = image
             message.shareObject = object
             UMSocialManager.default()?.share(to: platform, messageObject: message, currentViewController: SL.visibleVC) { (_, error) in
-                HUD.flash(.label(error == nil ? "分享成功" : "分享失败"), delay: 1.5, completion: nil)
+                SLHUD.message(title: nil, desc: error == nil ? "分享成功" : "分享失败")
                 complete?(error == nil)
             }
         }
@@ -101,7 +100,7 @@ extension UMShareProtocol where Self: SLUMServicer {
             object.thumbImage = image
             message.shareObject = object
             UMSocialManager.default()?.share(to: platform, messageObject: message, currentViewController: SL.visibleVC) { (_, error) in
-                HUD.flash(.label(error == nil ? "分享成功" : "分享失败"), delay: 1.5, completion: nil)
+                SLHUD.message(title: nil, desc: error == nil ? "分享成功" : "分享失败")
                 complete?(error == nil)
             }
         }
@@ -116,7 +115,7 @@ extension UMShareProtocol where Self: SLUMServicer {
             object.thumbImage = image
             message.shareObject = object
             UMSocialManager.default()?.share(to: platform, messageObject: message, currentViewController: SL.visibleVC) { (_, error) in
-                HUD.flash(.label(error == nil ? "分享成功" : "分享失败"), delay: 1.5, completion: nil)
+                SLHUD.message(title: nil, desc: error == nil ? "分享成功" : "分享失败")
                 complete?(error == nil)
             }
         }
@@ -131,7 +130,7 @@ extension UMShareProtocol where Self: SLUMServicer {
         shareMessage?.miniProgramType = type
         messageObject.shareObject = shareMessage
         UMSocialManager.default()?.share(to: .wechatSession, messageObject: messageObject, currentViewController: SL.visibleVC) { (_, error) in
-            HUD.flash(.label(error == nil ? "分享成功" : "分享失败"), delay: 1.5, completion: nil)
+            SLHUD.message(title: nil, desc: error == nil ? "分享成功" : "分享失败")
             complete?(error == nil)
         }
     }

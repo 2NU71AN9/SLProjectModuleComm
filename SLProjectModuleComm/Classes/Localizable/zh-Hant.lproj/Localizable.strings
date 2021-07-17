@@ -22,7 +22,7 @@
 "home_waterfall" = "瀑布流";
 "home_refreshAndLoad" = "上拉加載/下拉刷新(MJRefresh)";
 "home_emptyPage" = "空白狀態頁";
-"home_toast" = "Toast(PKHUD)";
+"home_toast" = "Toast";
 "home_naviPage" = "導航頁面(JXPagingView)";
 "home_listNest" = "列表嵌套(JXPagingView)";
 "home_carouse" = "輪播(FSPagerView)";
@@ -34,6 +34,7 @@
 "home_guide" = "引導頁(EAIntroView)";
 "home_instruction" = "功能引導(Instructions)";
 "home_screenShot" = "截屏";
+"home_swipeCell" = "cell側滑########";
 "home_imagePicker" = "圖片選擇(HXPhotoPicker)";
 "home_filePicker" = "文件選擇/預覽";
 "home_datePicker" = "時間選擇";

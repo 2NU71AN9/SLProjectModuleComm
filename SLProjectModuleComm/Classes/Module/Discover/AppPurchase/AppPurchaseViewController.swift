@@ -15,7 +15,7 @@ class AppPurchaseViewController: BaseViewController {
     
     @IBAction func btnClick(_ sender: UIButton) {
         AppPurchaseManager.shared.purchaseProduct("") { product, error in
-            SLHUD.showToast(product != nil ? "购买成功" : "购买失败")
+            SLHUD.message(title: nil, desc: product != nil ? "购买成功" : "购买失败")
         }
     }
 }

@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZDM-kL-cNP">
-                    <rect key="frame" x="20" y="64" width="374" height="285"/>
+                    <rect key="frame" x="20" y="64" width="374" height="225"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsM-5Y-GJR">
                             <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -29,7 +29,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="vIs-dY-9dX"/>
                             </constraints>
-                            <state key="normal" title="text">
+                            <state key="normal" title="Toast">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -47,7 +47,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="4g8-el-pHY"/>
                             </constraints>
-                            <state key="normal" title="success">
+                            <state key="normal" title="Message">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -65,7 +65,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="lu9-kV-ZpS"/>
                             </constraints>
-                            <state key="normal" title="error">
+                            <state key="normal" title="loading">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -93,24 +93,6 @@
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="btn4Action:" destination="-1" eventType="touchUpInside" id="Ule-Hr-bB4"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKF-r5-mxr">
-                            <rect key="frame" x="0.0" y="240" width="374" height="45"/>
-                            <color key="backgroundColor" name="prime"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="Roj-5R-X9t"/>
-                            </constraints>
-                            <state key="normal" title="image">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="kCornerRadius">
-                                    <real key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="btn5Action:" destination="-1" eventType="touchUpInside" id="F72-Lv-hCH"/>
                             </connections>
                         </button>
                     </subviews>

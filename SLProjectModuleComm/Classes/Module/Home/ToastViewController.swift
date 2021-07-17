@@ -6,27 +6,39 @@
 //
 
 import UIKit
-import PKHUD
+import SLIKit
 
 class ToastViewController: BaseViewController {
     
+    private var timer: Timer?
+    
     @IBAction func btn1Action(_ sender: UIButton) {
-        HUD.flash(.label("提示内容..."), delay: 2.0)
+        SLHUD.toast("提示内容提示内容提示内容提示内容提示内容提示内容提示内容提示内容")
     }
     @IBAction func btn2Action(_ sender: UIButton) {
-        HUD.flash(.labeledSuccess(title: "成功", subtitle: "提交成功!"), delay: 2.0)
+        SLHUD.message(title: "标题", desc: "这是提示内容...")
     }
     @IBAction func btn3Action(_ sender: UIButton) {
-        HUD.flash(.labeledError(title: "失败", subtitle: "提交失败!"), delay: 2.0)
-    }
-    @IBAction func btn4Action(_ sender: UIButton) {
-        HUD.show(.labeledProgress(title: "请求中", subtitle: "请稍候..."))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            HUD.flash(.labeledSuccess(title: "成功", subtitle: "提交成功!"), delay: 2.0)
+        SLHUD.loading("加载中...")
+        SL.delay(second: 3) {
+            SLHUD.dismiss()
         }
     }
-    @IBAction func btn5Action(_ sender: UIButton) {
-        HUD.flash(.labeledImage(image: R.image.cry100(), title: "成功", subtitle: "提交成功!"), delay: 2.0)
+    @IBAction func btn4Action(_ sender: UIButton) {
+        timer?.invalidate()
+        timer = nil
+
+        var intervalCount: CGFloat = 0.0
+        SLHUD.progress(intervalCount / 100)
+
+        timer = Timer.scheduledTimer(withTimeInterval: 0.025, repeats: true) { [weak self] timer in
+            intervalCount += 1
+            if intervalCount == 100 {
+                self?.timer?.invalidate()
+                self?.timer = nil
+            }
+            SLHUD.progress(intervalCount / 100)
+        }
     }
 }
 
