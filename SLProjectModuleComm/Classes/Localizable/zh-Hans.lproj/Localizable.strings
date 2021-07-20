@@ -68,8 +68,8 @@
 "discover_authority" = "权限申请";
 "discover_location" = "定位";
 "discover_crypto" = "加解密(CryptoSwift)";
-"discover_videoPlayer" = "视频播放器#######";
-"discover_audioPlayer" = "音频播放器#######";
+"discover_videoPlayer" = "视频播放";
+"discover_audioPlayer" = "音频播放#######";
 
 "my_iPhoneName" = "iPhone名称";
 "my_iPhoneDesc" = "设备型号";

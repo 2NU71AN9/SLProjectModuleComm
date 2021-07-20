@@ -68,7 +68,7 @@
 "discover_authority" = "Authority";
 "discover_location" = "Location";
 "discover_crypto" = "Crypto(CryptoSwift)";
-"discover_videoPlayer" = "VideoPlayer#######";
+"discover_videoPlayer" = "VideoPlayer";
 "discover_audioPlayer" = "AudioPlayer#######";
 
 "my_iPhoneName" = "iPhone name";

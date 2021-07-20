@@ -32,8 +32,7 @@ class SLDiscoverViewController: BaseViewController {
         [SLLocalText.discover_UMShare, SLLocalText.discover_JGShare, SLLocalText.discover_wechatPayAndAliPay, SLLocalText.discover_inPurchase, SLLocalText.discover_RYIM],
         [SLLocalText.discover_netWork, SLLocalText.discover_socket, SLLocalText.discover_GCD],
         [SLLocalText.discover_component, SLLocalText.discover_AOP, SLLocalText.discover_stringInterpolation, SLLocalText.discover_customOperator, SLLocalText.discover_JS, SLLocalText.discover_webView],
-        [SLLocalText.discover_authority, SLLocalText.discover_location, SLLocalText.discover_crypto],
-        [SLLocalText.discover_videoPlayer, SLLocalText.discover_audioPlayer]
+        [SLLocalText.discover_authority, SLLocalText.discover_location, SLLocalText.discover_crypto, SLLocalText.discover_videoPlayer]
     ]
 }
 
@@ -126,7 +125,7 @@ extension SLDiscoverViewController {
         case [3, 2]:
             let vc = CryptoViewController()
             navigationController?.pushViewController(vc, animated: true)
-        case [4, 0]:
+        case [3, 3]:
             let vc = VideoViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:

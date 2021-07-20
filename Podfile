@@ -34,7 +34,7 @@ target 'SLProjectModuleComm' do
   pod 'SwiftMessages' #应用内消息弹窗
   pod 'EAIntroView' #引导页
   pod 'Instructions' #功能引导
-  pod 'SkeletonView' # 加载动画
+  pod 'SkeletonView' #tableView加载动画
   pod 'JFCitySelector'
   pod 'TTGTagCollectionView'
   pod 'SideMenu' #抽屉
