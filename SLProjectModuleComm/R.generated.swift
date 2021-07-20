@@ -458,7 +458,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 5 files.
+  /// This `R.file` struct is generated, and contains static references to 6 files.
   struct file {
     /// Resource file `CityCode.json`.
     static let cityCodeJson = Rswift.FileResource(bundle: R.hostingBundle, name: "CityCode", pathExtension: "json")
@@ -470,6 +470,8 @@ struct R: Rswift.Validatable {
     static let locationPoint2xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "locationPoint@2x", pathExtension: "png")
     /// Resource file `locationPoint@3x.png`.
     static let locationPoint3xPng = Rswift.FileResource(bundle: R.hostingBundle, name: "locationPoint@3x", pathExtension: "png")
+    /// Resource file `videoData.json`.
+    static let videoDataJson = Rswift.FileResource(bundle: R.hostingBundle, name: "videoData", pathExtension: "json")
 
     /// `bundle.url(forResource: "CityCode", withExtension: "json")`
     static func cityCodeJson(_: Void = ()) -> Foundation.URL? {
@@ -498,6 +500,12 @@ struct R: Rswift.Validatable {
     /// `bundle.url(forResource: "locationPoint@3x", withExtension: "png")`
     static func locationPoint3xPng(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.locationPoint3xPng
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "videoData", withExtension: "json")`
+    static func videoDataJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.videoDataJson
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -708,7 +716,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 45 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 47 nibs.
   struct nib {
     /// Nib `AOPViewController`.
     static let aopViewController = _R.nib._AOPViewController()
@@ -800,6 +808,10 @@ struct R: Rswift.Validatable {
     static let transition2ViewController = _R.nib._Transition2ViewController()
     /// Nib `TransitionViewController`.
     static let transitionViewController = _R.nib._TransitionViewController()
+    /// Nib `VideoDetailViewController`.
+    static let videoDetailViewController = _R.nib._VideoDetailViewController()
+    /// Nib `VideoPlayerCell`.
+    static let videoPlayerCell = _R.nib._VideoPlayerCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "AOPViewController", in: bundle)`
@@ -1161,6 +1173,22 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "VideoDetailViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.videoDetailViewController) instead")
+    static func videoDetailViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.videoDetailViewController)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "VideoPlayerCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.videoPlayerCell) instead")
+    static func videoPlayerCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.videoPlayerCell)
+    }
+    #endif
+
     static func aopViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.aopViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
@@ -1341,15 +1369,25 @@ struct R: Rswift.Validatable {
       return R.nib.transitionViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
 
+    static func videoDetailViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.videoDetailViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    static func videoPlayerCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VideoPlayerCell? {
+      return R.nib.videoPlayerCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VideoPlayerCell
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `FGCurAddressCell`.
     static let fgCurAddressCell: Rswift.ReuseIdentifier<FGCurAddressCell> = Rswift.ReuseIdentifier(identifier: "FGCurAddressCell")
     /// Reuse identifier `HXPPImageCell`.
     static let hxppImageCell: Rswift.ReuseIdentifier<HXPPImageCell> = Rswift.ReuseIdentifier(identifier: "HXPPImageCell")
+    /// Reuse identifier `VideoPlayerCell`.
+    static let videoPlayerCell: Rswift.ReuseIdentifier<VideoPlayerCell> = Rswift.ReuseIdentifier(identifier: "VideoPlayerCell")
 
     fileprivate init() {}
   }
@@ -3465,6 +3503,31 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _VideoDetailViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "VideoDetailViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _VideoPlayerCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = VideoPlayerCell
+
+      let bundle = R.hostingBundle
+      let identifier = "VideoPlayerCell"
+      let name = "VideoPlayerCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VideoPlayerCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VideoPlayerCell
       }
 
       fileprivate init() {}

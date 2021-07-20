@@ -126,6 +126,9 @@ extension SLDiscoverViewController {
         case [3, 2]:
             let vc = CryptoViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case [4, 0]:
+            let vc = VideoViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

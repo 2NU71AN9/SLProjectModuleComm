@@ -46,6 +46,9 @@ target 'SLProjectModuleComm' do
   pod 'DDGScreenShot' #截图
   pod 'DeviceKit'
   pod 'MGSwipeTableCell' #cell侧滑
+  pod 'ZFPlayer'
+  pod 'ZFPlayer/ControlView'
+  pod 'ZFPlayer/AVPlayer'
   
   # ===============权限===============
   pod 'SPPermissions' #所有, 上架时使用子项

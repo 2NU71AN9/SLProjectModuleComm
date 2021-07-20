@@ -15,12 +15,18 @@ import SLIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+//    var allowOrentitaionRotation = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         whetherLoged()
         config(launchOptions)
         return true
     }
+    
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        allowOrentitaionRotation ? .allButUpsideDown : .portrait
+//    }
 }
 
 extension AppDelegate {
