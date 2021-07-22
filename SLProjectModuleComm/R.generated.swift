@@ -1690,7 +1690,7 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let discover_UMShare = Rswift.StringResource(key: "discover_UMShare", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
-      /// en translation: VideoPlayer#######
+      /// en translation: VideoPlayer
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static let discover_videoPlayer = Rswift.StringResource(key: "discover_videoPlayer", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "zh-Hant"], comment: nil)
@@ -2725,7 +2725,7 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("discover_UMShare", bundle: bundle, comment: "")
       }
 
-      /// en translation: VideoPlayer#######
+      /// en translation: VideoPlayer
       ///
       /// Locales: en, zh-Hans, zh-Hant
       static func discover_videoPlayer(preferredLanguages: [String]? = nil) -> String {

@@ -166,21 +166,13 @@ extension VideoViewController {
     }
     
     private func loadData() {
-        if let path = Bundle.main.path(forResource: "videoData", ofType: "json") {
-            let url = URL(fileURLWithPath: path, isDirectory: true)
-            do {
-                let data = try Data(contentsOf: url)
-                if let dict = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
-                   let list = dict["list"] as? [[String: Any]],
-                   let models = [VideoModel].deserialize(from: list) as? [VideoModel] {
-                    dataArray = models
-                    tableView.reloadData()
-                    player.zf_filterShouldPlayCellWhileScrolled { [weak self] indexPath in
-                        self?.playTheVideoAtIndexPath(indexPath)
-                    }
-                }
-            } catch {
-                print("读取json文件出错")
+        if let dict = Bundle.main.sl.loadJSON(with: "videoData") as? [String: Any],
+           let list = dict["list"] as? [[String: Any]],
+           let models = [VideoModel].deserialize(from: list) as? [VideoModel] {
+            dataArray = models
+            tableView.reloadData()
+            player.zf_filterShouldPlayCellWhileScrolled { [weak self] indexPath in
+                self?.playTheVideoAtIndexPath(indexPath)
             }
         }
     }
