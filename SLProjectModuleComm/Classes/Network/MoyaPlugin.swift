@@ -33,7 +33,7 @@ internal final class ShowProgress: PluginType {
 
     /// 在收到响应之后调用，但是在MoyaProvider调用它的完成处理程序之前调用
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
-        SLHUD.dismiss()
+        SLHUD.dismissLoadingOrProgress()
     }
 
     /// 调用以在完成之前修改结果

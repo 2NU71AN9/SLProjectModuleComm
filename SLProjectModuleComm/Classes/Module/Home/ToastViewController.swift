@@ -20,8 +20,8 @@ class ToastViewController: BaseViewController {
     }
     @IBAction func btn3Action(_ sender: UIButton) {
         SLHUD.loading("加载中...")
-        SL.delay(second: 3) {
-            SLHUD.dismiss()
+        SL.delay(second: 2) {
+            SLHUD.dismissLoadingOrProgress()
         }
     }
     @IBAction func btn4Action(_ sender: UIButton) {

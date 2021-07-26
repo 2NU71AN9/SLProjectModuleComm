@@ -5,9 +5,9 @@ platform :ios, '13.0'
 target 'SLProjectModuleComm' do
   use_frameworks!
 
-#  pod 'SLIKit', :git => 'https://github.com/2NU71AN9/SLIKit.git'
-  pod 'SLIKit', :path => '../SLIKit'
+  pod 'SLIKit'
   pod 'SLEmptyPage'
+  pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'develop'
   pod 'Aspects'
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftDate'
