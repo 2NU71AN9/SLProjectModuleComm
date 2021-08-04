@@ -49,6 +49,7 @@ target 'SLProjectModuleComm' do
   pod 'ZFPlayer'
   pod 'ZFPlayer/ControlView'
   pod 'ZFPlayer/AVPlayer'
+  pod 'YKWoodpecker'
   
   # ===============权限===============
   pod 'SPPermissions' #所有, 上架时使用子项

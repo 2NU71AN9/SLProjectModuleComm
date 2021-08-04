@@ -10,7 +10,7 @@ import IQKeyboardManagerSwift
 import SLEmptyPage
 import GDPerformanceView_Swift
 import SLIKit
-
+import YKWoodpecker
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -106,6 +106,7 @@ extension AppDelegate {
         #if DEBUG
         PerformanceMonitor.shared().start()
         PerformanceMonitor.shared().performanceViewConfigurator.options = [.performance, .memory]
+        YKWoodpeckerManager.sharedInstance().show()
         #endif
     }
 }
