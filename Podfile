@@ -7,7 +7,7 @@ target 'SLProjectModuleComm' do
 
   pod 'SLIKit'
   pod 'SLEmptyPage'
-  pod 'HandyJSON', :git => 'https://github.com/alibaba/HandyJSON.git', :branch => 'develop'
+  pod 'HandyJSON', '5.0.4-beta'
   pod 'Aspects'
   pod 'IQKeyboardManagerSwift'
   pod 'SwiftDate'

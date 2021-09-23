@@ -167,7 +167,7 @@ extension CryptoViewController {
             // 开始解密1（从加密后的字符数组解密）
             let decrypted1 = try aes.decrypt(encrypted)
             // 开始解密2（从加密后的base64字符串解密）
-            let decrypted2 = try encryptedBase64?.decryptBase64ToString(cipher: aes)
+            let decrypted2 = try encryptedBase64.decryptBase64ToString(cipher: aes)
             
             dataArray.append(("AES\nkey: \(key)", [
                 ("加密结果", String(data: Data(encrypted), encoding: .utf8)),
