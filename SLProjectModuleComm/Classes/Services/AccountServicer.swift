@@ -56,6 +56,7 @@ extension AccountServicer {
     
     /// 登录成功
     @objc func loginSuccess() {
+        haveToLogoutSubject.accept(PublishSubject<Bool>())
         loginSuccessSubject.onNext(true)
     }
 
