@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SLIKit
 
 class SLLoginViewController: BaseViewController {
     
@@ -42,7 +43,8 @@ extension SLLoginViewController {
         if navigationController?.presentingViewController != nil && presentingViewController != nil {
             dismiss(animated: true, completion: nil)
         } else {
-            UIApplication.shared.windows.last?.rootViewController = SLTabBar.customStyle()
+            SL.WINDOW?.rootViewController = SLTabBar.customStyle()
+//            UIApplication.shared.windows.last?.rootViewController = SLTabBar.customStyle()
         }
     }
 }
