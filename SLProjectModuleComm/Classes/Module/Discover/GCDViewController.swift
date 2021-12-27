@@ -10,7 +10,7 @@ import UIKit
 class GCDViewController: BaseViewController {
     /// 主线程队列
     let mainQueue = DispatchQueue.main
-    /// 全局队列
+    /// 全局并发队列
     let globalQueue = DispatchQueue.global()
     /// 串行队列
     let serial = DispatchQueue(label: "serial")
@@ -96,6 +96,14 @@ class GCDViewController: BaseViewController {
             print("3 ---- ", Thread.current)
         }
     }
+    
+    override func forwardingTarget(for aSelector: Selector!) -> Any? {
+        
+    }
+    override func method(for aSelector: Selector!) -> IMP! {
+        
+    }
+    
 }
 
 // MARK: - LifeCyle

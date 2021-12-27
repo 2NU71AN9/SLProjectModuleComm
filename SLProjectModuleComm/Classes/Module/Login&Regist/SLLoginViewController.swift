@@ -44,7 +44,6 @@ extension SLLoginViewController {
             dismiss(animated: true, completion: nil)
         } else {
             SL.WINDOW?.rootViewController = SLTabBar.customStyle()
-//            UIApplication.shared.windows.last?.rootViewController = SLTabBar.customStyle()
         }
     }
 }
