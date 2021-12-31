@@ -49,6 +49,7 @@ public enum SLLocalText: String {
     case home_tableViewCellAnimation
     case home_star
     case home_emitter
+    case home_SwiftUI
     
     case discover_UMShare
     case discover_JGShare

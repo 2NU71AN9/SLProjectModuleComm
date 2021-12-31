@@ -50,6 +50,7 @@
 "home_tableViewCellAnimation" = "TableViewCell animation";
 "home_star" = "Star";
 "home_emitter" = "Emitter";
+"home_SwiftUI" = "SwiftUI";
 
 "discover_UMShare" = "UM-Share";
 "discover_JGShare" = "JG-Share";

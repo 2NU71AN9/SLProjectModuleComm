@@ -50,6 +50,7 @@
 "home_tableViewCellAnimation" = "TableViewCell動畫";
 "home_star" = "星星評分";
 "home_emitter" = "粒子特效";
+"home_SwiftUI" = "SwiftUI";
 
 "discover_UMShare" = "友盟分享";
 "discover_JGShare" = "極光分享";

@@ -20,7 +20,7 @@ class SLHomeViewModel: BaseViewModel {
          SLLocalText.home_alert, SLLocalText.home_popMenu, SLLocalText.home_marquee, SLLocalText.home_rollingNotice, SLLocalText.home_guide, SLLocalText.home_instruction, SLLocalText.home_screenShot, SLLocalText.home_swipeCell],
         [SLLocalText.home_imagePicker, SLLocalText.home_filePicker, SLLocalText.home_datePicker, SLLocalText.home_tagPicker1, SLLocalText.home_tagPicker2, SLLocalText.home_addressPicker, SLLocalText.home_addressPicker_gaode, SLLocalText.home_cityPicker],
         [SLLocalText.home_customNavigation, SLLocalText.home_drawer, SLLocalText.home_gridView],
-        [SLLocalText.home_transitionAnimation, SLLocalText.home_tableViewCellAnimation, SLLocalText.home_star, SLLocalText.home_emitter]
+        [SLLocalText.home_transitionAnimation, SLLocalText.home_tableViewCellAnimation, SLLocalText.home_star, SLLocalText.home_emitter, SLLocalText.home_SwiftUI]
     ]
 }
 

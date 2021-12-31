@@ -9,6 +9,7 @@ import UIKit
 import SLIKit
 import JFCitySelector
 import DDGScreenShot
+import SwiftUI
 
 class SLHomeViewController: BaseViewController {
     let guideManager = GuideManager()
@@ -169,6 +170,10 @@ extension SLHomeViewController {
             navigationController?.pushViewController(vc, animated: true)
         case [4, 3]:
             let vc = EmitterViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        case [4, 4]:
+//            let vc = UIHostingController(rootView: ContentView("Hello SwiftUI"))
+            let vc = SwiftUIViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:
             break

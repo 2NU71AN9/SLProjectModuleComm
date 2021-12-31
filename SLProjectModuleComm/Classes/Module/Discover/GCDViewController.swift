@@ -96,14 +96,6 @@ class GCDViewController: BaseViewController {
             print("3 ---- ", Thread.current)
         }
     }
-    
-    override func forwardingTarget(for aSelector: Selector!) -> Any? {
-        
-    }
-    override func method(for aSelector: Selector!) -> IMP! {
-        
-    }
-    
 }
 
 // MARK: - LifeCyle
