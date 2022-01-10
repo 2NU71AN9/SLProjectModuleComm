@@ -21,6 +21,7 @@ class EmptyPageContentCustomViewController: BaseViewController {
             .registerClass(UITableViewCell.self)
             .base
         tableView.emptyViewEnable = true // 默认true
+        tableView.isLoadingEnable = false
         tableView.emptyView?.image = R.image.cry100()
         tableView.emptyView?.text = "没有找到数据"
         tableView.emptyView?.actionTitle = "重新加载"

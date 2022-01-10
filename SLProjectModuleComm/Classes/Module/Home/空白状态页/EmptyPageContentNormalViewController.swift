@@ -28,6 +28,7 @@ extension EmptyPageContentNormalViewController {
         super.setMasterView()
         naviBarHidden = true
         view.addSubview(tableView)
+        tableView.isLoadingEnable = false
     }
     
     override func viewWillLayoutSubviews() {

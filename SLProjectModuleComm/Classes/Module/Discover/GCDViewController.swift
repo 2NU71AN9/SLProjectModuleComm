@@ -103,5 +103,32 @@ extension GCDViewController {
     override func setMasterView() {
         super.setMasterView()
         title = SLLocalText.discover_GCD.text
+        
+        /**
+         afterFunc不会执行
+         如果是带afterDelay的延时函数，会在内部创建一个 NSTimer，然后添加到当前线程的RunLoop中。也就是如果当前线程没有开启RunLoop，该方法会失效
+         */
+        concurrent.async {
+            self.perform(#selector(self.afterFunc), with: nil, afterDelay: 2)
+        }
+        
+        /**
+         afterFunc不会执行
+         如果RunLoop的mode中一个item都没有，RunLoop会退出。即在调用RunLoop的run方法后，由于其mode中没有添加任何item去维持RunLoop的时间循环，RunLoop随即还是会退出。
+         */
+        concurrent.async {
+            RunLoop.current.run()
+            self.perform(#selector(self.afterFunc), with: nil, afterDelay: 2)
+        }
+        
+        // afterFunc会执行
+        concurrent.async {
+            self.perform(#selector(self.afterFunc), with: nil, afterDelay: 2)
+            RunLoop.current.run()
+        }
+    }
+    
+    @objc private func afterFunc() {
+        print("延迟2秒执行")
     }
 }

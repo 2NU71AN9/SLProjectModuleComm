@@ -29,7 +29,9 @@ class SLDiscoverViewController: BaseViewController {
     }
     
     private let dataArray = [
-        [SLLocalText.discover_UMShare, SLLocalText.discover_JGShare, SLLocalText.discover_wechatPayAndAliPay, SLLocalText.discover_inPurchase, SLLocalText.discover_RYIM],
+        [SLLocalText.discover_UMShare, SLLocalText.discover_JGShare, SLLocalText.discover_wechatPayAndAliPay, SLLocalText.discover_inPurchase,
+//         SLLocalText.discover_RYIM
+        ],
         [SLLocalText.discover_netWork, SLLocalText.discover_socket, SLLocalText.discover_GCD],
         [SLLocalText.discover_component, SLLocalText.discover_AOP, SLLocalText.discover_stringInterpolation, SLLocalText.discover_customOperator, SLLocalText.discover_JS, SLLocalText.discover_webView],
         [SLLocalText.discover_authority, SLLocalText.discover_location, SLLocalText.discover_crypto, SLLocalText.discover_videoPlayer]
