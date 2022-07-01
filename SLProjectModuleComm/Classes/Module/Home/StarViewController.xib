@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,10 +26,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="O2P-hW-JPy">
-                    <rect key="frame" x="15" y="64" width="384" height="310"/>
+                    <rect key="frame" x="15" y="64" width="384" height="350"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJb-gh-bTd" customClass="CosmosView" customModule="Cosmos">
-                            <rect key="frame" x="84.5" y="0.0" width="215" height="30"/>
+                            <rect key="frame" x="84.5" y="0.0" width="215" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -57,7 +57,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pfu-GR-zfw" customClass="CosmosView" customModule="Cosmos">
-                            <rect key="frame" x="24" y="60" width="336" height="30"/>
+                            <rect key="frame" x="24" y="80" width="336" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
@@ -90,7 +90,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpd-F0-AOR" customClass="CosmosView" customModule="Cosmos">
-                            <rect key="frame" x="57" y="120" width="270" height="50"/>
+                            <rect key="frame" x="57" y="160" width="270" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
@@ -108,7 +108,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xft-sM-4Re" customClass="CosmosView" customModule="Cosmos">
-                            <rect key="frame" x="57" y="200" width="270" height="50"/>
+                            <rect key="frame" x="57" y="240" width="270" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="rating">
@@ -125,7 +125,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.29999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LkI-jE-UDC">
-                            <rect key="frame" x="-2" y="280" width="388" height="31"/>
+                            <rect key="frame" x="-2" y="320" width="388" height="31"/>
                             <connections>
                                 <action selector="sliderAction:" destination="-1" eventType="valueChanged" id="jAZ-L7-amC"/>
                             </connections>
@@ -146,20 +146,6 @@
             <point key="canvasLocation" x="139" y="141"/>
         </view>
     </objects>
-    <designables>
-        <designable name="BJb-gh-bTd">
-            <size key="intrinsicContentSize" width="215.380859375" height="30"/>
-        </designable>
-        <designable name="Pfu-GR-zfw">
-            <size key="intrinsicContentSize" width="336" height="30"/>
-        </designable>
-        <designable name="Xft-sM-4Re">
-            <size key="intrinsicContentSize" width="270" height="50"/>
-        </designable>
-        <designable name="zpd-F0-AOR">
-            <size key="intrinsicContentSize" width="270" height="50"/>
-        </designable>
-    </designables>
     <resources>
         <image name="EMOJI03-200" width="200" height="200"/>
         <image name="EMOJI04-200" width="200" height="200"/>
