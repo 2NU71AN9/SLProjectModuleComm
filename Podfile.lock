@@ -1,0 +1,406 @@
+PODS:
+  - Alamofire (5.6.2)
+  - AlipaySDK-iOS (15.8.10)
+  - AMap2DMap (5.6.1):
+    - AMapFoundation (~> 1.4)
+  - AMapFoundation (1.7.0)
+  - AMapLocation (2.9.0):
+    - AMapFoundation (>= 1.7.0)
+  - AMapSearch (9.3.1):
+    - AMapFoundation (>= 1.7.0)
+  - Aspects (1.4.1)
+  - Bugly (2.5.91)
+  - Cosmos (23.0.0)
+  - CryptoSwift (1.5.1)
+  - CTMediator (46)
+  - DDGScreenShot (1.1.6)
+  - DeviceKit (4.6.1)
+  - EAIntroView (2.13.0):
+    - EARestrictedScrollView (~> 1.1.0)
+  - EARestrictedScrollView (1.1.0)
+  - ESTabBarController-swift (2.8.0)
+  - FSPagerView (0.8.3)
+  - FSTextView (1.8)
+  - GDPerformanceView-Swift (2.1.1)
+  - HandyJSON (5.0.4-beta)
+  - Haptica (3.0.3)
+  - Hero (1.6.1)
+  - HXPhotoPicker (3.3.1):
+    - HXPhotoPicker/Default (= 3.3.1)
+  - HXPhotoPicker/Default (3.3.1)
+  - Instructions (2.2.0)
+  - IQKeyboardManagerSwift (6.5.10)
+  - JAnalytics (2.1.2):
+    - JCore (>= 2.0.0)
+  - JCore (3.2.5)
+  - JFCitySelector (0.3.4):
+    - YYModel
+  - JPush (4.6.6):
+    - JCore (>= 2.0.0)
+  - JShare (1.9.1):
+    - JCore (>= 2.0.0)
+  - JXPagingView (2.1.2):
+    - JXPagingView/Pager (= 2.1.2)
+    - JXPagingView/Paging (= 2.1.2)
+  - JXPagingView/Pager (2.1.2)
+  - JXPagingView/Paging (2.1.2)
+  - JXPhotoBrowser (3.1.3)
+  - JXSegmentedView (1.3.0)
+  - Kingfisher (7.3.0)
+  - MarqueeLabel (4.3.0)
+  - MGSwipeTableCell (1.6.14)
+  - MJRefresh (3.7.5)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - NewPopMenu (2.1.2)
+  - Peep (3.0.0)
+  - pop (1.0.12)
+  - ProgressHUD (13.6)
+  - R.swift (6.1.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
+  - RollingNotice-Swift (1.1.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SideMenu (6.5.0)
+  - SkeletonView (1.29.2)
+  - SLEmptyPage (1.1.5):
+    - SnapKit
+  - SLIKit (1.5.4):
+    - FSTextView
+    - Haptica
+    - HXPhotoPicker
+    - JXPhotoBrowser
+    - Kingfisher
+    - MJRefresh
+    - pop
+    - ProgressHUD
+    - RxCocoa
+    - RxSwift
+    - SnapKit
+    - SwiftDate
+    - SwiftMessages
+    - swiftScan
+    - TagListView
+    - Then
+    - Toaster
+  - SnapKit (5.6.0)
+  - SPPermissions (7.1.5):
+    - SPPermissions/Core (= 7.1.5)
+  - SPPermissions/Bluetooth (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Calendar (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Camera (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Contacts (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Core (7.1.5)
+  - SPPermissions/Health (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/LocationAlways (7.1.5):
+    - SPPermissions/Core
+    - SPPermissions/LocationExtension
+  - SPPermissions/LocationExtension (7.1.5)
+  - SPPermissions/LocationWhenInUse (7.1.5):
+    - SPPermissions/Core
+    - SPPermissions/LocationExtension
+  - SPPermissions/Microphone (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Motion (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Music (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Notification (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/PhotoLibrary (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Reminders (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Siri (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/SpeechRecognizer (7.1.5):
+    - SPPermissions/Core
+  - SPPermissions/Tracking (7.1.5):
+    - SPPermissions/Core
+  - Starscream (4.0.4)
+  - SwiftDate (6.3.1)
+  - SwiftLint (0.48.0)
+  - SwiftMessages (9.0.6):
+    - SwiftMessages/App (= 9.0.6)
+  - SwiftMessages/App (9.0.6)
+  - swiftScan (1.2.1)
+  - SwiftyJSON (5.0.1)
+  - SwiftyStoreKit (0.16.1)
+  - TagListView (1.4.1)
+  - Then (3.0.0)
+  - Toaster (2.3.0)
+  - TTGTagCollectionView (2.1.0)
+  - UMCommon (7.3.7):
+    - UMDevice
+  - UMDevice (2.2.1)
+  - UMPush (4.0.3):
+    - UMCommon
+  - UMShare/Core (6.10.5):
+    - UMCommon
+  - UMShare/Social/ReducedWeChat (6.10.5):
+    - UMCommon
+    - UMShare/Core
+  - UMShare/UI (6.10.5):
+    - UMCommon
+    - UMShare/Core
+  - ViewAnimator (3.1.0)
+  - WechatOpenSDK (1.8.7.1)
+  - YKWoodpecker (1.2.9)
+  - YYCache (1.0.4)
+  - YYModel (1.0.4)
+  - ZFPlayer (4.0.3):
+    - ZFPlayer/Core (= 4.0.3)
+  - ZFPlayer/AVPlayer (4.0.3):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (4.0.3):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (4.0.3)
+
+DEPENDENCIES:
+  - AlipaySDK-iOS
+  - AMap2DMap
+  - AMapLocation
+  - AMapSearch
+  - Aspects
+  - Bugly
+  - Cosmos
+  - CryptoSwift
+  - CTMediator
+  - DDGScreenShot
+  - DeviceKit
+  - EAIntroView
+  - ESTabBarController-swift
+  - FSPagerView
+  - FSTextView
+  - GDPerformanceView-Swift
+  - HandyJSON (= 5.0.4-beta)
+  - Hero
+  - HXPhotoPicker
+  - Instructions
+  - IQKeyboardManagerSwift
+  - JAnalytics
+  - JCore
+  - JFCitySelector
+  - JPush
+  - JShare
+  - JXPagingView
+  - JXSegmentedView
+  - Kingfisher
+  - MarqueeLabel
+  - MGSwipeTableCell
+  - Moya
+  - NewPopMenu
+  - Peep
+  - R.swift
+  - RollingNotice-Swift
+  - SideMenu
+  - SkeletonView
+  - SLEmptyPage
+  - SLIKit
+  - SPPermissions
+  - SPPermissions/Bluetooth
+  - SPPermissions/Calendar
+  - SPPermissions/Camera
+  - SPPermissions/Contacts
+  - SPPermissions/Health
+  - SPPermissions/LocationAlways
+  - SPPermissions/LocationWhenInUse
+  - SPPermissions/Microphone
+  - SPPermissions/Motion
+  - SPPermissions/Music
+  - SPPermissions/Notification
+  - SPPermissions/PhotoLibrary
+  - SPPermissions/Reminders
+  - SPPermissions/Siri
+  - SPPermissions/SpeechRecognizer
+  - SPPermissions/Tracking
+  - Starscream
+  - SwiftDate
+  - SwiftLint
+  - SwiftMessages
+  - SwiftyJSON
+  - SwiftyStoreKit
+  - TagListView
+  - TTGTagCollectionView
+  - UMCommon
+  - UMPush
+  - UMShare/Social/ReducedWeChat
+  - UMShare/UI
+  - ViewAnimator
+  - WechatOpenSDK
+  - YKWoodpecker
+  - YYCache
+  - ZFPlayer
+  - ZFPlayer/AVPlayer
+  - ZFPlayer/ControlView
+
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - Alamofire
+    - AlipaySDK-iOS
+    - AMap2DMap
+    - AMapFoundation
+    - AMapLocation
+    - AMapSearch
+    - Aspects
+    - Bugly
+    - Cosmos
+    - CryptoSwift
+    - CTMediator
+    - DDGScreenShot
+    - DeviceKit
+    - EAIntroView
+    - EARestrictedScrollView
+    - ESTabBarController-swift
+    - FSPagerView
+    - FSTextView
+    - GDPerformanceView-Swift
+    - HandyJSON
+    - Haptica
+    - Hero
+    - HXPhotoPicker
+    - Instructions
+    - IQKeyboardManagerSwift
+    - JAnalytics
+    - JCore
+    - JFCitySelector
+    - JPush
+    - JShare
+    - JXPagingView
+    - JXPhotoBrowser
+    - JXSegmentedView
+    - Kingfisher
+    - MarqueeLabel
+    - MGSwipeTableCell
+    - MJRefresh
+    - Moya
+    - NewPopMenu
+    - Peep
+    - pop
+    - ProgressHUD
+    - R.swift
+    - R.swift.Library
+    - RollingNotice-Swift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SideMenu
+    - SkeletonView
+    - SLEmptyPage
+    - SLIKit
+    - SnapKit
+    - SPPermissions
+    - Starscream
+    - SwiftDate
+    - SwiftLint
+    - SwiftMessages
+    - swiftScan
+    - SwiftyJSON
+    - SwiftyStoreKit
+    - TagListView
+    - Then
+    - Toaster
+    - TTGTagCollectionView
+    - UMCommon
+    - UMDevice
+    - UMPush
+    - UMShare
+    - ViewAnimator
+    - WechatOpenSDK
+    - YKWoodpecker
+    - YYCache
+    - YYModel
+    - ZFPlayer
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  AlipaySDK-iOS: 9f81bf87e55750c3b3ac6c1a89c7cbf16ba06f5f
+  AMap2DMap: cac76bc057de18a1641f34df6b50bf5bc6b23571
+  AMapFoundation: c14fcebd8e4267c593bd2e25067ac86b0ce64aba
+  AMapLocation: f5eb11e11c62f0f599f80b578eec8a1f70deb985
+  AMapSearch: 839b25de7af9d61b65266edf64382283b6af54a1
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  Bugly: afe841bba2ea6de6d432a3c125240a5e75949c55
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
+  CTMediator: f1cf58d509fb3192086c367711f039efd769b907
+  DDGScreenShot: b1f6e0c1e2a121a19b75f1fbac56e64e5765e06b
+  DeviceKit: 316f28290430467278b8a0d1c895968efa9e16e2
+  EAIntroView: 9adedfc6b5c3fd3ebe19766da01dae573e6ce053
+  EARestrictedScrollView: b0c2a3f92fb2610bb44d71c5e4893777c89e45ef
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  FSTextView: 9e2ca07bb6bb0fb7e77b49b2717adf81f3c620b5
+  GDPerformanceView-Swift: 22d964fe40b19e3d914dba2586237d064de8fd77
+  HandyJSON: a9c67202df97805a0ba4a00e30b50e9a30ac28f3
+  Haptica: 23497230b2d7476621f7860263ae0667279a0a89
+  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
+  HXPhotoPicker: f1274d0c931ad8564e0f23f33fe8b6110b639bd7
+  Instructions: 07052901a398b42eb1d83de9755b8a0bac3e2f7d
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  JAnalytics: 2576145801f3436755d5d8a0db52d1a130557169
+  JCore: 4c9febdfdb1a5675ab361bc1f06c0905391d7b23
+  JFCitySelector: 51452fcadaa180463901cd190149e5951623e477
+  JPush: 95c8f0b93ee40b76ea97b6c9eaaa0247947185ba
+  JShare: 384197bb8c98822b497c3fee0ced58ce5f58692e
+  JXPagingView: 90924b364a2ff7e94db534fad1fa50925ff69ee4
+  JXPhotoBrowser: d32e94e1226d43bf5ed83164e3f5b651fed625e0
+  JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
+  Kingfisher: cdb1189a9223b1bc028816bd47c8b8101a58831c
+  MarqueeLabel: 02f5ac8fd6877c94564556cb93fa86c70c08baeb
+  MGSwipeTableCell: d99ed6466f393b71cd488c6f798ba112ff5d1d01
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  NewPopMenu: c6129e08e8192f6257ceb5f9a4357e1b59c6e2e7
+  Peep: 63ea9c8ab41a44db14a2058d9b2e4f31ca69a86f
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  RollingNotice-Swift: 4a56cba5ea69eff0b0ee0829028e63a0229347ae
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+  SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
+  SLEmptyPage: e373451d06b2dc160cf5830c5bbd438145fd620b
+  SLIKit: 00b52784a700a3b555d193aa44f26364cd740310
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SPPermissions: c63ac1132badad39917de03a3c9dc2429ace94be
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
+  SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
+  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
+  swiftScan: 0849e7d7c1c641384767a573ee8cb90b88d1ddd9
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
+  TTGTagCollectionView: a2a8668c659b39e7a6ffd6590475ea53a7ae95f7
+  UMCommon: 37fe35f498e92cf57bbb06a086f02915fc35f211
+  UMDevice: 053478c4b4d7292f31f0a275c227d3c4007a5571
+  UMPush: a517cd5907eb10669ce6cf2e6c0dfe40be84b6b5
+  UMShare: 6fb187b72d5499d21839615666eca9020369abd8
+  ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
+  WechatOpenSDK: 6a4d1436c15b3b5fe2a0bd383f3046010186da44
+  YKWoodpecker: 5433b65498b2afe2a4adc20642f76ff57e161f2a
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZFPlayer: 624c92de06eb34df322c3b53b4c9ce760f528f7a
+
+PODFILE CHECKSUM: 661f6ca5e7967ff7f71a1d14638e2b860e91b783
+
+COCOAPODS: 1.11.3

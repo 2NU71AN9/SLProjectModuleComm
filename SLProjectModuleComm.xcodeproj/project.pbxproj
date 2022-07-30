@@ -17,6 +17,14 @@
 		D21B38E2269EB7DE009D96CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D21B38E4269EB7DE009D96CB /* InfoPlist.strings */; };
 		D21B38E9269EBB03009D96CB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D21B38EB269EBB03009D96CB /* Localizable.strings */; };
 		D21B38F0269EC6CB009D96CB /* SLLocalTextEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21B38EF269EC6CB009D96CB /* SLLocalTextEnum.swift */; };
+		D22B35742894E40A003292F1 /* RxNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22B356B2894E409003292F1 /* RxNetwork.swift */; };
+		D22B35752894E40A003292F1 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22B356C2894E409003292F1 /* APIService.swift */; };
+		D22B35762894E40A003292F1 /* NetReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22B356D2894E409003292F1 /* NetReachabilityManager.swift */; };
+		D22B35772894E40A003292F1 /* MoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22B356E2894E409003292F1 /* MoyaPlugin.swift */; };
+		D22B35782894E40A003292F1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22B356F2894E409003292F1 /* API.swift */; };
+		D22B35792894E40A003292F1 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22B35702894E409003292F1 /* NetworkHandler.swift */; };
+		D22B357A2894E40A003292F1 /* SocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22B35722894E409003292F1 /* SocketHandler.swift */; };
+		D22B357B2894E40A003292F1 /* SocketAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22B35732894E409003292F1 /* SocketAPIService.swift */; };
 		D235F27C2682C4810019C32F /* TapticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235F27A2682C4810019C32F /* TapticViewController.swift */; };
 		D235F27D2682C4810019C32F /* TapticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D235F27B2682C4810019C32F /* TapticViewController.xib */; };
 		D235F2802682C9B00019C32F /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D235F27E2682C9B00019C32F /* SoundViewController.swift */; };
@@ -75,14 +83,6 @@
 		D25E75D5258C9EC600CD9F4B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E7595258C9EC600CD9F4B /* BaseModel.swift */; };
 		D25E75D6258C9EC600CD9F4B /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E7596258C9EC600CD9F4B /* BaseNavigationController.swift */; };
 		D25E75D7258C9EC600CD9F4B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E7597258C9EC600CD9F4B /* BaseView.swift */; };
-		D25E75D8258C9EC600CD9F4B /* RxNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E759A258C9EC600CD9F4B /* RxNetwork.swift */; };
-		D25E75D9258C9EC600CD9F4B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E759B258C9EC600CD9F4B /* APIService.swift */; };
-		D25E75DA258C9EC600CD9F4B /* NetReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E759C258C9EC600CD9F4B /* NetReachabilityManager.swift */; };
-		D25E75DB258C9EC600CD9F4B /* MoyaPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E759D258C9EC600CD9F4B /* MoyaPlugin.swift */; };
-		D25E75DC258C9EC600CD9F4B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E759E258C9EC600CD9F4B /* API.swift */; };
-		D25E75DD258C9EC600CD9F4B /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E759F258C9EC600CD9F4B /* NetworkHandler.swift */; };
-		D25E75DE258C9EC600CD9F4B /* SocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E75A1258C9EC600CD9F4B /* SocketHandler.swift */; };
-		D25E75DF258C9EC600CD9F4B /* SocketAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E75A2258C9EC600CD9F4B /* SocketAPIService.swift */; };
 		D25E75E5258C9EC600CD9F4B /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = D25E75AD258C9EC600CD9F4B /* area.plist */; };
 		D25E75E6258C9EC600CD9F4B /* EWAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E75AE258C9EC600CD9F4B /* EWAddressModel.swift */; };
 		D25E75E7258C9EC600CD9F4B /* EWAddressPickViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E75AF258C9EC600CD9F4B /* EWAddressPickViewTableViewCell.swift */; };
@@ -258,6 +258,14 @@
 		D21B38EC269EBB06009D96CB /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D21B38ED269EBB0A009D96CB /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D21B38EF269EC6CB009D96CB /* SLLocalTextEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLLocalTextEnum.swift; sourceTree = "<group>"; };
+		D22B356B2894E409003292F1 /* RxNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNetwork.swift; sourceTree = "<group>"; };
+		D22B356C2894E409003292F1 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		D22B356D2894E409003292F1 /* NetReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetReachabilityManager.swift; sourceTree = "<group>"; };
+		D22B356E2894E409003292F1 /* MoyaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaPlugin.swift; sourceTree = "<group>"; };
+		D22B356F2894E409003292F1 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D22B35702894E409003292F1 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		D22B35722894E409003292F1 /* SocketHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketHandler.swift; sourceTree = "<group>"; };
+		D22B35732894E409003292F1 /* SocketAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAPIService.swift; sourceTree = "<group>"; };
 		D235F27A2682C4810019C32F /* TapticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapticViewController.swift; sourceTree = "<group>"; };
 		D235F27B2682C4810019C32F /* TapticViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapticViewController.xib; sourceTree = "<group>"; };
 		D235F27E2682C9B00019C32F /* SoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
@@ -322,14 +330,6 @@
 		D25E7595258C9EC600CD9F4B /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		D25E7596258C9EC600CD9F4B /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		D25E7597258C9EC600CD9F4B /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		D25E759A258C9EC600CD9F4B /* RxNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNetwork.swift; sourceTree = "<group>"; };
-		D25E759B258C9EC600CD9F4B /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		D25E759C258C9EC600CD9F4B /* NetReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetReachabilityManager.swift; sourceTree = "<group>"; };
-		D25E759D258C9EC600CD9F4B /* MoyaPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaPlugin.swift; sourceTree = "<group>"; };
-		D25E759E258C9EC600CD9F4B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		D25E759F258C9EC600CD9F4B /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
-		D25E75A1258C9EC600CD9F4B /* SocketHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketHandler.swift; sourceTree = "<group>"; };
-		D25E75A2258C9EC600CD9F4B /* SocketAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAPIService.swift; sourceTree = "<group>"; };
 		D25E75AD258C9EC600CD9F4B /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		D25E75AE258C9EC600CD9F4B /* EWAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressModel.swift; sourceTree = "<group>"; };
 		D25E75AF258C9EC600CD9F4B /* EWAddressPickViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWAddressPickViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -644,6 +644,29 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		D22B356A2894E409003292F1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D22B356B2894E409003292F1 /* RxNetwork.swift */,
+				D22B356C2894E409003292F1 /* APIService.swift */,
+				D22B356D2894E409003292F1 /* NetReachabilityManager.swift */,
+				D22B356E2894E409003292F1 /* MoyaPlugin.swift */,
+				D22B356F2894E409003292F1 /* API.swift */,
+				D22B35702894E409003292F1 /* NetworkHandler.swift */,
+				D22B35712894E409003292F1 /* Socket */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D22B35712894E409003292F1 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				D22B35722894E409003292F1 /* SocketHandler.swift */,
+				D22B35732894E409003292F1 /* SocketAPIService.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
 		D235F2822682CCDC0019C32F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,8 +828,8 @@
 				D235F2822682CCDC0019C32F /* Resource */,
 				D25E7579258C9EC500CD9F4B /* General */,
 				D25E7598258C9EC600CD9F4B /* Lib */,
-				D25E7599258C9EC600CD9F4B /* Network */,
 				D25E756B258C9EC500CD9F4B /* Services */,
+				D22B356A2894E409003292F1 /* Network */,
 				D25E75A3258C9EC600CD9F4B /* Utils */,
 				D2F2C570258D93A700EBF884 /* Tabbar */,
 				D2F2C58B258D94E200EBF884 /* Module */,
@@ -921,29 +944,6 @@
 			children = (
 			);
 			path = Lib;
-			sourceTree = "<group>";
-		};
-		D25E7599258C9EC600CD9F4B /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				D25E759A258C9EC600CD9F4B /* RxNetwork.swift */,
-				D25E759B258C9EC600CD9F4B /* APIService.swift */,
-				D25E759C258C9EC600CD9F4B /* NetReachabilityManager.swift */,
-				D25E759D258C9EC600CD9F4B /* MoyaPlugin.swift */,
-				D25E759E258C9EC600CD9F4B /* API.swift */,
-				D25E759F258C9EC600CD9F4B /* NetworkHandler.swift */,
-				D25E75A0258C9EC600CD9F4B /* Socket */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		D25E75A0258C9EC600CD9F4B /* Socket */ = {
-			isa = PBXGroup;
-			children = (
-				D25E75A2258C9EC600CD9F4B /* SocketAPIService.swift */,
-				D25E75A1258C9EC600CD9F4B /* SocketHandler.swift */,
-			);
-			path = Socket;
 			sourceTree = "<group>";
 		};
 		D25E75A3258C9EC600CD9F4B /* Utils */ = {
@@ -1724,6 +1724,7 @@
 				D2DB1224269837EE006A5409 /* AOPViewController.swift in Sources */,
 				D2928DE7268B0B5B00E1967D /* ImagePicker2ViewController.swift in Sources */,
 				D2E2E9D22690342E00899D23 /* CustomNavigationViewController.swift in Sources */,
+				D22B35762894E40A003292F1 /* NetReachabilityManager.swift in Sources */,
 				D2CFBC402695B45000C2C9CF /* LocationViewController.swift in Sources */,
 				D2D7206A26897BBE00B87422 /* ListNestContentViewController.swift in Sources */,
 				D2BD952F2697022C00D7E542 /* PayPlatformModel.swift in Sources */,
@@ -1750,9 +1751,11 @@
 				D280DA70269D70E300A83414 /* JSDataManager.swift in Sources */,
 				D25E75E8258C9EC600CD9F4B /* EWAddressPickView.swift in Sources */,
 				D235F299268332A60019C32F /* EmptyPageContentNormalViewController.swift in Sources */,
+				D22B35742894E40A003292F1 /* RxNetwork.swift in Sources */,
 				D28FC1642693EAD600D2900C /* DrawerLeftViewController.swift in Sources */,
 				D2DB121C26983055006A5409 /* StringInterpolationViewController.swift in Sources */,
 				D28FC16D26945BEC00D2900C /* TransitionViewController.swift in Sources */,
+				D22B35792894E40A003292F1 /* NetworkHandler.swift in Sources */,
 				D2CFBC3826953C7100C2C9CF /* Transition2ViewController.swift in Sources */,
 				D2E92334268C6FC200933146 /* MarqueeViewController.swift in Sources */,
 				D2DB1229269843BE006A5409 /* ModuleViewController.swift in Sources */,
@@ -1763,13 +1766,14 @@
 				D2BD95302697022C00D7E542 /* AliManager.swift in Sources */,
 				D2DB12162697F54B006A5409 /* AppPurchaseViewController.swift in Sources */,
 				D235F2952682D7330019C32F /* SegmentContentViewController.swift in Sources */,
+				D22B35772894E40A003292F1 /* MoyaPlugin.swift in Sources */,
 				D2C3933E269308F0009D4EBB /* GridViewController.swift in Sources */,
 				D2377EA626A2DCDE00F0A5E6 /* SwipeTableViewCell.swift in Sources */,
 				D25E75E9258C9EC600CD9F4B /* EWAddressViewController.swift in Sources */,
+				D22B357B2894E40A003292F1 /* SocketAPIService.swift in Sources */,
 				D2F7D14B269C126E00B71FDD /* NetworkViewController.swift in Sources */,
 				D25E75EC258C9EC600CD9F4B /* Reachability.m in Sources */,
 				D28FC1682693F43900D2900C /* DrawerInfoViewController.swift in Sources */,
-				D25E75DF258C9EC600CD9F4B /* SocketAPIService.swift in Sources */,
 				D2E922ED268C1D0000933146 /* FaceIDViewController.swift in Sources */,
 				D2F2C594258D94E200EBF884 /* SLHomeViewModel.swift in Sources */,
 				D2C393382692A3B0009D4EBB /* FGChooseAddressBgView.swift in Sources */,
@@ -1796,11 +1800,11 @@
 				D2C3933B2692AA13009D4EBB /* SLGaodeServicer.swift in Sources */,
 				D2C393342692A3B0009D4EBB /* FGChoosCitySearchView.swift in Sources */,
 				D25E74F9258C9D3500CD9F4B /* ViewController.swift in Sources */,
-				D25E75DE258C9EC600CD9F4B /* SocketHandler.swift in Sources */,
 				D241B24D26A671840012BB64 /* VideoViewController.swift in Sources */,
 				D2BD94CA26969C2A00D7E542 /* EmitterViewController.swift in Sources */,
 				D2C393372692A3B0009D4EBB /* FGSearchHeaderView.swift in Sources */,
 				D25E74F5258C9D3500CD9F4B /* AppDelegate.swift in Sources */,
+				D22B35752894E40A003292F1 /* APIService.swift in Sources */,
 				D235F28A2682D5E50019C32F /* RefreshViewController.swift in Sources */,
 				D280DA69269D70E300A83414 /* SLJSWebView.swift in Sources */,
 				D2D720712689CFD000B87422 /* CarouselViewController.swift in Sources */,
@@ -1814,17 +1818,14 @@
 				D25E75D2258C9EC600CD9F4B /* BaseCollectionViewCell.swift in Sources */,
 				D2C4A7302681C83100B31956 /* JGEventType.swift in Sources */,
 				D25E75D6258C9EC600CD9F4B /* BaseNavigationController.swift in Sources */,
-				D25E75D8258C9EC600CD9F4B /* RxNetwork.swift in Sources */,
 				D216E3C825AD78710072E287 /* SLUMServicer.swift in Sources */,
 				D2D720672689759800B87422 /* ListNestViewController.swift in Sources */,
 				D2F2C595258D94E200EBF884 /* SLHomeViewController.swift in Sources */,
 				D2E559C2268D69A600296C4B /* MessageAlertViewController.swift in Sources */,
 				D2E559B9268D5AC100296C4B /* ScrollMsgViewController.swift in Sources */,
 				D25E75E6258C9EC600CD9F4B /* EWAddressModel.swift in Sources */,
-				D25E75D9258C9EC600CD9F4B /* APIService.swift in Sources */,
 				D2E559C6268D8D8B00296C4B /* CustomMessageView.swift in Sources */,
 				D25E75C3258C9EC600CD9F4B /* SLVisitorViewController.swift in Sources */,
-				D25E75DB258C9EC600CD9F4B /* MoyaPlugin.swift in Sources */,
 				D21B38F0269EC6CB009D96CB /* SLLocalTextEnum.swift in Sources */,
 				D280DA74269D70E300A83414 /* WKWebViewJavascriptBridgeBase.swift in Sources */,
 				D280DA72269D70E300A83414 /* WKWebViewJavascriptBridge.swift in Sources */,
@@ -1835,9 +1836,9 @@
 				D2C4A72F2681C83100B31956 /* ViewControllerIntercepter.swift in Sources */,
 				D2F2C566258D91F900EBF884 /* R.generated.swift in Sources */,
 				D25E75CE258C9EC600CD9F4B /* CommNavigationBar.swift in Sources */,
-				D25E75DA258C9EC600CD9F4B /* NetReachabilityManager.swift in Sources */,
 				D2C4A7202681C72900B31956 /* ShareViewController.swift in Sources */,
 				D235F29B268332BA0019C32F /* EmptyPageContentCustomViewController.swift in Sources */,
+				D22B357A2894E40A003292F1 /* SocketHandler.swift in Sources */,
 				D280DA65269D70E300A83414 /* NativeCallJSHandler.swift in Sources */,
 				D216E3CC25AD78710072E287 /* UMShareProtocol.swift in Sources */,
 				D2CFBC3C26957EFF00C2C9CF /* StarViewController.swift in Sources */,
@@ -1856,9 +1857,8 @@
 				D2C03ACB277D9FAB0046941D /* SwiftUIViewController.swift in Sources */,
 				D25E75CB258C9EC600CD9F4B /* Enum.swift in Sources */,
 				D216E3C925AD78710072E287 /* UMAnalyticsProtocol.swift in Sources */,
+				D22B35782894E40A003292F1 /* API.swift in Sources */,
 				D2C393392692A3B0009D4EBB /* FGSearchAddressViewController.swift in Sources */,
-				D25E75DC258C9EC600CD9F4B /* API.swift in Sources */,
-				D25E75DD258C9EC600CD9F4B /* NetworkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

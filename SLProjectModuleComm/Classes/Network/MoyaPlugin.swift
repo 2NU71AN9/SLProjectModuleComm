@@ -9,7 +9,6 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Moya
-import SwiftyJSON
 import SLIKit
 
 /// Moya插件: 网络请求时显示loading...
@@ -76,27 +75,35 @@ internal final class Print: PluginType {
     /// 在通过网络发送请求(或存根)之前立即调用
     func willSend(_ request: RequestType, target: TargetType) {
         guard let target = target as? APIService else { return }
+        let jsonData = try? JSONSerialization.data(withJSONObject: target.parameters, options: .prettyPrinted)
+        let jsonString = String(data: jsonData ?? Data(), encoding: .utf8)
         print("""
             #############↓网络请求参数↓#################
             \(target.baseURL)\(target.path)
-            \(target.parameters)
+            \(jsonString ?? "无参数")
             #############↑网络请求参数↑#################
             """)
     }
     
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
         guard let target = target as? APIService else { return }
-        print("#############↓网络请求数据↓#################")
+        print("#############↓网络请求结果↓#################")
         switch result {
         case .success(let jsonValue):
-            if let jsonStr = try? jsonValue.mapJSON() {
-                print(String(format: "%@%@==>%@", target.baseURL.absoluteString, target.path, JSON(jsonStr).description))
-            } else {
-                print(String(format: "%@%@==>数据错误", target.baseURL.absoluteString, target.path))
+            do {
+                if let json = try jsonValue.mapJSON() as? [String: Any] {
+                    let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+                    let jsonString = String(data: jsonData, encoding: .utf8)
+                    print(String(format: "%@%@ ==>\n%@", target.baseURL.absoluteString, target.path, jsonString ?? ""))
+                } else {
+                    throw NetwotkError.noDataOrDataParsingFailed(message: "数据错误")
+                }
+            } catch let error {
+                print(String(format: "%@%@==>\(error.localizedDescription)", target.baseURL.absoluteString, target.path))
             }
         case .failure(let error):
             print(String(format: "%@%@==>%@", target.baseURL.absoluteString, target.path, error.errorDescription ?? "请求失败"))
         }
-        print("#############↑网络请求数据↑#################")
+        print("#############↑网络请求结果↑#################")
     }
 }

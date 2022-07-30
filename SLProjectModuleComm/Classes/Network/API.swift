@@ -43,7 +43,10 @@ public enum HttpCode: Int {
     case failed = 300 // 失败
     case noDataOrDataParsingFailed = 301 // 无数据或解析失败
 
-    var logoutCode: [Int] { [rawValue, 14006] }
+    /// 是否登录失效
+    static func isLoginInvalid(_ code: Int?) -> Bool {
+        [Self.logout.rawValue].contains(code)
+    }
 }
 
 public enum SLError: Swift.Error {
@@ -68,7 +71,7 @@ extension SLError: LocalizedError {
             #endif
             return String(describing: error)
         case .failed(let code, let message):
-            if HttpCode.logout.logoutCode.contains(code ?? 0) {
+            if HttpCode.isLoginInvalid(code) {
                 AccountServicer.service.logout()
             } else {
                 #if DEBUG

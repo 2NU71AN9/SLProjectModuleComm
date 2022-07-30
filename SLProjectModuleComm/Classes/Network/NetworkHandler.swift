@@ -9,7 +9,6 @@ import UIKit
 import Moya
 import HandyJSON
 import RxSwift
-import SwiftyJSON
 import Alamofire
 
 class NetworkHandler: NSObject {
@@ -31,21 +30,25 @@ class NetworkHandler: NSObject {
             APIProvider.request(target) { (result) in
                 switch result {
                 case .success(let jsonValue):
-                    if let jsonStr = try? jsonValue.mapJSON(),
-                        var response = NetworkResponse.deserialize(from: JSON(jsonStr).dictionaryObject) {
-                        target.responsePath?.components(separatedBy: ".").forEach { (str) in
-                            if let result = response.result as? [String: Any] {
-                                response.result = result[str]
+                    do {
+                        if let json = try jsonValue.mapJSON() as? [String: Any],
+                           var response = NetworkResponse.deserialize(from: json) {
+                            target.responsePath?.components(separatedBy: ".").forEach { (str) in
+                                if let result = response.result as? [String: Any] {
+                                    response.result = result[str]
+                                }
                             }
+                            obsever.onNext(response)
+                            obsever.onCompleted()
+                        } else {
+                            throw SLError.noDataOrDataParsingFailed(message: "数据错误")
                         }
-                        obsever.onNext(response)
-                        obsever.onCompleted()
-                    } else {
-                        obsever.onNext(NetworkResponse(code: 300, message: "数据错误", data: nil))
+                    } catch let error {
+                        obsever.onNext(NetworkResponse(code: 300, message: error.localizedDescription, data: nil))
                         obsever.onCompleted()
                     }
                 case .failure(let error):
-                    obsever.onNext(NetworkResponse(code: 300, message: error.errorDescription, data: nil))
+                    obsever.onNext(NetworkResponse(code: error.errorCode, message: error.errorDescription, data: nil))
                     obsever.onCompleted()
                 }
             }
