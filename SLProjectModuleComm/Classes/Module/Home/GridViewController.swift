@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import TTGTagCollectionView
+import TTGTags
 
 class GridViewController: BaseViewController {
 

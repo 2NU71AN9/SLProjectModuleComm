@@ -96,7 +96,7 @@ internal final class Print: PluginType {
                     let jsonString = String(data: jsonData, encoding: .utf8)
                     print(String(format: "%@%@ ==>\n%@", target.baseURL.absoluteString, target.path, jsonString ?? ""))
                 } else {
-                    throw NetwotkError.noDataOrDataParsingFailed(message: "数据错误")
+                    throw SLError.noDataOrDataParsingFailed(message: "数据错误")
                 }
             } catch let error {
                 print(String(format: "%@%@==>\(error.localizedDescription)", target.baseURL.absoluteString, target.path))
